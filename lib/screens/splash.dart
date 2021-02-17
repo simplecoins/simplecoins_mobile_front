@@ -25,7 +25,9 @@ class _SplashState extends State<Splash> {
           Spacer(),
           Text(
             'Simplecoins.africa',
-            style: GoogleFonts.manrope(
+            style: TextStyle(
+              fontFamily: 'Manrope',
+              fontWeight: FontWeight.w400,
               fontSize: 12,
               color: Colors.black
             ),
