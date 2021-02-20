@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/button.dart';
 
 class Onboarding extends StatefulWidget {
   @override
@@ -6,6 +7,7 @@ class Onboarding extends StatefulWidget {
 }
 
 class _OnboardingState extends State<Onboarding> {
+  int currentPage = 0;
   List<Map<String, String>> pageDataSet1 = [
     {
       "image": "assets/Onboarding/ScribbleArt_01.png",
@@ -14,22 +16,22 @@ class _OnboardingState extends State<Onboarding> {
     {
       "image": "assets/Onboarding/ScribbleArt_02.png",
       "text": "Freedom",
-          
     },
     {
       "image": "assets/Onboarding/ScribbleArt_03.png",
       "text": "Super Secure",
     },
   ];
-    List<Map<String, String>> pageDataSet2 = [
+  List<Map<String, String>> pageDataSet2 = [
     {
       "image": "assets/Onboarding/Wave.png",
-      "text": "Simplecoins is a platform for making fast and simple crypto purchases using your Mobile Money",
+      "text":
+          "Simplecoins is a platform for making fast and simple crypto purchases using your Mobile Money",
     },
     {
       "image": "assets/Onboarding/stars.png",
-      "text": "Enjoy the stress free experience we have to offer, along side the best crypto rates on the market.",
-          
+      "text":
+          "Enjoy the stress free experience we have to offer, along side the best crypto rates on the market.",
     },
     {
       "image": "assets/Onboarding/Shield.png",
@@ -38,34 +40,103 @@ class _OnboardingState extends State<Onboarding> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 3,
-              child: PageView.builder(
-                itemCount: pageDataSet1.length,
-                itemBuilder: (context, index) => PageContent(
-                    text: pageDataSet1[index]['text'],
-                    image: pageDataSet1[index]["image"],
-                    text1: pageDataSet2[index]['text'],
-                    image1: pageDataSet2[index]['image'],
-                  )
-              ),
+    return Scaffold(
+      //color: Colors.white,
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            flex: 9,
+            child: PageView.builder(
+              onPageChanged: (value) {
+                setState(() {
+                  currentPage = value;
+                });
+              },
+              itemCount: pageDataSet1.length,
+              itemBuilder: (context, index) => PageContent(
+                text: pageDataSet1[index]['text'],
+                image: pageDataSet1[index]["image"],
+                text1: pageDataSet2[index]['text'],
+                image1: pageDataSet2[index]['image'],
+              )
             ),
-            Expanded(
-              flex: 2,
-              child: SizedBox(),
-            )
-          ],
-        ),
+          ),
+          Expanded(
+            flex: 4,
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children:
+                    List.generate(
+                      pageDataSet1.length,
+                      (index) => buildDot(index),
+                    ),
+                  ),
+                ),
+                Spacer(
+                  flex: 2,
+                ),
+                SizedBox(
+                  height: 64,
+                  width: 311,
+                  child: FlatButton(
+                    padding: EdgeInsets.all(20.0),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        side: BorderSide(color: Colors.black)),
+                    //color: Colors.white,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Sign In with Google',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'Manrope'
+                            ),
+                        ),
+                        SizedBox(width: 10),
+                        Image.asset(
+                          'assets/Onboarding/bx_bxl-google.png',
+                          height: 17.87,)
+                      ],
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Spacer(),
+                DefaultButton(
+                  text: 'Sign Me Up',
+                ),
+                Spacer(
+                  flex: 2,
+                ),
+                ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  AnimatedContainer buildDot(int index ) {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 200),
+      margin: EdgeInsets.only(right: 5),
+      height: 4,
+      width: 23,
+      decoration: BoxDecoration(
+        color: currentPage == index ? Colors.black : Color(0xFFE3E9F0),
+        borderRadius: BorderRadius.circular(3)
       ),
     );
   }
 }
+
+
 
 class PageContent extends StatelessWidget {
   const PageContent({
@@ -81,38 +152,44 @@ class PageContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Spacer(
-          flex: 4,
-        ),
+        Spacer(),
         Image.asset(
           image,
           fit: BoxFit.fitWidth,
         ),
         Spacer(),
-        Row(
-          children: <Widget>[
-            Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Manrope',
-                fontWeight: FontWeight.w800,
-                fontSize: 30,
-                color: Colors.black
+        Padding(
+          padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+          child: Row(
+            children: <Widget>[
+              Text(
+                text,
+                style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w800,
+                    fontSize: 30,
+                    color: Colors.black),
               ),
-              ),
+              SizedBox(width: 10),
               Image.asset(image1)
-          ],
-        ),
-        Text(
-          text1,
-          style: TextStyle(
-            fontFamily: 'Manrope',
-            fontWeight: FontWeight.w500,
-            fontSize: 18,
-            color: Colors.black
+            ],
           ),
-          )
+        ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+          child: Text(
+            text1,
+            style: TextStyle(
+                fontFamily: 'Manrope',
+                fontWeight: FontWeight.w500,
+                fontSize: 18,
+                color: Colors.black),
+          ),
+        ),
+        Spacer(),
       ],
     );
   }
 }
+
+
