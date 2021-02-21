@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
+import 'package:simplecoins_0/components/googlebutton.dart';
 
 class Onboarding extends StatefulWidget {
   @override
@@ -79,34 +80,7 @@ class _OnboardingState extends State<Onboarding> {
                 Spacer(
                   flex: 2,
                 ),
-                SizedBox(
-                  height: 64,
-                  width: 311,
-                  child: FlatButton(
-                    padding: EdgeInsets.all(20.0),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        side: BorderSide(color: Colors.black)),
-                    //color: Colors.white,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Sign In with Google',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'Manrope'
-                            ),
-                        ),
-                        SizedBox(width: 10),
-                        Image.asset(
-                          'assets/Onboarding/bx_bxl-google.png',
-                          height: 17.87,)
-                      ],
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
+                GoogleButton(),
                 Spacer(),
                 DefaultButton(
                   text: 'Sign Me Up',
@@ -135,6 +109,7 @@ class _OnboardingState extends State<Onboarding> {
     );
   }
 }
+
 
 
 
