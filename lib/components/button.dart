@@ -29,7 +29,7 @@ class DefaultButton extends StatelessWidget {
             fontSize: 16
             ),
         ),
-        onPressed: () {},
+        onPressed: press,
       ),
     );
   }

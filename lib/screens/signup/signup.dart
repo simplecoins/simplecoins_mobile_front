@@ -7,6 +7,8 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  TextEditingController _pController = new TextEditingController();
+  TextEditingController _cpController = new TextEditingController();
   bool _isChecked = false;
   bool _isHidden = true;
   String _password;
@@ -93,6 +95,7 @@ class _SignUpState extends State<SignUp> {
             ),
             Spacer(),
             TextFormField(
+              controller: _pController,
               onSaved: (val) => _password = val,
               autofocus: false,
               keyboardType: TextInputType.visiblePassword,
@@ -113,6 +116,7 @@ class _SignUpState extends State<SignUp> {
             ),
             Spacer(),
             TextFormField(
+              controller: _cpController,
               onSaved: (val) => _password = val,
               autofocus: false,
               keyboardType: TextInputType.visiblePassword,
@@ -133,6 +137,7 @@ class _SignUpState extends State<SignUp> {
             ),
             Spacer(),
             Row(
+              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Checkbox(
                   activeColor: Colors.black,
@@ -144,7 +149,12 @@ class _SignUpState extends State<SignUp> {
                   },
                 ),
                 Text(
-                  'I certify that I am 18 years of age or older, and\nagree to the User Agreement and Privacy Policy.'
+                  'I certify that I am 18 years of age or older, and\nagree to the User Agreement and Privacy Policy.',
+                  style: TextStyle(
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      color: Color(0xFF787879)),
                 )
               ],
             ),
@@ -153,6 +163,11 @@ class _SignUpState extends State<SignUp> {
             ),
             DefaultButton(
               text: 'Sign Up',
+              press: () {
+                _pController.text == _cpController.text
+                    ? print('yes')
+                    : print('no');
+              },
             ),
             Spacer(
               flex: 2,
