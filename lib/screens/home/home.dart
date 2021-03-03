@@ -25,38 +25,61 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         centerTitle: false,
         backgroundColor: Colors.white,
         title: Padding(
-          padding: EdgeInsets.only(left: 25.0),
+          padding: EdgeInsets.only(left: 21.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Good Evening',
-                style: TextStyle(color: Colors.black),
+                'GOOD EVENING',
+                style: TextStyle(
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                  color: Color(0xFF808080)
+                ),
               ),
               Text(
                 'Andy Andy Kwesi',
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                ),
               )
             ],
           ),
         ),
         actions: <Widget>[
           Padding(
-            padding: EdgeInsets.only(right: 25.0),
+            padding: EdgeInsets.only(right: 20.0),
             child: Image.asset('assets/Homescreen/Ellipse 14.png'),
           )
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(25.0),
+        padding: EdgeInsets.all(32.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Buy Crypto. Sell for Cash'),
             Text(
-                'Easily buy and sell Crypto from us and pay\nwith Mobile money'),
+              'Buy Crypto. Sell for Cash',
+              style: TextStyle(
+                fontFamily: 'Manrope',
+                fontWeight: FontWeight.w600,
+                fontSize: 16
+              ),
+            ),
+            Text(
+              'Easily buy and sell Crypto from us and pay\nwith Mobile money',
+              style: TextStyle(
+                fontFamily: 'Manrope',
+                fontWeight: FontWeight.w500,
+                fontSize: 14
+              ),
+            ),
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.only(top: 31.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(7)),
                 child: Container(
@@ -87,8 +110,26 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w400),
                     tabs: [
-                      Tab(child: Text('             Buy Crypto             ')),
-                      Tab(child: Text('             Sell Crypto             ')),
+                      Tab(
+                        child: Text(
+                          '             Buy Crypto             ',
+                          style: TextStyle(
+                            fontFamily: 'Manrope',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14
+                          ),
+                        )
+                      ),
+                      Tab(
+                        child: Text(
+                          '             Sell Crypto             ',
+                          style: TextStyle(
+                            fontFamily: 'Manrope',
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14
+                          ),
+                        )
+                      ),
                     ],
                   ),
                 ),
@@ -116,7 +157,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                         CryptoCard(
                           imgPath: 'assets/Homescreen/USDT.png',
-                          cryptoName: 'Bitcoin',
+                          cryptoName: 'USDT',
                           press: () {},
                         ),
                         SizedBox(
@@ -124,7 +165,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                         CryptoCard(
                           imgPath: 'assets/Homescreen/Ripple.png',
-                          cryptoName: 'Bitcoin',
+                          cryptoName: 'Ripple',
                           press: () {},
                         ),
                       ],
@@ -143,7 +184,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                         CryptoCard(
                           imgPath: 'assets/Homescreen/USDT.png',
-                          cryptoName: 'Bitcoin',
+                          cryptoName: 'USDT',
                           press: () {},
                         ),
                         SizedBox(
@@ -151,7 +192,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                         CryptoCard(
                           imgPath: 'assets/Homescreen/Ripple.png',
-                          cryptoName: 'Bitcoin',
+                          cryptoName: 'Ripple',
                           press: () {},
                         ),
                       ],
@@ -160,6 +201,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
+            Spacer(),
             Stack(
               children: <Widget>[
                 Padding(
@@ -210,11 +252,30 @@ class CryptoCard extends StatelessWidget {
               imgPath,
               width: 52,
             ),
+            SizedBox(
+              width: 10.0,
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(cryptoName),
-                Text('\$37,000.00'),
+                Text(
+                  cryptoName,
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16
+                  ),
+                ),
+                Text(
+                  '\$37,000.00',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    color: Color(0xFF37D39B)
+                  ),
+                ),
               ],
             ),
             Spacer(),
