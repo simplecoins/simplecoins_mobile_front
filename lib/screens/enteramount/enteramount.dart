@@ -121,6 +121,9 @@ class _EnterAmountState extends State<EnterAmount> {
             DefaultButton(
               text: 'Next',
               press: () {},
+            ),
+            SizedBox(
+              height: 25.0,
             )
           ],
         ),
@@ -139,12 +142,14 @@ class PadNumber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(45.0),
       onTap: () {},
-      //splashColor: Colors.pink,
       child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle
+        ),
         height: 72.0,
         width: 72.0,
-        //color: Colors.white,
         child: Center(
           child: Text(
             text,
