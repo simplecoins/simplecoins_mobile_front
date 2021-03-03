@@ -48,19 +48,18 @@ class _OnboardingState extends State<Onboarding> {
           Expanded(
             flex: 9,
             child: PageView.builder(
-              onPageChanged: (value) {
-                setState(() {
-                  currentPage = value;
-                });
-              },
-              itemCount: pageDataSet1.length,
-              itemBuilder: (context, index) => PageContent(
-                text: pageDataSet1[index]['text'],
-                image: pageDataSet1[index]["image"],
-                text1: pageDataSet2[index]['text'],
-                image1: pageDataSet2[index]['image'],
-              )
-            ),
+                onPageChanged: (value) {
+                  setState(() {
+                    currentPage = value;
+                  });
+                },
+                itemCount: pageDataSet1.length,
+                itemBuilder: (context, index) => PageContent(
+                      text: pageDataSet1[index]['text'],
+                      image: pageDataSet1[index]["image"],
+                      text1: pageDataSet2[index]['text'],
+                      image1: pageDataSet2[index]['image'],
+                    )),
           ),
           Expanded(
             flex: 4,
@@ -70,8 +69,7 @@ class _OnboardingState extends State<Onboarding> {
                   padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children:
-                    List.generate(
+                    children: List.generate(
                       pageDataSet1.length,
                       (index) => buildDot(index),
                     ),
@@ -84,11 +82,12 @@ class _OnboardingState extends State<Onboarding> {
                 Spacer(),
                 DefaultButton(
                   text: 'Sign Me Up',
+                  press: () {},
                 ),
                 Spacer(
                   flex: 2,
                 ),
-                ],
+              ],
             ),
           )
         ],
@@ -96,22 +95,18 @@ class _OnboardingState extends State<Onboarding> {
     );
   }
 
-  AnimatedContainer buildDot(int index ) {
+  AnimatedContainer buildDot(int index) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 200),
       margin: EdgeInsets.only(right: 5),
       height: 4,
       width: 23,
       decoration: BoxDecoration(
-        color: currentPage == index ? Colors.black : Color(0xFFE3E9F0),
-        borderRadius: BorderRadius.circular(3)
-      ),
+          color: currentPage == index ? Colors.black : Color(0xFFE3E9F0),
+          borderRadius: BorderRadius.circular(3)),
     );
   }
 }
-
-
-
 
 class PageContent extends StatelessWidget {
   const PageContent({
@@ -166,5 +161,3 @@ class PageContent extends StatelessWidget {
     );
   }
 }
-
-

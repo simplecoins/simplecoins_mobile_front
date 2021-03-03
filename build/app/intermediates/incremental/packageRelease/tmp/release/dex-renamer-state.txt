@@ -1,0 +1,4 @@
+#Wed Mar 03 02:48:25 GMT 2021
+base.0=/Users/dreezy/vscode/flutter/simplecoins/simplecoins_front/simplecoins_mobile_front/build/app/intermediates/transforms/r8/release/0/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
