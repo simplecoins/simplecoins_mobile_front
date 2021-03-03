@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class EnterWalletAddress extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Text(
-          'Bitcoin Address',
+          '$cryptoType Address',
           style: TextStyle(color: Colors.black),
         ),
         leading: IconButton(

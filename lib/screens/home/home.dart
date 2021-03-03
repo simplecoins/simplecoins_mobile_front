@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -32,11 +33,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               Text(
                 'GOOD EVENING',
                 style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 12,
-                  color: Color(0xFF808080)
-                ),
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12,
+                    color: Color(0xFF808080)),
               ),
               Text(
                 'Andy Andy Kwesi',
@@ -65,18 +65,16 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             Text(
               'Buy Crypto. Sell for Cash',
               style: TextStyle(
-                fontFamily: 'Manrope',
-                fontWeight: FontWeight.w600,
-                fontSize: 16
-              ),
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16),
             ),
             Text(
               'Easily buy and sell Crypto from us and pay\nwith Mobile money',
               style: TextStyle(
-                fontFamily: 'Manrope',
-                fontWeight: FontWeight.w500,
-                fontSize: 14
-              ),
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14),
             ),
             Padding(
               padding: EdgeInsets.only(top: 31.0),
@@ -111,25 +109,21 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         fontWeight: FontWeight.w400),
                     tabs: [
                       Tab(
-                        child: Text(
-                          '             Buy Crypto             ',
-                          style: TextStyle(
+                          child: Text(
+                        '             Buy Crypto             ',
+                        style: TextStyle(
                             fontFamily: 'Manrope',
                             fontWeight: FontWeight.w600,
-                            fontSize: 14
-                          ),
-                        )
-                      ),
+                            fontSize: 14),
+                      )),
                       Tab(
-                        child: Text(
-                          '             Sell Crypto             ',
-                          style: TextStyle(
+                          child: Text(
+                        '             Sell Crypto             ',
+                        style: TextStyle(
                             fontFamily: 'Manrope',
                             fontWeight: FontWeight.w600,
-                            fontSize: 14
-                          ),
-                        )
-                      ),
+                            fontSize: 14),
+                      )),
                     ],
                   ),
                 ),
@@ -150,7 +144,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         CryptoCard(
                           imgPath: 'assets/Homescreen/Bitcoin.png',
                           cryptoName: 'Bitcoin',
-                          press: () {},
+                          press: () {
+                            cryptoType = 'Bitcoin';
+                            Navigator.pushNamed(context, '/enterwalletaddress');
+                          },
                         ),
                         SizedBox(
                           height: 10.0,
@@ -158,7 +155,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         CryptoCard(
                           imgPath: 'assets/Homescreen/USDT.png',
                           cryptoName: 'USDT',
-                          press: () {},
+                          press: () {
+                            cryptoType = 'USDT';
+                            Navigator.pushNamed(context, '/enterwalletaddress');
+                          },
                         ),
                         SizedBox(
                           height: 10.0,
@@ -166,7 +166,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         CryptoCard(
                           imgPath: 'assets/Homescreen/Ripple.png',
                           cryptoName: 'Ripple',
-                          press: () {},
+                          press: () {
+                            cryptoType = 'Ripple';
+                            Navigator.pushNamed(context, '/enterwalletaddress');
+                          },
                         ),
                       ],
                     ),
@@ -177,7 +180,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         CryptoCard(
                           imgPath: 'assets/Homescreen/Bitcoin.png',
                           cryptoName: 'Bitcoin',
-                          press: () {},
+                          press: () {
+                            cryptoType = 'Bitcoin';
+                            Navigator.pushNamed(context, '/enterwalletaddress');
+                          },
                         ),
                         SizedBox(
                           height: 10.0,
@@ -185,7 +191,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         CryptoCard(
                           imgPath: 'assets/Homescreen/USDT.png',
                           cryptoName: 'USDT',
-                          press: () {},
+                          press: () {
+                            cryptoType = 'USDT';
+                            Navigator.pushNamed(context, '/enterwalletaddress');
+                          },
                         ),
                         SizedBox(
                           height: 10.0,
@@ -193,7 +202,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         CryptoCard(
                           imgPath: 'assets/Homescreen/Ripple.png',
                           cryptoName: 'Ripple',
-                          press: () {},
+                          press: () {
+                            cryptoType = 'Ripple';
+                            Navigator.pushNamed(context, '/enterwalletaddress');
+                          },
                         ),
                       ],
                     ),
@@ -262,19 +274,17 @@ class CryptoCard extends StatelessWidget {
                 Text(
                   cryptoName,
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16
-                  ),
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16),
                 ),
                 Text(
                   '\$37,000.00',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    color: Color(0xFF37D39B)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: Color(0xFF37D39B)),
                 ),
               ],
             ),
