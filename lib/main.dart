@@ -1,6 +1,7 @@
 //import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/screens/choosepaymentnumber/choosepaymentnumber.dart';
 import 'package:simplecoins_0/screens/enteramount/enteramount.dart';
 import 'package:simplecoins_0/screens/enterwalletaddress/enterwalletaddress.dart';
 import 'package:simplecoins_0/screens/home/home.dart';
@@ -13,7 +14,7 @@ import 'package:simplecoins_0/screens/wrapper.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/enteramount',
+    initialRoute: '/payment',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
@@ -22,7 +23,8 @@ void main() {
       '/signup': (context) => SignUp(),
       '/home': (context) => Home(),
       '/enterwalletaddress': (context) => EnterWalletAddress(),
-      '/enteramount': (context) => EnterAmount()
+      '/enteramount': (context) => EnterAmount(),
+      '/payment': (context) => ChoosePaymentNumber()
     }
   ));
 }
