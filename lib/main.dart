@@ -13,7 +13,7 @@ import 'package:simplecoins_0/screens/wrapper.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/onboarding',
+    initialRoute: '/enteramount',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
