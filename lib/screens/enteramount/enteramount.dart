@@ -76,7 +76,6 @@ class _EnterAmountState extends State<EnterAmount> {
               rightButtonFn: () {
                 setState(() {
                   text = text.substring(0, text.length - 1);
-                  _parse();
                 });
               },
               rightIcon: Icon(
