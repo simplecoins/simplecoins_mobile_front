@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
+import 'package:simplecoins_0/components/numpad.dart';
 
 class EnterAmount extends StatefulWidget {
   @override
@@ -7,6 +8,20 @@ class EnterAmount extends StatefulWidget {
 }
 
 class _EnterAmountState extends State<EnterAmount> {
+  String text = '';
+  _onKeyboardTap(String value) {
+    setState(() {
+      text = text + value;
+      print('$value tapped');
+    });
+  }
+
+  // PASS STRING TO TEXT TO BE USED
+  // _parse() {
+  //   var parsetest = int.parse(text);
+  //   print(parsetest);
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +60,7 @@ class _EnterAmountState extends State<EnterAmount> {
               height: 10.0,
             ),
             Text(
-              '\$ 0.00',
+              '\$ $text',
               style: TextStyle(
                   fontFamily: 'Manrope',
                   fontWeight: FontWeight.w600,
@@ -55,67 +70,26 @@ class _EnterAmountState extends State<EnterAmount> {
               'GHS 0.00',
               style: TextStyle(fontFamily: 'Manrope'),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    PadNumber(
-                      text: '1',
-                    ),
-                    PadNumber(
-                      text: '2',
-                    ),
-                    PadNumber(
-                      text: '3',
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    PadNumber(
-                      text: '4',
-                    ),
-                    PadNumber(
-                      text: '5',
-                    ),
-                    PadNumber(
-                      text: '6',
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    PadNumber(
-                      text: '7',
-                    ),
-                    PadNumber(
-                      text: '8',
-                    ),
-                    PadNumber(
-                      text: '9',
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    PadNumber(
-                      text: '.',
-                    ),
-                    PadNumber(
-                      text: '0',
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.backspace_outlined),
-                    )
-                  ],
-                )
-              ],
+            NumericKeyboard(
+              onKeyboardTap: _onKeyboardTap,
+              textColor: Colors.black,
+              rightButtonFn: () {
+                setState(() {
+                  text = text.substring(0, text.length - 1);
+                  _parse();
+                });
+              },
+              rightIcon: Icon(
+                Icons.backspace,
+                color: Colors.black,
+              ),
+              leftButtonFn: () {
+                print('left button clicked');
+              },
+              leftIcon: Icon(
+                Icons.check,
+                color: Colors.red,
+              ),
             ),
             Spacer(),
             DefaultButton(
@@ -126,38 +100,6 @@ class _EnterAmountState extends State<EnterAmount> {
               height: 25.0,
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class PadNumber extends StatelessWidget {
-  const PadNumber({
-    Key key,
-    this.text,
-  }) : super(key: key);
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(45.0),
-      onTap: () {},
-      child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle
-        ),
-        height: 72.0,
-        width: 72.0,
-        child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-                fontFamily: 'Manrope',
-                fontSize: 24,
-                fontWeight: FontWeight.w600),
-          ),
         ),
       ),
     );
