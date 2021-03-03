@@ -1,6 +1,7 @@
 //import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/screens/enterwalletaddress/enterwalletaddress.dart';
 import 'package:simplecoins_0/screens/home/home.dart';
 import 'package:simplecoins_0/screens/onboarding/onboarding.dart';
 import 'package:simplecoins_0/screens/signin/signin.dart';
@@ -11,14 +12,15 @@ import 'package:simplecoins_0/screens/wrapper.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/home',
+    initialRoute: '/enterwalletaddress',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
       '/onboarding': (context) => Onboarding(),
       '/signin': (context) => SignIn(),
       '/signup': (context) => SignUp(),
-      '/home': (context) => Home()
+      '/home': (context) => Home(),
+      '/enterwalletaddress': (context) => EnterWalletAddress()
     }
   ));
 }

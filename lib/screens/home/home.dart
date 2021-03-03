@@ -136,7 +136,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               ),
             ),
             SizedBox(
-              height: 40.0,
+              height: 60.0,
             ),
             Container(
               height: 250.0,
@@ -242,7 +242,7 @@ class CryptoCard extends StatelessWidget {
       child: FlatButton(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: Colors.grey)),
+            side: BorderSide(color: Color(0xFFF2F2F2))),
         onPressed: press,
         child: (Row(
           //mainAxisAlignment: MainAxisAlignment.center,
