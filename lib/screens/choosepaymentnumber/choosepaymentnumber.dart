@@ -51,7 +51,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
         padding: EdgeInsets.all(20.0),
         child: Column(
           //delete cross axis alignment and position other text
-          crossAxisAlignment: CrossAxisAlignment.start,
+          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -71,24 +71,34 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                 )
               ],
             ),
-            Text(
-              //CHANGE TO AMOUNT ENTERED IN CHOOSE AMOUNT PAGE. GLOBALIZE AMOUNT
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  //CHANGE TO AMOUNT ENTERED IN CHOOSE AMOUNT PAGE. GLOBALIZE AMOUNT
 
-              '(GHS 34.56)',
-              style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20),
+                  '(GHS 34.56)',
+                  style: TextStyle(
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20),
+                ),
+              ],
             ),
             SizedBox(
               height: 31.0,
             ),
-            Text(
-              'Choose Payment network & Number',
-              style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Choose Payment network & Number',
+                  style: TextStyle(
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14),
+                ),
+              ],
             ),
             SizedBox(
               height: 8.0,
