@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/button.dart';
 
 class PaymentInfo extends StatefulWidget {
   @override
@@ -92,14 +93,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Andy Apenteng'
-                      ), 
-                      Text(
-                        '0503091855'
-                      )
-                    ],
+                    children: [Text('Andy Apenteng'), Text('0503091855')],
                   ),
                   Spacer(),
                   GestureDetector(
@@ -117,6 +111,23 @@ class _PaymentInfoState extends State<PaymentInfo> {
                   )
                 ],
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/Emojis/image 13.png',
+                  height: 15.0,
+                ),
+                SizedBox(
+                  width: 5.0,
+                ),
+                Text('Use Refrence: Simplecoins')
+              ],
+            ),
+            DefaultButton(
+              text: 'Done',
+              press: () {},
             )
           ],
         ),
