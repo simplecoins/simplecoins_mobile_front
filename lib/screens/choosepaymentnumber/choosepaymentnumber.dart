@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:simplecoins_0/components/networkcard.dart';
-import 'package:simplecoins_0/components/numbercard.dart';
+import 'package:simplecoins_0/components/newnumber.dart';
+import 'package:simplecoins_0/components/savednumber.dart';
 
 class ChoosePaymentNumber extends StatefulWidget {
   @override
@@ -200,7 +200,8 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                       ),
                     )
                   ],
-                )),
+                )
+            ),
             Visibility(
               visible: _isVisible,
               child: Container(
