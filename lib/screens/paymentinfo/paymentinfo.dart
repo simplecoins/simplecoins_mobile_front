@@ -32,9 +32,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
               'assets/Success Gif/giphy.gif',
               height: 123.0,
             ),
-            Text(
-              'Awesome!!'
-            ),
+            Text('Awesome!!'),
             RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
@@ -79,12 +77,46 @@ class _PaymentInfoState extends State<PaymentInfo> {
               width: 335.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(
-                  color: Color(0xFFF2F2F2)
-                ),
+                border: Border.all(color: Color(0xFFF2F2F2)),
                 //color: Colors.black
               ),
-              child: Row(),
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/MoMo Networks/Vodafone.png',
+                    width: 52.0,
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Andy Apenteng'
+                      ), 
+                      Text(
+                        '0503091855'
+                      )
+                    ],
+                  ),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Color(0xFFBFDBFE),
+                          borderRadius: BorderRadius.circular(10.0)),
+                      height: 63.0,
+                      width: 60.0,
+                      child: Center(
+                        child: Text('Copy'),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
