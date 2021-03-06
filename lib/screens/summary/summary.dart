@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/button.dart';
+import 'package:simplecoins_0/components/savednumber.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class Summary extends StatefulWidget {
   @override
@@ -42,26 +45,12 @@ class _SummaryState extends State<Summary> {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'You are buying'
-                    ),
-                    Text(
-                      '\$ 300.00'
-                    )
-                  ],
+                  children: [Text('You are buying'), Text('\$ 300.00')],
                 ),
                 Spacer(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      'GHS 1740.00'
-                    ),
-                    Text(
-                      '0.00034 BTC'
-                    )
-                  ],
+                  children: [Text('GHS 1740.00'), Text('0.00034 BTC')],
                 )
               ],
             ),
@@ -70,11 +59,72 @@ class _SummaryState extends State<Summary> {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text('Miner fee')],
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text('\$5.67')],
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text('BTC address')],
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text('136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4')],
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Text('You are paying from')],
+            ),
+            SavedNumber(
+              imgPath: 'assets/MoMo Networks/MTN.png',
+              numberText: '0503456748',
+              networkText: 'Desmond Sofua',
+              press: () {},
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Miner fee'
+                Checkbox(
+                  activeColor: Colors.black,
+                  value: isChecked,
+                  onChanged: (value) {
+                    setState(() {
+                      isChecked = !isChecked;
+                    });
+                  },
+                ),
+                RichText(
+                  text: TextSpan(
+                    // Note: Styles for TextSpans must be explicitly defined.
+                    // Child text spans will inherit styles from parent
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF757575),
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(text: 'I certify that I am '),
+                      TextSpan(
+                          text: '18 years of age or older, ',
+                          style: TextStyle(color: Colors.black, fontSize: 12)),
+                      TextSpan(text: 'and'),
+                      TextSpan(text: '\nagree to the '),
+                      TextSpan(
+                          text: 'User Agreement',
+                          style: TextStyle(color: Colors.black, fontSize: 12)),
+                      TextSpan(text: ' and its return, '),
+                      TextSpan(text: '\nrefund and cancellation policy'),
+                    ],
+                  ),
                 )
               ],
+            ),
+            DefaultButton(
+              text: 'Buy Bitcoin',
+              press: () {},
             )
           ],
         ),
