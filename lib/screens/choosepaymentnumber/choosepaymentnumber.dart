@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/newnumber.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class ChoosePaymentNumber extends StatefulWidget {
   @override
@@ -9,7 +11,6 @@ class ChoosePaymentNumber extends StatefulWidget {
 
 class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
     with SingleTickerProviderStateMixin {
-  bool _isVisible = false;
   TabController _tabController;
   @override
   void initState() {
@@ -49,6 +50,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
       body: Padding(
         padding: EdgeInsets.all(20.0),
         child: Column(
+          //delete cross axis alignment and position other text
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
@@ -146,7 +148,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
             ),
             Container(
                 width: 335.0,
-                height: 250.0,
+                height: 430.0,
                 child: TabBarView(
                   controller: _tabController,
                   children: [
@@ -158,7 +160,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                             imgPath: 'assets/MoMo Networks/MTN.png',
                             press: () {
                               setState(() {
-                                _isVisible = !_isVisible;
+                                isVisible = !isVisible;
                               });
                             },
                           ),
@@ -200,14 +202,12 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                       ),
                     )
                   ],
-                )
-            ),
+                )),
             Visibility(
-              visible: _isVisible,
-              child: Container(
-                height: 50.0,
-                width: 50.0,
-                color: Colors.red,
+              visible: isVisible,
+              child: DefaultButton(
+                text: 'Next',
+                press: () {},
               ),
             )
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class NewNumber extends StatelessWidget {
   const NewNumber({
@@ -53,8 +54,62 @@ class NewNumber extends StatelessWidget {
           ),
         ),
         SizedBox(
-              height: 10.0,
-            )
+          height: 10.0,
+        ),
+        Visibility(
+          visible: isVisible,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 19.0,
+              ),
+              Text(
+                'Account Name',
+                style: TextStyle(
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              TextField(
+                autofocus: false,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    //hintText: 'Email',
+                    contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0))),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Text(
+                'Account Number',
+                style: TextStyle(
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              TextField(
+                autofocus: false,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    //hintText: 'Email',
+                    contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0))),
+              ),
+            ],
+          ),
+        )
       ],
     );
   }
