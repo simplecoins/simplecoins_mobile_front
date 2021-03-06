@@ -51,64 +51,97 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              children: [Text('You are buying '), Text('\$50 BTC')],
+              children: [
+                Text(
+                  'You are buying ',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 20
+                  ),
+                ),
+                Text(
+                  '\$50 BTC',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20
+                  ),
+                )
+              ],
             ),
             Text(
 
                 //CHANGE TO AMOUNT ENTERED IN CHOOSE AMOUNT PAGE. GLOBALIZE AMOUNT
 
-                '(GHS 34.56)'),
-            Text('Choose Payment network & Number'),
-            Padding(
-              padding: EdgeInsets.only(top: 31.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(7)),
-                child: Container(
-                  // color: Colors.red
-                  width: 335.0,
-                  height: 58.0,
-                  decoration: BoxDecoration(
-                      color: Color(0xFFF5F7FA),
-                      // border: Border.all(
-                      //   color: Colors.red[500],
-                      // ),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                  child: TabBar(
-                    controller: _tabController,
-                    isScrollable: true,
-                    indicator: BoxDecoration(color: Colors.black),
-                    indicatorColor: Colors.transparent,
-                    labelColor: Colors.white,
-                    labelStyle: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                        fontFamily: 'Manrope',
-                        fontWeight: FontWeight.w600),
-                    unselectedLabelColor: Color(0xFFA5AEBC),
-                    unselectedLabelStyle: TextStyle(
-                        fontSize: 16,
-                        color: Colors.red,
-                        fontFamily: 'Manrope',
-                        fontWeight: FontWeight.w400),
-                    tabs: [
-                      Tab(
-                          child: Text(
-                        '             New Number             ',
-                        style: TextStyle(
-                            fontFamily: 'Manrope',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14),
-                      )),
-                      Tab(
-                          child: Text(
-                        '             Saved Number             ',
-                        style: TextStyle(
-                            fontFamily: 'Manrope',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14),
-                      )),
-                    ],
+              '(GHS 34.56)',
+              style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 20
+              ),
+            ),
+            SizedBox(
+              height: 31.0,
+            ),
+            Text(
+              'Choose Payment network & Number',
+              style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14
                   ),
+            ),
+            SizedBox(
+              height: 8.0,
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(7)),
+              child: Container(
+                // color: Colors.red
+                width: 335.0,
+                height: 58.0,
+                decoration: BoxDecoration(
+                    color: Color(0xFFF5F7FA),
+                    // border: Border.all(
+                    //   color: Colors.red[500],
+                    // ),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: TabBar(
+                  controller: _tabController,
+                  isScrollable: true,
+                  indicator: BoxDecoration(color: Colors.black),
+                  indicatorColor: Colors.transparent,
+                  labelColor: Colors.white,
+                  labelStyle: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w600),
+                  unselectedLabelColor: Color(0xFFA5AEBC),
+                  unselectedLabelStyle: TextStyle(
+                      fontSize: 16,
+                      color: Colors.red,
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w400),
+                  tabs: [
+                    Tab(
+                        child: Text(
+                      '             New Number             ',
+                      style: TextStyle(
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14),
+                    )),
+                    Tab(
+                        child: Text(
+                      '             Saved Number             ',
+                      style: TextStyle(
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14),
+                    )),
+                  ],
                 ),
               ),
             ),
