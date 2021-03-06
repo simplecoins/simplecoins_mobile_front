@@ -9,6 +9,7 @@ class ChoosePaymentNumber extends StatefulWidget {
 
 class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
     with SingleTickerProviderStateMixin {
+  bool _isVisible = false;
   TabController _tabController;
   @override
   void initState() {
@@ -55,31 +56,27 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                 Text(
                   'You are buying ',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20
-                  ),
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20),
                 ),
                 Text(
                   '\$50 BTC',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20
-                  ),
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20),
                 )
               ],
             ),
             Text(
-
-                //CHANGE TO AMOUNT ENTERED IN CHOOSE AMOUNT PAGE. GLOBALIZE AMOUNT
+              //CHANGE TO AMOUNT ENTERED IN CHOOSE AMOUNT PAGE. GLOBALIZE AMOUNT
 
               '(GHS 34.56)',
               style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20
-              ),
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20),
             ),
             SizedBox(
               height: 31.0,
@@ -87,10 +84,9 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
             Text(
               'Choose Payment network & Number',
               style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14
-                  ),
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14),
             ),
             SizedBox(
               height: 8.0,
@@ -157,17 +153,21 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                     Tab(
                       child: ListView(
                         children: [
-                          NetworkCard(
+                          NewNumber(
                             text: 'MTN Mobile Money',
                             imgPath: 'assets/MoMo Networks/MTN.png',
-                            press: () {},
+                            press: () {
+                              setState(() {
+                                _isVisible = !_isVisible;
+                              });
+                            },
                           ),
-                          NetworkCard(
+                          NewNumber(
                             text: 'Vodafone Cash',
                             imgPath: 'assets/MoMo Networks/Vodafone.png',
                             press: () {},
                           ),
-                          NetworkCard(
+                          NewNumber(
                             text: 'AirtelTigo Money',
                             imgPath: 'assets/MoMo Networks/AirtelTigo.png',
                             press: () {},
@@ -178,19 +178,19 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                     Tab(
                       child: ListView(
                         children: [
-                          NumberCard(
+                          SavedNumber(
                             networkText: 'Desmond Sofua',
                             numberText: '0503456748',
                             imgPath: 'assets/MoMo Networks/MTN.png',
                             press: () {},
                           ),
-                          NumberCard(
+                          SavedNumber(
                             networkText: 'Andy Apenteng',
                             numberText: '0503091855',
                             imgPath: 'assets/MoMo Networks/Vodafone.png',
                             press: () {},
                           ),
-                          NumberCard(
+                          SavedNumber(
                             networkText: 'Godfrey Ebhohimen',
                             numberText: '0203094567',
                             imgPath: 'assets/MoMo Networks/AirtelTigo.png',
@@ -200,7 +200,15 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                       ),
                     )
                   ],
-                ))
+                )),
+            Visibility(
+              visible: _isVisible,
+              child: Container(
+                height: 50.0,
+                width: 50.0,
+                color: Colors.red,
+              ),
+            )
           ],
         ),
       ),

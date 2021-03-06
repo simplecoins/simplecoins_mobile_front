@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class NetworkCard extends StatelessWidget {
-  const NetworkCard({
+class NewNumber extends StatelessWidget {
+  const NewNumber({
     Key key,
     this.imgPath,
     this.text,

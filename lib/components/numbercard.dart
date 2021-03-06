@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class NumberCard extends StatelessWidget {
-  const NumberCard({
+class SavedNumber extends StatelessWidget {
+  const SavedNumber({
     Key key,
     this.imgPath,
     this.networkText,
