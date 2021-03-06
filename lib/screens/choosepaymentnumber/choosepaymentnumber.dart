@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/networkcard.dart';
 import 'package:simplecoins_0/components/numbercard.dart';
 
 class ChoosePaymentNumber extends StatefulWidget {
@@ -127,68 +128,46 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                             text: 'MTN Mobile Money',
                             imgPath: 'assets/MoMo Networks/MTN.png',
                             press: () {},
+                          ),
+                          NetworkCard(
+                            text: 'Vodafone Cash',
+                            imgPath: 'assets/MoMo Networks/Vodafone.png',
+                            press: () {},
+                          ),
+                          NetworkCard(
+                            text: 'AirtelTigo Money',
+                            imgPath: 'assets/MoMo Networks/AirtelTigo.png',
+                            press: () {},
                           )
                         ],
                       ),
                     ),
                     Tab(
-                      child: Text('ggchg'),
+                      child: ListView(
+                        children: [
+                          NumberCard(
+                            networkText: 'Desmond Sofua',
+                            numberText: '0503456748',
+                            imgPath: 'assets/MoMo Networks/MTN.png',
+                            press: () {},
+                          ),
+                          NumberCard(
+                            networkText: 'Andy Apenteng',
+                            numberText: '0503091855',
+                            imgPath: 'assets/MoMo Networks/Vodafone.png',
+                            press: () {},
+                          ),
+                          NumberCard(
+                            networkText: 'Godfrey Ebhohimen',
+                            numberText: '0203094567',
+                            imgPath: 'assets/MoMo Networks/AirtelTigo.png',
+                            press: () {},
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class NetworkCard extends StatelessWidget {
-  const NetworkCard({
-    Key key,
-    this.imgPath,
-    this.text,
-    this.press,
-  }) : super(key: key);
-  final String imgPath;
-  final String text;
-  final Function press;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 75.0,
-      width: 335.0,
-      child: FlatButton(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: Color(0xFFF2F2F2))),
-        onPressed: press,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              imgPath,
-              width: 52,
-            ),
-            SizedBox(
-              width: 10.0,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  text,
-                  style: TextStyle(
-                      fontFamily: 'Manrope',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14),
-                )
-              ],
-            ),
-            Spacer(),
-            Icon(Icons.chevron_right)
           ],
         ),
       ),

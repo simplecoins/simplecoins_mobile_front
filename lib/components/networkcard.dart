@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
-class NumberCard extends StatelessWidget {
-  const NumberCard({
+class NetworkCard extends StatelessWidget {
+  const NetworkCard({
     Key key,
     this.imgPath,
-    this.networkText,
+    this.text,
     this.press,
-    this.numberText,
   }) : super(key: key);
   final String imgPath;
-  final String networkText;
-  final String numberText;
+  final String text;
   final Function press;
 
   @override
@@ -40,19 +38,12 @@ class NumberCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      networkText,
+                      text,
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w500,
-                          fontSize: 16),
-                    ),
-                    Text(
-                      numberText,
-                      style: TextStyle(
-                          fontFamily: 'Manrope',
-                          fontWeight: FontWeight.w400,
                           fontSize: 14),
-                    ),
+                    )
                   ],
                 ),
                 Spacer(),
@@ -62,8 +53,8 @@ class NumberCard extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 10.0,
-        )
+              height: 10.0,
+            )
       ],
     );
   }
