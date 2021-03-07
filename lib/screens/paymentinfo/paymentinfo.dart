@@ -33,25 +33,15 @@ class _PaymentInfoState extends State<PaymentInfo> {
               'assets/Success Gif/giphy.gif',
               height: 123.0,
             ),
-            Text('Awesome!!'),
-            RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                // Note: Styles for TextSpans must be explicitly defined.
-                // Child text spans will inherit styles from parent
-                style: TextStyle(
-                  fontSize: 12.0,
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFF757575),
-                ),
-                children: <TextSpan>[
-                  TextSpan(text: 'You just placed an order to Buy '),
-                  TextSpan(
-                      text: 'GHS\n 738.00 ',
-                      style: TextStyle(color: Colors.black, fontSize: 12)),
-                  TextSpan(text: 'worth of Bitcoin.'),
-                ],
+            SizedBox(
+              height: 19.0,
+            ),
+            Text(
+              'Awesome!!',
+              style: TextStyle(
+                fontFamily: 'Manrope',
+                fontWeight: FontWeight.w400,
+                fontSize: 18
               ),
             ),
             RichText(
@@ -60,18 +50,57 @@ class _PaymentInfoState extends State<PaymentInfo> {
                 // Note: Styles for TextSpans must be explicitly defined.
                 // Child text spans will inherit styles from parent
                 style: TextStyle(
-                  fontSize: 12.0,
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFF757575),
-                ),
+                fontFamily: 'Manrope',
+                fontWeight: FontWeight.w400,
+                fontSize: 18,
+                color: Colors.black
+              ),
                 children: <TextSpan>[
+                  TextSpan(text: 'You just placed an order to Buy '),
                   TextSpan(
-                      text: 'Send 775.32 GHS ',
-                      style: TextStyle(color: Colors.black, fontSize: 12)),
-                  TextSpan(text: 'to'),
+                      text: 'GHS\n 738.00 ',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontFamily: 'Manrope',
+                        fontWeight: FontWeight.w600
+                      )
+                    ),
+                  TextSpan(text: 'worth of Bitcoin.'),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 90.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                RichText(
+                  text: TextSpan(
+                    // Note: Styles for TextSpans must be explicitly defined.
+                    // Child text spans will inherit styles from parent
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w400
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Send 775.32 GHS ',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w600
+                        )
+                      ),
+                      TextSpan(text: 'to'),
+                    ],
+                  ),
+                ),
+              ],
             ),
             Container(
               height: 75.0,
@@ -93,7 +122,26 @@ class _PaymentInfoState extends State<PaymentInfo> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [Text('Andy Apenteng'), Text('0503091855')],
+                    children: [
+                      Text(
+                        'Andy Apenteng',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w500
+                        )
+                      ),
+                      Text(
+                        '0503091855',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w400
+                        )
+                      )
+                    ],
                   ),
                   Spacer(),
                   GestureDetector(
@@ -105,12 +153,23 @@ class _PaymentInfoState extends State<PaymentInfo> {
                       height: 63.0,
                       width: 60.0,
                       child: Center(
-                        child: Text('Copy'),
+                        child: Text(
+                          'Copy',
+                          style: TextStyle(
+                          color: Color(0xFF1D4ED8),
+                          fontSize: 12,
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w600
+                        )
+                        ),
                       ),
                     ),
                   )
                 ],
               ),
+            ),
+            SizedBox(
+              height: 20.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -122,12 +181,24 @@ class _PaymentInfoState extends State<PaymentInfo> {
                 SizedBox(
                   width: 5.0,
                 ),
-                Text('Use Refrence: Simplecoins')
+                Text(
+                  'Use Refrence: Simplecoins',
+                  style: TextStyle(
+                    color: Color(0xFF3B32A7),
+                    fontSize: 12,
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w600
+                  )
+                )
               ],
             ),
+            Spacer(),
             DefaultButton(
               text: 'Done',
               press: () {},
+            ),
+            SizedBox(
+              height: 15.0,
             )
           ],
         ),
