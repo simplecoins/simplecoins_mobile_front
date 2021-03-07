@@ -18,7 +18,12 @@ class _SummaryState extends State<Summary> {
         elevation: 0.0,
         title: Text(
           'Checkout',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(
+            color: Colors.black,
+            fontFamily: 'Manrope',
+            fontWeight: FontWeight.w600,
+            fontSize: 17.0
+          ),
         ),
         leading: IconButton(
           onPressed: () {},

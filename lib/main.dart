@@ -11,12 +11,13 @@ import 'package:simplecoins_0/screens/signin/signin.dart';
 import 'package:simplecoins_0/screens/signup/signup.dart';
 import 'package:simplecoins_0/screens/splash.dart';
 import 'package:simplecoins_0/screens/summary/summary.dart';
+import 'package:simplecoins_0/screens/transactions/transactions.dart';
 import 'package:simplecoins_0/screens/wrapper.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/summary',
+    initialRoute: '/transactions',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
@@ -28,7 +29,8 @@ void main() {
       '/enteramount': (context) => EnterAmount(),
       '/payment': (context) => ChoosePaymentNumber(),
       '/summary': (context) => Summary(),
-      '/paymentinfo': (context) => PaymentInfo()
+      '/paymentinfo': (context) => PaymentInfo(),
+      '/transactions': (context) => Transactions(),
     }
   ));
 }
