@@ -45,12 +45,47 @@ class _SummaryState extends State<Summary> {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text('You are buying'), Text('\$ 300.00')],
+                  children: [
+                    Text(
+                      'YOU ARE BUYING',
+                      style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600
+                      ),
+                    ),
+                    Text(
+                      '\$ 300.00',
+                      style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600
+                      ),
+                    )
+                  ],
                 ),
                 Spacer(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [Text('GHS 1740.00'), Text('0.00034 BTC')],
+                  children: [
+                    Text(
+                      'GHS 1740.00',
+                      style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFF1857BB)
+                      ),
+                    ),
+                    Text(
+                      '0.00034 BTC',
+                      style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600
+                      ),
+                    )
+                  ],
                 )
               ],
             ),
@@ -59,29 +94,86 @@ class _SummaryState extends State<Summary> {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text('Miner fee')],
+              children: [
+                Text(
+                  'Miner fee',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500
+                  ),
+                )
+              ],
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text('\$5.67')],
+              children: [
+                Text(
+                  '\$5.67',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 25.0,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text('BTC address')],
+              children: [
+                Text(
+                  'BTC address',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500
+                  ),
+                )
+              ],
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text('136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4')],
+              children: [
+                Text(
+                  '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 60.0,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Text('You are paying from')],
+              children: [
+                Text(
+                  'You are paying from',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
             ),
             SavedNumber(
               imgPath: 'assets/MoMo Networks/MTN.png',
               numberText: '0503456748',
               networkText: 'Desmond Sofua',
               press: () {},
+            ),
+            SizedBox(
+              height: 68.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,9 +214,13 @@ class _SummaryState extends State<Summary> {
                 )
               ],
             ),
+            Spacer(),
             DefaultButton(
               text: 'Buy Bitcoin',
               press: () {},
+            ),
+            SizedBox(
+              height: 15.0,
             )
           ],
         ),
