@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/copynumber.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
 
 class THistorySelected extends StatefulWidget {
@@ -45,6 +46,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                       'AWAITING PAYMENT'
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: 50.0,
                 ),
                 Row(
                   children: [
@@ -94,6 +98,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     )
                   ],
                 ),
+                SizedBox(
+                  height: 50.0,
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -119,6 +126,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                       ),
                     )
                   ],
+                ),
+                SizedBox(
+                  height: 20.0,
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,6 +156,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     )
                   ],
                 ),
+                SizedBox(
+                  height: 20.0,
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -171,6 +184,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                       ),
                     )
                   ],
+                ),
+                SizedBox(
+                  height: 20.0,
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -198,6 +214,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     )
                   ],
                 ),
+                SizedBox(
+                  height: 15.0,
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -213,6 +232,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     )
                   ],
                 ),
+                SizedBox(
+                  height: 76.0,
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -226,11 +248,17 @@ class _THistorySelectedState extends State<THistorySelected> {
                     )
                   ],
                 ),
+                SizedBox(
+                  height: 10.0,
+                ),
                 SavedNumber(
                   imgPath: 'assets/MoMo Networks/MTN.png',
                   numberText: '0503456748',
                   networkText: 'Desmond Sofua',
                   press: () {},
+                ),
+                SizedBox(
+                  height: 40.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -261,7 +289,31 @@ class _THistorySelectedState extends State<THistorySelected> {
                     ),
                   ],
                 ),
-                
+                SizedBox(
+                  height: 10.0,
+                ),
+                CopyNumber(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/Emojis/image 13.png',
+                      height: 15.0,
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Text(
+                      'Use Refrence: Simplecoins',
+                      style: TextStyle(
+                        color: Color(0xFF3B32A7),
+                        fontSize: 12,
+                        fontFamily: 'Manrope',
+                        fontWeight: FontWeight.w600
+                      )
+                    )
+                  ],
+                ),
               ],
             ),
           )

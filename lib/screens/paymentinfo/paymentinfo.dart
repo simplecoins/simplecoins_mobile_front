@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
+import 'package:simplecoins_0/components/copynumber.dart';
 
 class PaymentInfo extends StatefulWidget {
   @override
