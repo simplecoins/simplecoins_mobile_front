@@ -20,7 +20,7 @@ import 'package:simplecoins_0/screens/wrapper.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/userprofile',
+    initialRoute: '/changepassword',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),

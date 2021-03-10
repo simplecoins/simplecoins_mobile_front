@@ -49,7 +49,16 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               flex: 2,
             ),
             Row(
-              children: <Widget>[Text('Your Bitcoin Address')],
+              children: <Widget>[
+                Text(
+                  'Your Bitcoin Address',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600
+                  ),
+                )
+              ],
             ),
             SizedBox(
               height: 10.0,
@@ -58,7 +67,6 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               autofocus: false,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                  //hintText: 'Email',
                   contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0))),
@@ -66,7 +74,12 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
             Spacer(),
             Text(
               'Click to paste address',
-              style: TextStyle(decoration: TextDecoration.underline),
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                fontFamily: 'Manrope',
+                fontSize: 14,
+                fontWeight: FontWeight.w600
+              ),
             ),
             Spacer(
               flex: 4,
