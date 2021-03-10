@@ -335,9 +335,10 @@ class _UserProfileState extends State<UserProfile> {
                 )
               ],
             ),
-            SizedBox(
-              height: 69.0,
-            ),
+            // SizedBox(
+            //   height: 69.0,
+            // ),
+            Spacer(),
             SizedBox(
               height: 64,
               width: 311,
@@ -361,6 +362,9 @@ class _UserProfileState extends State<UserProfile> {
                 ),
                 onPressed: () {},
               ),
+            ),
+            SizedBox(
+              height: 15.0,
             )
           ],
         ),

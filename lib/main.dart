@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/screens/changepassword/changepassword.dart';
 import 'package:simplecoins_0/screens/choosepaymentnumber/choosepaymentnumber.dart';
 import 'package:simplecoins_0/screens/enteramount/enteramount.dart';
 import 'package:simplecoins_0/screens/enterwalletaddress/enterwalletaddress.dart';
@@ -34,7 +35,8 @@ void main() {
       '/paymentinfo': (context) => PaymentInfo(),
       '/transactions': (context) => Transactions(),
       '/thistory': (context) => THistorySelected(),
-      '/userprofile': (context) => UserProfile()
+      '/userprofile': (context) => UserProfile(),
+      '/changepassword': (context) => ChangePassword()
     }
   ));
 }
