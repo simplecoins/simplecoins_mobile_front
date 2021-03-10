@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/button.dart';
 
 class PasswordChangeSuccess extends StatefulWidget {
   @override
@@ -9,7 +10,44 @@ class _PasswordChangeSuccessState extends State<PasswordChangeSuccess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        title: Text(
+          'Change Password',
+          style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Manrope',
+              fontWeight: FontWeight.w600,
+              fontSize: 17.0),
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/Success Gif/giphy.gif',
+              height: 74.0,
+            ),
+            Text(
+              'Awesome!!\nYou have successfully changed\nyour password',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'Manrope',
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w400),
+            ),
+            Spacer(),
+            DefaultButton(
+              text: 'Back to Profile',
+              press: () {},
+            )
+          ],
+        ),
+      ),
     );
   }
 }
