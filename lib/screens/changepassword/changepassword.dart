@@ -122,6 +122,9 @@ class _ChangePasswordState extends State<ChangePassword> {
             DefaultButton(
               text: 'Change Password',
               press: () {},
+            ),
+            SizedBox(
+              height: 15.0,
             )
           ],
         ),
