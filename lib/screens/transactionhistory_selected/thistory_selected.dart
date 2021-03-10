@@ -24,6 +24,13 @@ class _THistorySelectedState extends State<THistorySelected> {
               fontWeight: FontWeight.w600,
               fontSize: 17.0),
         ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.chevron_left,
+            color: Colors.black,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {},

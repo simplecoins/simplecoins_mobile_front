@@ -13,12 +13,13 @@ import 'package:simplecoins_0/screens/splash.dart';
 import 'package:simplecoins_0/screens/summary/summary.dart';
 import 'package:simplecoins_0/screens/transactionhistory_selected/thistory_selected.dart';
 import 'package:simplecoins_0/screens/transactions/transactions.dart';
+import 'package:simplecoins_0/screens/userprofile/userprofile.dart';
 import 'package:simplecoins_0/screens/wrapper.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/thistory',
+    initialRoute: '/userprofile',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
@@ -33,6 +34,7 @@ void main() {
       '/paymentinfo': (context) => PaymentInfo(),
       '/transactions': (context) => Transactions(),
       '/thistory': (context) => THistorySelected(),
+      '/userprofile': (context) => UserProfile()
     }
   ));
 }
