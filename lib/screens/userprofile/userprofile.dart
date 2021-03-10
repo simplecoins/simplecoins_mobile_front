@@ -38,6 +38,35 @@ class _UserProfileState extends State<UserProfile> {
           )
         ],
       ),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      'GOOD EVENING'
+                    ),
+                    Text(
+                      'Andy Andy Kwesi'
+                    ),
+                    Text(
+                      '23 Total Orders'
+                    )
+                  ],
+                ),
+                Spacer(),
+                Image.asset(
+                  'assets/Homescreen/Ellipse 14.png',
+                  width: 93.0,
+                )
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
