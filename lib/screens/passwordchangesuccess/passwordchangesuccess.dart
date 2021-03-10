@@ -28,6 +28,9 @@ class _PasswordChangeSuccessState extends State<PasswordChangeSuccess> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Spacer(
+              flex: 1,
+            ),
             Image.asset(
               'assets/Success Gif/giphy.gif',
               height: 74.0,
@@ -45,7 +48,9 @@ class _PasswordChangeSuccessState extends State<PasswordChangeSuccess> {
                 ),
               ],
             ),
-            Spacer(),
+            Spacer(
+              flex: 2,
+            ),
             DefaultButton(
               text: 'Back to Profile',
               press: () {},
