@@ -32,18 +32,26 @@ class _PasswordChangeSuccessState extends State<PasswordChangeSuccess> {
               'assets/Success Gif/giphy.gif',
               height: 74.0,
             ),
-            Text(
-              'Awesome!!\nYou have successfully changed\nyour password',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w400),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Awesome!!\nYou have successfully changed\nyour password',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontFamily: 'Manrope',
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w400),
+                ),
+              ],
             ),
             Spacer(),
             DefaultButton(
               text: 'Back to Profile',
               press: () {},
+            ),
+            SizedBox(
+              height: 15.0,
             )
           ],
         ),

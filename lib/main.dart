@@ -38,7 +38,7 @@ void main() {
       '/thistory': (context) => THistorySelected(),
       '/userprofile': (context) => UserProfile(),
       '/changepassword': (context) => ChangePassword(),
-      '/passwordchangesuccess': (context) => PasswordChangeSuccess()
+      '/passwordchangesuccess': (context) => PasswordChangeSuccess(),
     }
   ));
 }
