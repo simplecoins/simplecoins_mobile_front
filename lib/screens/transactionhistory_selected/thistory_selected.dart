@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/copynumber.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
 
@@ -42,9 +43,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'AWAITING PAYMENT'
-                    ),
+                    Text('AWAITING PAYMENT'),
                   ],
                 ),
                 SizedBox(
@@ -58,18 +57,16 @@ class _THistorySelectedState extends State<THistorySelected> {
                         Text(
                           'YOU ARE BUYING',
                           style: TextStyle(
-                            fontFamily: 'Manrope',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600
-                          ),
+                              fontFamily: 'Manrope',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
                         ),
                         Text(
                           '\$ 250.00',
                           style: TextStyle(
-                            fontFamily: 'Manrope',
-                            fontSize: 30,
-                            fontWeight: FontWeight.w600
-                          ),
+                              fontFamily: 'Manrope',
+                              fontSize: 30,
+                              fontWeight: FontWeight.w600),
                         )
                       ],
                     ),
@@ -80,19 +77,17 @@ class _THistorySelectedState extends State<THistorySelected> {
                         Text(
                           'GHS 1455.00',
                           style: TextStyle(
-                            fontFamily: 'Manrope',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xFF1857BB)
-                          ),
+                              fontFamily: 'Manrope',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xFF1857BB)),
                         ),
                         Text(
                           '0.00034 BTC',
                           style: TextStyle(
-                            fontFamily: 'Manrope',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600
-                          ),
+                              fontFamily: 'Manrope',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
                         )
                       ],
                     )
@@ -107,10 +102,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       'Created on',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -120,10 +114,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       '09:20 PM - Jan 03 2021',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400),
                     )
                   ],
                 ),
@@ -136,10 +129,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       'Buy Rate',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -149,10 +141,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       '5.70 GHS',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400),
                     )
                   ],
                 ),
@@ -165,10 +156,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       'Miner fee',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -178,10 +168,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       '\$5.67',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400),
                     )
                   ],
                 ),
@@ -194,10 +183,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       'BTC address',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -207,10 +195,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -223,12 +210,11 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       'Track transaction on the blockchain',
                       style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Color(0xFF2F7CF6),
-                        fontFamily: 'Manrope',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500
-                      ),
+                          decoration: TextDecoration.underline,
+                          color: Color(0xFF2F7CF6),
+                          fontFamily: 'Manrope',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -241,10 +227,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                     Text(
                       'You are paying from',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -268,21 +253,18 @@ class _THistorySelectedState extends State<THistorySelected> {
                         // Note: Styles for TextSpans must be explicitly defined.
                         // Child text spans will inherit styles from parent
                         style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontFamily: 'Manrope',
-                          fontWeight: FontWeight.w400
-                        ),
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontFamily: 'Manrope',
+                            fontWeight: FontWeight.w400),
                         children: <TextSpan>[
                           TextSpan(
-                            text: 'Send 775.32 GHS ',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontFamily: 'Manrope',
-                              fontWeight: FontWeight.w600
-                            )
-                          ),
+                              text: 'Send 775.32 GHS ',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Manrope',
+                                  fontWeight: FontWeight.w600)),
                           TextSpan(text: 'to'),
                         ],
                       ),
@@ -293,6 +275,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                   height: 10.0,
                 ),
                 CopyNumber(),
+                SizedBox(
+                  height: 20.0,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -303,18 +288,28 @@ class _THistorySelectedState extends State<THistorySelected> {
                     SizedBox(
                       width: 5.0,
                     ),
-                    Text(
-                      'Use Refrence: Simplecoins',
+                    Text('Use Refrence: Simplecoins',
                       style: TextStyle(
                         color: Color(0xFF3B32A7),
                         fontSize: 12,
                         fontFamily: 'Manrope',
-                        fontWeight: FontWeight.w600
+                        fontWeight: FontWeight.w600)
                       )
-                    )
                   ],
                 ),
+                SizedBox(
+                  height: 110.0,
+                )
               ],
+            ),
+          ),
+          Positioned(
+            bottom: 35.0,
+            left: 32.0,
+            right: 32.0,
+            child: DefaultButton(
+              text: 'Done',
+              press: () {},
             ),
           )
         ],
