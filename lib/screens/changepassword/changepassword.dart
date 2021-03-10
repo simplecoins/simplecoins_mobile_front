@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/button.dart';
 
 class ChangePassword extends StatefulWidget {
   @override
@@ -37,6 +38,93 @@ class _ChangePasswordState extends State<ChangePassword> {
             ),
           )
         ],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Text(
+                  'Current Password',
+                  style: TextStyle(
+                      fontFamily: 'Manrope',
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w600),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            TextFormField(
+              autofocus: false,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0))),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              children: [
+                Text(
+                  'New Password',
+                  style: TextStyle(
+                      fontFamily: 'Manrope',
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w600),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            TextFormField(
+              autofocus: false,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0))),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              children: [
+                Text(
+                  'Confirm New Password',
+                  style: TextStyle(
+                      fontFamily: 'Manrope',
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w600),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            TextFormField(
+              autofocus: false,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0))),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Spacer(),
+            DefaultButton(
+              text: 'Change Password',
+              press: () {},
+            )
+          ],
+        ),
       ),
     );
   }
