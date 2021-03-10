@@ -7,6 +7,7 @@ import 'package:simplecoins_0/screens/enteramount/enteramount.dart';
 import 'package:simplecoins_0/screens/enterwalletaddress/enterwalletaddress.dart';
 import 'package:simplecoins_0/screens/home/home.dart';
 import 'package:simplecoins_0/screens/onboarding/onboarding.dart';
+import 'package:simplecoins_0/screens/passwordchangesuccess/passwordchangesuccess.dart';
 import 'package:simplecoins_0/screens/paymentinfo/paymentinfo.dart';
 import 'package:simplecoins_0/screens/signin/signin.dart';
 import 'package:simplecoins_0/screens/signup/signup.dart';
@@ -20,7 +21,7 @@ import 'package:simplecoins_0/screens/wrapper.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/changepassword',
+    initialRoute: '/passwordchangesuccess',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
@@ -36,7 +37,8 @@ void main() {
       '/transactions': (context) => Transactions(),
       '/thistory': (context) => THistorySelected(),
       '/userprofile': (context) => UserProfile(),
-      '/changepassword': (context) => ChangePassword()
+      '/changepassword': (context) => ChangePassword(),
+      '/passwordchangesuccess': (context) => PasswordChangeSuccess()
     }
   ));
 }
