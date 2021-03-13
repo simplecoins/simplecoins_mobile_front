@@ -131,7 +131,13 @@ class _PaymentInfoState extends State<PaymentInfo> {
             Spacer(),
             DefaultButton(
               text: 'Done',
-              press: () {},
+              press: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return alert;
+                  });
+              },
             ),
             SizedBox(
               height: 15.0,
@@ -142,4 +148,32 @@ class _PaymentInfoState extends State<PaymentInfo> {
     );
   }
 }
+
+// set up the buttons
+Widget remindButton = FlatButton(
+  child: Text("Remind me later"),
+  onPressed: () {},
+);
+Widget cancelButton = FlatButton(
+  child: Text("Cancel"),
+  onPressed: () {},
+);
+Widget launchButton = FlatButton(
+  child: Text("Launch missile"),
+  onPressed: () {},
+);
+
+// set up the AlertDialog
+AlertDialog alert = AlertDialog(
+  contentPadding: EdgeInsets.all(60.0),
+  content: Text(
+      "Do you wish to discard\nthis order?",
+      textAlign: TextAlign.center,
+    ),
+  actions: [
+    remindButton,
+    cancelButton,
+    launchButton,
+  ],
+);
 
