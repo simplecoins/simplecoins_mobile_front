@@ -17,7 +17,13 @@ class _PaymentInfoState extends State<PaymentInfo> {
         elevation: 0.0,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return alert;
+                  });
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
@@ -132,11 +138,6 @@ class _PaymentInfoState extends State<PaymentInfo> {
             DefaultButton(
               text: 'Done',
               press: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return alert;
-                  });
               },
             ),
             SizedBox(
@@ -150,7 +151,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
 }
 
 // set up the buttons
-Widget remindButton = FlatButton(
+Widget discardButton = FlatButton(
   child: Text("Remind me later"),
   onPressed: () {},
 );
@@ -158,22 +159,27 @@ Widget cancelButton = FlatButton(
   child: Text("Cancel"),
   onPressed: () {},
 );
-Widget launchButton = FlatButton(
-  child: Text("Launch missile"),
-  onPressed: () {},
-);
+// Widget launchButton = FlatButton(
+//   child: Text("Launch missile"),
+//   onPressed: () {},
+// );
 
 // set up the AlertDialog
 AlertDialog alert = AlertDialog(
   contentPadding: EdgeInsets.all(60.0),
   content: Text(
       "Do you wish to discard\nthis order?",
+      style: TextStyle(
+        fontFamily: 'Manrope',
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: Color(0xFF243656)
+      ),
       textAlign: TextAlign.center,
     ),
   actions: [
-    remindButton,
+    discardButton,
     cancelButton,
-    launchButton,
   ],
 );
 
