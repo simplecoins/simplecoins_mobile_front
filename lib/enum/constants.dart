@@ -1,3 +1,3 @@
 String cryptoType = '';
 bool isVisible = false;
-bool isChecked = false;
+bool isSummaryChecked = false;

@@ -80,7 +80,12 @@ class _PaymentInfoState extends State<PaymentInfo> {
               ),
             ),
             SizedBox(
-              height: 90.0,
+              height: 44.0,
+            ),
+            Row(
+              children: [
+                Placeholder(),
+              ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -111,6 +116,9 @@ class _PaymentInfoState extends State<PaymentInfo> {
                 ),
               ],
             ),
+
+            //Edit name isolation
+
             CopyNumber(),
             SizedBox(
               height: 20.0,

@@ -185,10 +185,10 @@ class _SummaryState extends State<Summary> {
               children: [
                 Checkbox(
                   activeColor: Colors.black,
-                  value: isChecked,
+                  value: isSummaryChecked,
                   onChanged: (value) {
                     setState(() {
-                      isChecked = !isChecked;
+                      isSummaryChecked = !isSummaryChecked;
                     });
                   },
                 ),
