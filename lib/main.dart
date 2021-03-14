@@ -11,6 +11,7 @@ import 'package:simplecoins_0/screens/home/home.dart';
 import 'package:simplecoins_0/screens/onboarding/onboarding.dart';
 import 'package:simplecoins_0/screens/passwordchangesuccess/passwordchangesuccess.dart';
 import 'package:simplecoins_0/screens/paymentinfo/paymentinfo.dart';
+import 'package:simplecoins_0/screens/sellsummary/sellsummary.dart';
 import 'package:simplecoins_0/screens/signin/signin.dart';
 import 'package:simplecoins_0/screens/signup/signup.dart';
 import 'package:simplecoins_0/screens/splash/splash.dart';
@@ -23,7 +24,7 @@ import 'package:simplecoins_0/screens/wrapper/wrapper.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/choosereceivingnumber',
+    initialRoute: '/sellsummary',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
@@ -42,7 +43,8 @@ void main() {
       '/changepassword': (context) => ChangePassword(),
       '/passwordchangesuccess': (context) => PasswordChangeSuccess(),
       '/entersellamount': (context) => EnterSellAmount(),
-      '/choosereceivingnumber': (context) => ChooseReceivingNumber()
+      '/choosereceivingnumber': (context) => ChooseReceivingNumber(),
+      '/sellsummary': (context) => SellSummary()
     }
   ));
 }
