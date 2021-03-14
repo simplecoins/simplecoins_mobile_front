@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/screens/changepassword/changepassword.dart';
 import 'package:simplecoins_0/screens/choosepaymentnumber/choosepaymentnumber.dart';
+import 'package:simplecoins_0/screens/choosereceivingnumber/choosereceivingnumber.dart';
 import 'package:simplecoins_0/screens/enteramount/enteramount.dart';
 import 'package:simplecoins_0/screens/entersellamount/entersellamount.dart';
 import 'package:simplecoins_0/screens/enterwalletaddress/enterwalletaddress.dart';
@@ -22,7 +23,7 @@ import 'package:simplecoins_0/screens/wrapper/wrapper.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/entersellamount',
+    initialRoute: '/choosereceivingnumber',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
@@ -41,6 +42,7 @@ void main() {
       '/changepassword': (context) => ChangePassword(),
       '/passwordchangesuccess': (context) => PasswordChangeSuccess(),
       '/entersellamount': (context) => EnterSellAmount(),
+      '/choosereceivingnumber': (context) => ChooseReceivingNumber()
     }
   ));
 }
