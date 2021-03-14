@@ -11,7 +11,7 @@ import 'package:simplecoins_0/screens/passwordchangesuccess/passwordchangesucces
 import 'package:simplecoins_0/screens/paymentinfo/paymentinfo.dart';
 import 'package:simplecoins_0/screens/signin/signin.dart';
 import 'package:simplecoins_0/screens/signup/signup.dart';
-import 'package:simplecoins_0/screens/splash.dart';
+import 'package:simplecoins_0/screens/splash/splash.dart';
 import 'package:simplecoins_0/screens/summary/summary.dart';
 import 'package:simplecoins_0/screens/transactionhistory_selected/thistory_selected.dart';
 import 'package:simplecoins_0/screens/transactions/transactions.dart';
