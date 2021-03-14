@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/copynumber.dart';
 
-import '../../alertdiag.dart';
 
 class PaymentInfo extends StatefulWidget {
   @override
@@ -82,11 +82,15 @@ class _PaymentInfoState extends State<PaymentInfo> {
             SizedBox(
               height: 44.0,
             ),
-            Row(
-              children: [
-                Placeholder(),
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     Container(
+            //       height: 10.0,
+            //       width: double.infinity,
+            //       child: Placeholder()
+            //     ),
+            //   ],
+            // ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
