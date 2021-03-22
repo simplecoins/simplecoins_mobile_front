@@ -40,14 +40,26 @@ class _CoinPaymentState extends State<CoinPayment> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.all(20.0),
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.start,
           //crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('You Would Need To ')],
+              children: [
+                SizedBox(
+                  height: 70.0,
+                ),
+                Text(
+                  'You Would Need To',
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600
+                  ),
+                )
+              ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -60,14 +72,14 @@ class _CoinPaymentState extends State<CoinPayment> {
                     style: TextStyle(
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w400,
-                        fontSize: 18,
-                        color: Colors.black),
+                        fontSize: 16,
+                        color: Color(0xFF787879)),
                     children: <TextSpan>[
                       TextSpan(
                           text: 'Send 3324 XRP ',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 18,
+                              fontSize: 16,
                               fontFamily: 'Manrope',
                               fontWeight: FontWeight.w600)),
                       TextSpan(text: 'to '),
@@ -75,61 +87,74 @@ class _CoinPaymentState extends State<CoinPayment> {
                           text: 'our XRP Wallet ',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 18,
+                              fontSize: 16,
                               fontFamily: 'Manrope',
                               fontWeight: FontWeight.w600)),
                       TextSpan(
                           text:
-                              'address\n below and you will automatically receive \nyour Mobile Money transfer after \nconfirmation.'),
+                              'address\n below and you will automatically receive\nyour Mobile Money transfer after\nconfirmation.'),
                       TextSpan(text: 'worth of Bitcoin.'),
                     ],
                   ),
                 ),
               ],
             ),
-            Container(
-              height: 75.0,
-              width: 335.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Color(0xFFF2F2F2)),
-                //color: Colors.black
-              ),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 14.0,
+            SizedBox(
+              height: 40.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  height: 75.0,
+                  width: 335.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Color(0xFFF2F2F2)),
+                    //color: Colors.black
                   ),
-                  Text(
-                    '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
-                    style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  SizedBox(
-                    width: 14.0,
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Color(0xFFBFDBFE),
-                          borderRadius: BorderRadius.circular(10.0)),
-                      height: 63.0,
-                      width: 60.0,
-                      child: Center(
-                        child: Text('Copy',
-                            style: TextStyle(
-                                color: Color(0xFF1D4ED8),
-                                fontSize: 12,
-                                fontFamily: 'Manrope',
-                                fontWeight: FontWeight.w600)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: 14.0,
                       ),
-                    ),
-                  )
-                ],
-              ),
+                      Text(
+                        '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+                        style: TextStyle(
+                            fontFamily: 'Manrope',
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      // SizedBox(
+                      //   width: 14.0,
+                      // ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xFFBFDBFE),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 63.0,
+                          width: 60.0,
+                          child: Center(
+                            child: Text('Copy',
+                                style: TextStyle(
+                                    color: Color(0xFF1D4ED8),
+                                    fontSize: 12,
+                                    fontFamily: 'Manrope',
+                                    fontWeight: FontWeight.w600)),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 60.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -142,14 +167,14 @@ class _CoinPaymentState extends State<CoinPayment> {
                     style: TextStyle(
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w400,
-                        fontSize: 18,
+                        fontSize: 14,
                         color: Colors.black),
                     children: <TextSpan>[
                       TextSpan(
                           text: 'Or Scan the QR code below ',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 18,
+                              fontSize: 14,
                               fontFamily: 'Manrope',
                               fontWeight: FontWeight.w600)),
                       TextSpan(
@@ -160,10 +185,20 @@ class _CoinPaymentState extends State<CoinPayment> {
                 ),
               ],
             ),
-            Image.asset('assets/qr code/clarity_qr-code-line.png'),
+            SizedBox(
+              height: 25.0,
+            ),
+            Image.asset(
+              'assets/qr code/clarity_qr-code-line.png',
+              width: 129.0,
+            ),
+            Spacer(),
             DefaultButton(
               text: 'I have made the payment',
               press: () {},
+            ),
+            SizedBox(
+              height: 15.0,
             )
           ],
         ),

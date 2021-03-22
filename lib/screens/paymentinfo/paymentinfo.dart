@@ -138,7 +138,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                   width: 5.0,
                 ),
                 Text(
-                  'Use Refrence: Simplecoins',
+                  'Use Reference: Simplecoins',
                   style: TextStyle(
                     color: Color(0xFF3B32A7),
                     fontSize: 12,
