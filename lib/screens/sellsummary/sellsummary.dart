@@ -214,6 +214,8 @@ class _SellSummaryState extends State<SellSummary> {
             DefaultButton(
               text: 'Buy Bitcoin',
               press: () {},
+              bcolor: isSellSummaryChecked ? Colors.black : Color(0xFFF2F2F2),
+              tcolor: isSellSummaryChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(
               height: 15.0,
