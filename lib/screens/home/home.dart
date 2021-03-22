@@ -214,24 +214,53 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
-            Spacer(),
-            Stack(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(top: 8.0),
-                  child: DefaultButton(
-                    text: 'View my transactions',
-                    press: () {},
+            SizedBox(
+              height: 90.0,
+            ),
+            SizedBox(
+              height: 100.0,
+              width: double.infinity,
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    top: 0.0,
+                    right: 0.0,
+                    left: 0.0,
+                    child: Padding(
+                      padding: EdgeInsets.all(5.0),
+                      child: DefaultButton(
+                        text: 'View my transactions',
+                        press: () {},
+                        bcolor: Colors.black,
+                        tcolor: Colors.white,
+                      ),
+                    ),
                   ),
-                ),
-                Container(
-                  width: 10.0,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.blue,
+                  Positioned(
+                    right: 0.0,
+                    top: 0.0,
+                    child: Container(
+                      height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        shape: BoxShape.circle
+                      ),
+                      child: Center(
+                        child: Text(
+                          '2',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12.0,
+                            fontFamily: 'Manrope',
+                            fontWeight: FontWeight.w600
+                          ),
+                        ),
+                      ),
+                    )
                   ),
-                )
-              ],
+                ],
+              ),
             )
           ],
         ),
