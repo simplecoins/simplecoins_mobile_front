@@ -157,14 +157,45 @@ class _SignUpState extends State<SignUp> {
                       });
                     },
                   ),
-                  Text(
-                    'I certify that I am 18 years of age or older, and\nagree to the User Agreement and Privacy Policy.',
+                  RichText(
+                  text: TextSpan(
+                    // Note: Styles for TextSpans must be explicitly defined.
+                    // Child text spans will inherit styles from parent
                     style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12,
-                        color: Color(0xFF787879)),
-                  )
+                      fontSize: 12.0,
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF757575),
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(text: 'I certify that I am '),
+                      TextSpan(
+                          text: '18 years of age or older, ',
+                          style: TextStyle(color: Colors.black, fontSize: 12)),
+                      TextSpan(text: 'and'),
+                      TextSpan(text: '\nagree to the '),
+                      TextSpan(
+                          text: 'User Agreement',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            fontFamily: 'Manrope',
+                            color: Colors.black,
+                            fontSize: 12
+                          )
+                          ),
+                      TextSpan(text: ' and '),
+                      TextSpan(
+                      text: 'Privacy Policy',
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          fontFamily: 'Manrope',
+                          color: Colors.black,
+                          fontSize: 12
+                        )
+                      ),
+                    ],
+                  ),
+                )
                 ],
               ),
               SizedBox(
@@ -177,8 +208,8 @@ class _SignUpState extends State<SignUp> {
                       ? print('yes')
                       : print('no');
                 },
-                bcolor: Colors.black,
-                tcolor: Colors.white,
+                bcolor: _isChecked ? Colors.black : Color(0xFFF2F2F2),
+                tcolor: _isChecked ? Colors.white : Color(0xFFAAABAE),
               ),
               SizedBox(
                 height: 36.0,
