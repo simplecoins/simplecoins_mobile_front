@@ -19,6 +19,7 @@ import 'package:simplecoins_0/screens/splash/splash.dart';
 import 'package:simplecoins_0/screens/summary/summary.dart';
 import 'package:simplecoins_0/screens/transactionhistory_selected/thistory_selected.dart';
 import 'package:simplecoins_0/screens/transactions/transactions.dart';
+import 'package:simplecoins_0/screens/transactionsuccess/transactionsuccess.dart';
 import 'package:simplecoins_0/screens/userprofile/userprofile.dart';
 import 'package:simplecoins_0/screens/wrapper/wrapper.dart';
 
@@ -46,7 +47,8 @@ void main() {
       '/entersellamount': (context) => EnterSellAmount(),
       '/choosereceivingnumber': (context) => ChooseReceivingNumber(),
       '/sellsummary': (context) => SellSummary(),
-      '/coinpayment': (context) => CoinPayment()
+      '/coinpayment': (context) => CoinPayment(),
+      '/TransactionSuccess': (context) => TransactionSuccess()
     }
   ));
 }
