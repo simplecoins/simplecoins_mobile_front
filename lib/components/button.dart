@@ -5,9 +5,13 @@ class DefaultButton extends StatelessWidget {
     Key key,
     this.text,
     this.press,
+    this.bcolor,
+    this.tcolor,
   }) : super(key: key);
   final String text;
   final Function press;
+  final Color bcolor;
+  final Color tcolor;
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +22,15 @@ class DefaultButton extends StatelessWidget {
         padding: EdgeInsets.all(20.0),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: Colors.black)),
-        color: Colors.black,
+            side: BorderSide(color: bcolor)),
+        color: bcolor,
         child: Text(
           text,
           style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Manrope',
-            fontWeight: FontWeight.w600,
-            fontSize: 16
-            ),
+              color: tcolor,
+              fontFamily: 'Manrope',
+              fontWeight: FontWeight.w600,
+              fontSize: 16),
         ),
         onPressed: press,
       ),

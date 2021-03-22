@@ -122,20 +122,20 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber> with Sing
                   indicatorColor: Colors.transparent,
                   labelColor: Colors.white,
                   labelStyle: TextStyle(
-                      fontSize: 14,
+                      fontSize: 16,
                       color: Colors.white,
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w600),
                   unselectedLabelColor: Color(0xFFA5AEBC),
                   unselectedLabelStyle: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.red,
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w400),
                   tabs: [
                     Tab(
                         child: Text(
-                      '         New Number         ',
+                      '             New Number             ',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600,
@@ -143,7 +143,7 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber> with Sing
                     )),
                     Tab(
                         child: Text(
-                      '         Saved Number         ',
+                      '             Saved Number             ',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600,

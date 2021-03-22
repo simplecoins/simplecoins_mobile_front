@@ -19,11 +19,10 @@ class _SummaryState extends State<Summary> {
         title: Text(
           'Checkout',
           style: TextStyle(
-            color: Colors.black,
-            fontFamily: 'Manrope',
-            fontWeight: FontWeight.w600,
-            fontSize: 17.0
-          ),
+              color: Colors.black,
+              fontFamily: 'Manrope',
+              fontWeight: FontWeight.w600,
+              fontSize: 17.0),
         ),
         leading: IconButton(
           onPressed: () {},
@@ -54,18 +53,16 @@ class _SummaryState extends State<Summary> {
                     Text(
                       'YOU ARE BUYING',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
                     ),
                     Text(
                       '\$ 300.00',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 30,
-                        fontWeight: FontWeight.w600
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 30,
+                          fontWeight: FontWeight.w600),
                     )
                   ],
                 ),
@@ -76,19 +73,17 @@ class _SummaryState extends State<Summary> {
                     Text(
                       'GHS 1740.00',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xFF1857BB)
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFF1857BB)),
                     ),
                     Text(
                       '0.00034 BTC',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
                     )
                   ],
                 )
@@ -103,10 +98,9 @@ class _SummaryState extends State<Summary> {
                 Text(
                   'Miner fee',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
                 )
               ],
             ),
@@ -116,10 +110,9 @@ class _SummaryState extends State<Summary> {
                 Text(
                   '\$5.67',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400),
                 )
               ],
             ),
@@ -132,10 +125,9 @@ class _SummaryState extends State<Summary> {
                 Text(
                   'BTC address',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
                 )
               ],
             ),
@@ -145,10 +137,9 @@ class _SummaryState extends State<Summary> {
                 Text(
                   '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
                 )
               ],
             ),
@@ -161,10 +152,9 @@ class _SummaryState extends State<Summary> {
                 Text(
                   'You are paying from',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
                 )
               ],
             ),
@@ -222,7 +212,11 @@ class _SummaryState extends State<Summary> {
             Spacer(),
             DefaultButton(
               text: 'Buy Bitcoin',
-              press: () {},
+              press: () {
+                print('clicked');
+              },
+              bcolor: isSummaryChecked ? Colors.black : Color(0xFFF2F2F2),
+              tcolor: isSummaryChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(
               height: 15.0,

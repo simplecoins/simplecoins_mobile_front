@@ -55,6 +55,9 @@ class _EnterAmountState extends State<EnterAmount> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              height: 28.0,
+            ),
             Text('How much BTC you wish to buy'),
             SizedBox(
               height: 10.0,
@@ -66,9 +69,31 @@ class _EnterAmountState extends State<EnterAmount> {
                   fontWeight: FontWeight.w600,
                   fontSize: 60),
             ),
+            SizedBox(
+              height: 35.0,
+            ),
             Text(
               'GHS 0.00',
-              style: TextStyle(fontFamily: 'Manrope'),
+              style: TextStyle(
+                fontFamily: 'Manrope',
+                fontSize: 16,
+                fontWeight: FontWeight.w600
+              ),
+            ),
+            SizedBox(
+              height: 11.0,
+            ),
+            Text(
+              'GHS 50.00 Minimum buy',
+              style: TextStyle(
+                fontFamily: 'Manrope',
+                fontWeight: FontWeight.w600,
+                fontSize: 12,
+                color: Color(0xFFE56565)
+              ),
+            ),
+            SizedBox(
+              height: 41.0,
             ),
             NumericKeyboard(
               onKeyboardTap: _onKeyboardTap,
