@@ -45,14 +45,14 @@ class _PaymentInfoState extends State<PaymentInfo> {
             SizedBox(
               height: 19.0,
             ),
-            Text(
-              'Awesome!!',
-              style: TextStyle(
-                fontFamily: 'Manrope',
-                fontWeight: FontWeight.w400,
-                fontSize: 18
-              ),
-            ),
+            // Text(
+            //   'Awesome!!',
+            //   style: TextStyle(
+            //     fontFamily: 'Manrope',
+            //     fontWeight: FontWeight.w400,
+            //     fontSize: 18
+            //   ),
+            // ),
             RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
@@ -65,7 +65,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                 color: Colors.black
               ),
                 children: <TextSpan>[
-                  TextSpan(text: 'You just placed an order to Buy '),
+                  TextSpan(text: 'Awesome!!\nYou just placed an order to Buy '),
                   TextSpan(
                       text: 'GHS\n 738.00 ',
                       style: TextStyle(

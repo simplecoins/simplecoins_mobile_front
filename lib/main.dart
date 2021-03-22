@@ -26,7 +26,7 @@ import 'package:simplecoins_0/screens/wrapper/wrapper.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/choosereceivingnumber',
+    initialRoute: '/transactionSuccess',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
@@ -48,7 +48,7 @@ void main() {
       '/choosereceivingnumber': (context) => ChooseReceivingNumber(),
       '/sellsummary': (context) => SellSummary(),
       '/coinpayment': (context) => CoinPayment(),
-      '/TransactionSuccess': (context) => TransactionSuccess()
+      '/transactionSuccess': (context) => TransactionSuccess()
     }
   ));
 }
