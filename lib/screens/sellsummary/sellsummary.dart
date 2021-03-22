@@ -193,13 +193,18 @@ class _SellSummaryState extends State<SellSummary> {
                       TextSpan(
                           text: '18 years of age or older, ',
                           style: TextStyle(color: Colors.black, fontSize: 12)),
-                      TextSpan(text: 'and'),
-                      TextSpan(text: '\nagree to the '),
+                      TextSpan(text: 'and '),
+                      TextSpan(text: 'agree\nto the '),
                       TextSpan(
-                          text: 'User Agreement',
-                          style: TextStyle(color: Colors.black, fontSize: 12)),
+                        text: 'User Agreement',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          decoration: TextDecoration.underline
+                        )
+                      ),
                       TextSpan(text: ' and its return, '),
-                      TextSpan(text: '\nrefund and cancellation policy'),
+                      TextSpan(text: 'refund and\ncancellation policy'),
                     ],
                   ),
                 )
