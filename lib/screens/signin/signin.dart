@@ -43,11 +43,10 @@ class _SignInState extends State<SignIn> {
                 Text(
                   'Welcome',
                   style: TextStyle(
-                    fontFamily: "Manrope",
-                    fontSize: 24,
-                    fontWeight: FontWeight.w800
-                  ),
-                  ),
+                      fontFamily: "Manrope",
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800),
+                ),
               ],
             ),
             Row(
@@ -57,12 +56,11 @@ class _SignInState extends State<SignIn> {
                   'Sign In with your details to \ncontinue',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    color: Color(0xFF787879),
-                    fontFamily: "Manrope",
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500
-                  ),
-                  ),
+                      color: Color(0xFF787879),
+                      fontFamily: "Manrope",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
+                ),
               ],
             ),
             Spacer(
@@ -84,7 +82,7 @@ class _SignInState extends State<SignIn> {
               keyboardType: TextInputType.visiblePassword,
               obscureText: _isHidden,
               decoration: InputDecoration(
-                focusColor: Colors.black,
+                  focusColor: Colors.black,
                   suffixIcon: GestureDetector(
                     onTap: _toggle,
                     child: Icon(
@@ -102,6 +100,9 @@ class _SignInState extends State<SignIn> {
             ),
             DefaultButton(
               text: 'Sign In',
+              press: () {},
+              bcolor: Colors.black,
+              tcolor: Colors.white,
             ),
             Spacer(
               flex: 2,

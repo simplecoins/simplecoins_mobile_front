@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/copynumber.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 
 class PaymentInfo extends StatefulWidget {
@@ -153,6 +154,8 @@ class _PaymentInfoState extends State<PaymentInfo> {
               text: 'Done',
               press: () {
               },
+              bcolor: isSummaryChecked ? Colors.black : Color(0xFFF2F2F2),
+              tcolor: isSummaryChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(
               height: 15.0,

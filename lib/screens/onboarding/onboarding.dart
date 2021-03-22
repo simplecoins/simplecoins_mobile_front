@@ -83,6 +83,8 @@ class _OnboardingState extends State<Onboarding> {
                 DefaultButton(
                   text: 'Sign Me Up',
                   press: () {},
+                  bcolor: Colors.black,
+                  tcolor: Colors.white,
                 ),
                 Spacer(
                   flex: 2,
