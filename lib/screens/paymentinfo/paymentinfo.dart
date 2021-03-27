@@ -83,6 +83,14 @@ class _PaymentInfoState extends State<PaymentInfo> {
             SizedBox(
               height: 44.0,
             ),
+            Image.asset(
+              'assets/Payment Info/akar-icons_arrow-down.png',
+              // width: 14.0,
+              height: 26.0,
+            ),
+            SizedBox(
+              height: 44.0,
+            ),
             // Row(
             //   children: [
             //     Container(
@@ -146,6 +154,35 @@ class _PaymentInfoState extends State<PaymentInfo> {
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w600
                   )
+                )
+              ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Row(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Checkbox(
+                  activeColor: Colors.black,
+                  value: isPInfoChecked,
+                  onChanged: (value) {
+                    setState(() {
+                      isPInfoChecked = !isPInfoChecked;
+                    });
+                  },
+                ),
+                SizedBox(
+                  width: 33.0,
+                ),
+                Text(
+                  'Select to confirm you have made the above payment',
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF757575),
+                  ),
                 )
               ],
             ),
