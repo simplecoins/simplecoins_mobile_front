@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/googlebutton.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class Onboarding extends StatefulWidget {
   @override
@@ -9,28 +10,7 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   int currentPage = 0;
-  List<Map<String, String>> pageData = [
-    {
-      "image": "assets/Onboarding/ScribbleArt_01.png",
-      "text": "Hello!",
-      "emoji": "assets/Onboarding/Wave.png",
-      "subtitle":
-          "Simplecoins is a platform for making fast and simple crypto purchases using your Mobile Money",
-    },
-    {
-      "image": "assets/Onboarding/ScribbleArt_02.png",
-      "text": "Freedom",
-      "emoji": "assets/Onboarding/stars.png",
-      "subtitle":
-          "Enjoy the stress free experience we have to offer, along side the best crypto rates on the market.",
-    },
-    {
-      "image": "assets/Onboarding/ScribbleArt_03.png",
-      "text": "Super Secure",
-      "emoji": "assets/Onboarding/Shield.png",
-      "subtitle": "With simple but secure accounts and transactions you can trust"
-    },
-  ];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
