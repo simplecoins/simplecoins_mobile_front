@@ -191,8 +191,8 @@ class _PaymentInfoState extends State<PaymentInfo> {
               text: 'Done',
               press: () {
               },
-              bcolor: isSummaryChecked ? Colors.black : Color(0xFFF2F2F2),
-              tcolor: isSummaryChecked ? Colors.white : Color(0xFFAAABAE),
+              bcolor: isPInfoChecked ? Colors.black : Color(0xFFF2F2F2),
+              tcolor: isPInfoChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(
               height: 15.0,
