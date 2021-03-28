@@ -9,7 +9,7 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   int currentPage = 0;
-  List<Map<String, String>> pageDataSet1 = [
+  List<Map<String, String>> pageData = [
     {
       "image": "assets/Onboarding/ScribbleArt_01.png",
       "text": "Hello!",
@@ -45,12 +45,12 @@ class _OnboardingState extends State<Onboarding> {
                     currentPage = value;
                   });
                 },
-                itemCount: pageDataSet1.length,
+                itemCount: pageData.length,
                 itemBuilder: (context, index) => PageContent(
-                      text: pageDataSet1[index]['text'],
-                      image: pageDataSet1[index]["image"],
-                      text1: pageDataSet1[index]['subtitle'],
-                      image1: pageDataSet1[index]['emoji'],
+                      text: pageData[index]['text'],
+                      image: pageData[index]["image"],
+                      text1: pageData[index]['subtitle'],
+                      image1: pageData[index]['emoji'],
                     )),
           ),
           Expanded(
@@ -62,7 +62,7 @@ class _OnboardingState extends State<Onboarding> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: List.generate(
-                      pageDataSet1.length,
+                      pageData.length,
                       (index) => buildDot(index),
                     ),
                   ),
