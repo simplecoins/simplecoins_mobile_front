@@ -13,30 +13,22 @@ class _OnboardingState extends State<Onboarding> {
     {
       "image": "assets/Onboarding/ScribbleArt_01.png",
       "text": "Hello!",
+      "emoji": "assets/Onboarding/Wave.png",
+      "subtitle":
+          "Simplecoins is a platform for making fast and simple crypto purchases using your Mobile Money",
     },
     {
       "image": "assets/Onboarding/ScribbleArt_02.png",
       "text": "Freedom",
+      "emoji": "assets/Onboarding/stars.png",
+      "subtitle":
+          "Enjoy the stress free experience we have to offer, along side the best crypto rates on the market.",
     },
     {
       "image": "assets/Onboarding/ScribbleArt_03.png",
       "text": "Super Secure",
-    },
-  ];
-  List<Map<String, String>> pageDataSet2 = [
-    {
-      "image": "assets/Onboarding/Wave.png",
-      "text":
-          "Simplecoins is a platform for making fast and simple crypto purchases using your Mobile Money",
-    },
-    {
-      "image": "assets/Onboarding/stars.png",
-      "text":
-          "Enjoy the stress free experience we have to offer, along side the best crypto rates on the market.",
-    },
-    {
-      "image": "assets/Onboarding/Shield.png",
-      "text": "With simple but secure accounts and transactions you can trust",
+      "emoji": "assets/Onboarding/Shield.png",
+      "subtitle": "With simple but secure accounts and transactions you can trust"
     },
   ];
   @override
@@ -57,8 +49,8 @@ class _OnboardingState extends State<Onboarding> {
                 itemBuilder: (context, index) => PageContent(
                       text: pageDataSet1[index]['text'],
                       image: pageDataSet1[index]["image"],
-                      text1: pageDataSet2[index]['text'],
-                      image1: pageDataSet2[index]['image'],
+                      text1: pageDataSet1[index]['subtitle'],
+                      image1: pageDataSet1[index]['emoji'],
                     )),
           ),
           Expanded(
