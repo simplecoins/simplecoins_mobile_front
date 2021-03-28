@@ -6,7 +6,7 @@ bool isPInfoChecked = false;
 
 
 var currencies = ['Bitcoin', 'USDT', 'Ripple'];
-var status = ['awaiting payment', 'processing', 'processed', 'cancelled'];
+var status = ['AWAITING PAYMENT', 'PROCESSING', 'PROCESSED', 'CANCELLED'];
 
 var buyRate = 5.70;
 
@@ -43,7 +43,7 @@ List<Map> transactions = [
     'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
     'paymentfrom': 0503456748,
     'paymentto': 0503091855,
-    'price': 250.0,
+    'price': 250.00,
     'isBuying': true
   },
   {
@@ -55,7 +55,7 @@ List<Map> transactions = [
     'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
     'paymentfrom': 0503456748,
     'paymentto': 0503091855,
-    'price': 50.0,
+    'price': 50.00,
     'isBuying': true
   },
   {
@@ -67,7 +67,19 @@ List<Map> transactions = [
     'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
     'paymentfrom': 0503456748,
     'paymentto': 0503091855,
-    'price': 150.0,
+    'price': 150.00,
+    'isBuying': false
+  },
+  {
+    'currency': currencies[1],
+    'status': status[3],
+    'creationdate': '09:20 PM - Jan 03 2021',
+    'buyrate': buyRate,
+    'miners fee': 5.67,
+    'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+    'paymentfrom': 0503456748,
+    'paymentto': 0503091855,
+    'price': 70.00,
     'isBuying': true
   }
 ];

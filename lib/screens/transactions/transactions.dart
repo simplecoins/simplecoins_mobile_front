@@ -8,6 +8,7 @@ class Transactions extends StatefulWidget {
 
 class _TransactionsState extends State<Transactions>
     with SingleTickerProviderStateMixin {
+  final testvar = 70.0;
   TabController _tabController;
   @override
   void initState() {
@@ -109,18 +110,51 @@ class _TransactionsState extends State<Transactions>
                 controller: _tabController,
                 children: [
                   Tab(
-                      child: ListView(
-                    children: [
-                      TransactionCard(
+                      child: ListView.builder(
+                    itemCount: transactions.length,
+                    itemBuilder: (context, index) {
+                      return TransactionCard(
                         press: () {},
-                        imgPath: 'assets/Homescreen/Bitcoin.png',
-                        transType: 'Buying Bitcoin',
-                        status: 'hbdshbfs',
-                        usdPrice: '\$250',
-                        ghPrice: 'GHS 2457.00',
-                      ),
-                    ],
+                        imgPath:
+                            'assets/Homescreen/${transactions[index]['currency']}.png',
+                        transType: transactions[index]['status'] ==
+                                'AWAITING PAYMENT'
+                            ? 'Buying ${transactions[index]['currency']}'
+                            : (transactions[index]['status'] == 'PROCESSING'
+                                ? 'Sold ${transactions[index]['currency']}'
+                                : (transactions[index]['status'] == 'PROCESSED'
+                                ? 'Sold ${transactions[index]['currency']}'
+                                : 'Bought ${transactions[index]['currency']}')),
+                        status: transactions[index]['status'],
+                        usdPrice: transactions[index]['isBuying'] ? '\$'+transactions[index]['price'].toString() : '-\$'+transactions[index]['price'].toString(),
+                        ghPrice:
+                            'GHS '+(transactions[index]['price'] * 5.90).toString(),
+                        priceColor: transactions[index]['isBuying']
+                            ? Color(0xFF40A187)
+                            : Color(0xFFE56565),
+                        statusColor: transactions[index]['status'] ==
+                                'AWAITING PAYMENT'
+                            ? Color(0xFF4F49C1)
+                            : (transactions[index]['status'] == 'PROCESSING'
+                                ? Color(0xFFFFB121)
+                                : (transactions[index]['status'] == 'PROCESSED'
+                                ? Color(0xFF40A187)
+                                : Color(0xFFE56565))),
+                      );
+                    },
                   )
+                      // ListView(
+                      //   children: [
+                      //     TransactionCard(
+                      //       press: () {},
+                      //       imgPath: 'assets/Homescreen/Bitcoin.png',
+                      //       transType: 'Buying Bitcoin',
+                      //       status: 'hbdshbfs',
+                      //       usdPrice: '\$250',
+                      //       ghPrice: 'GHS 2457.00',
+                      //     ),
+                      //   ],
+                      // )
                       //   ListView.builder(
                       //   itemCount: transactions.length,
                       //   itemBuilder: (context, index) {
@@ -167,6 +201,8 @@ class TransactionCard extends StatelessWidget {
     this.usdPrice,
     this.ghPrice,
     this.status,
+    this.priceColor,
+    this.statusColor,
   }) : super(key: key);
   final Function press;
   final String imgPath;
@@ -174,74 +210,85 @@ class TransactionCard extends StatelessWidget {
   final usdPrice;
   final ghPrice;
   final status;
+  final Color priceColor;
+  final Color statusColor;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 75.0,
-      width: 335.0,
-      child: FlatButton(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: Color(0xFFF2F2F2))),
-        onPressed: press,
-        child: (Row(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              imgPath,
-              width: 52,
-            ),
-            SizedBox(
-              width: 10.0,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      children: [
+        SizedBox(
+          height: 75.0,
+          width: 335.0,
+          child: FlatButton(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+                side: BorderSide(color: Color(0xFFF2F2F2))),
+            onPressed: press,
+            child: (Row(
+              //mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  transType,
-                  style: TextStyle(
-                      fontFamily: 'Manrope',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14),
+                Image.asset(
+                  imgPath,
+                  width: 52,
                 ),
-                Text(
-                  status,
-                  style: TextStyle(
-                      fontFamily: 'Manrope',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 10,
-                      color: Color(0xFF4F49C1)),
+                SizedBox(
+                  width: 10.0,
                 ),
-              ],
-            ),
-            Spacer(),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  usdPrice,
-                  style: TextStyle(
-                      fontFamily: 'Manrope',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14,
-                      color: Color(0xFF40A187)),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      transType,
+                      style: TextStyle(
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14),
+                    ),
+                    Text(
+                      status,
+                      style: TextStyle(
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 10,
+                          color: statusColor),
+                    ),
+                  ],
                 ),
-                Text(
-                  ghPrice,
-                  style: TextStyle(
-                      fontFamily: 'Manrope',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14),
+                Spacer(),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      usdPrice,
+                      style: TextStyle(
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14,
+                          color: priceColor),
+                    ),
+                    Text(
+                      ghPrice,
+                      style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        color: Color(0xFF757575)
+                      ),
+                    )
+                  ],
                 )
               ],
-            )
-          ],
-        )),
-      ),
+            )),
+          ),
+        ),
+        SizedBox(
+          height: 8.0,
+        )
+      ],
     );
   }
 }
