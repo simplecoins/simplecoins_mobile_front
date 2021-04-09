@@ -10,6 +10,8 @@ var status = ['AWAITING PAYMENT', 'PROCESSING', 'PROCESSED', 'CANCELLED'];
 
 var buyRate = 5.70;
 
+// var compare = DateTime(2021, 02, 02);
+
 List<Map<String, String>> pageData = [
   {
     "image": "assets/Onboarding/ScribbleArt_01.png",
@@ -33,53 +35,160 @@ List<Map<String, String>> pageData = [
   },
 ];
 
-List<Map> transactions = [
-  {
-    'currency': currencies[0],
-    'status': status[0],
-    'creationdate': '09:20 PM - Jan 03 2021',
-    'buyrate': buyRate,
-    'miners fee': 5.67,
-    'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
-    'paymentfrom': 0503456748,
-    'paymentto': 0503091855,
-    'price': 250.00,
-    'isBuying': true
-  },
-  {
-    'currency': currencies[1],
-    'status': status[2],
-    'creationdate': '09:20 PM - Jan 03 2021',
-    'buyrate': buyRate,
-    'miners fee': 5.67,
-    'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
-    'paymentfrom': 0503456748,
-    'paymentto': 0503091855,
-    'price': 50.00,
-    'isBuying': true
-  },
-  {
-    'currency': currencies[2],
-    'status': status[1],
-    'creationdate': '09:20 PM - Jan 03 2021',
-    'buyrate': buyRate,
-    'miners fee': 5.67,
-    'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
-    'paymentfrom': 0503456748,
-    'paymentto': 0503091855,
-    'price': 150.00,
-    'isBuying': false
-  },
-  {
-    'currency': currencies[1],
-    'status': status[3],
-    'creationdate': '09:20 PM - Jan 03 2021',
-    'buyrate': buyRate,
-    'miners fee': 5.67,
-    'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
-    'paymentfrom': 0503456748,
-    'paymentto': 0503091855,
-    'price': 70.00,
-    'isBuying': true
-  }
-];
+class Transaction {
+  String currency;
+  String status;
+  var creationdate;
+  double buyRate;
+  double minersFee;
+  String cryptoAddress;
+  int paymentFrom;
+  int paymentTo;
+  double price;
+  bool isBuying;
+
+  Transaction({
+    this.currency,
+    this.status,
+    this.creationdate,
+    this.buyRate,
+    this.cryptoAddress,
+    this.isBuying,
+    this.minersFee,
+    this.paymentFrom,
+    this.paymentTo,
+    this.price,
+  });
+}
+
+List<Transaction> transactions = [
+  Transaction(
+      currency: currencies[0],
+      status: status[0],
+      creationdate: DateTime(2021, 03, 29).millisecondsSinceEpoch,
+      buyRate: buyRate,
+      minersFee: 5.67,
+      cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFrom: 0503456748,
+      paymentTo: 0503091855,
+      price: 150.0,
+      isBuying: true),
+  Transaction(
+      currency: currencies[2],
+      status: status[2],
+      creationdate: DateTime(2021, 03, 28).millisecondsSinceEpoch,
+      buyRate: buyRate,
+      minersFee: 5.67,
+      cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFrom: 0503456748,
+      paymentTo: 0503091855,
+      price: 130.0,
+      isBuying: false),
+  Transaction(
+      currency: currencies[0],
+      status: status[1],
+      creationdate: DateTime(2021, 03, 29).millisecondsSinceEpoch,
+      buyRate: buyRate,
+      minersFee: 5.67,
+      cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFrom: 0503456748,
+      paymentTo: 0503091855,
+      price: 70.0,
+      isBuying: true),
+  Transaction(
+      currency: currencies[1],
+      status: status[1],
+      creationdate: DateTime(2021, 03, 27).millisecondsSinceEpoch,
+      buyRate: buyRate,
+      minersFee: 5.67,
+      cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFrom: 0503456748,
+      paymentTo: 0503091855,
+      price: 1200.0,
+      isBuying: true),
+  Transaction(
+      currency: currencies[2],
+      status: status[3],
+      creationdate: DateTime(2021, 03, 25).millisecondsSinceEpoch,
+      buyRate: buyRate,
+      minersFee: 5.67,
+      cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFrom: 0503456748,
+      paymentTo: 0503091855,
+      price: 1000.0,
+      isBuying: true),
+  Transaction(
+      currency: currencies[0],
+      status: status[0],
+      creationdate: DateTime(2021, 03, 28).millisecondsSinceEpoch,
+      buyRate: buyRate,
+      minersFee: 5.67,
+      cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFrom: 0503456748,
+      paymentTo: 0503091855,
+      price: 70.0,
+      isBuying: false),
+  Transaction(
+      currency: currencies[2],
+      status: status[3],
+      creationdate: DateTime(2021, 03, 23).millisecondsSinceEpoch,
+      buyRate: buyRate,
+      minersFee: 5.67,
+      cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFrom: 0503456748,
+      paymentTo: 0503091855,
+      price: 850.0,
+      isBuying: true),
+]..sort((v1, v2) => v2.creationdate - v1.creationdate);
+
+// List<Map> transactions = [
+//   {
+//     'currency': currencies[0],
+//     'status': status[0],
+//     'creationdate': DateTime(2021, 03, 28),
+//       // '09:20 PM - Jan 03 2021',
+//     'buyrate': buyRate,
+//     'miners fee': 5.67,
+//     'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+//     'paymentfrom': 0503456748,
+//     'paymentto': 0503091855,
+//     'price': 250.00,
+//     'isBuying': true
+//   },
+//   {
+//     'currency': currencies[1],
+//     'status': status[2],
+//     'creationdate': DateTime(2021, 03, 28),
+//     'buyrate': buyRate,
+//     'miners fee': 5.67,
+//     'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+//     'paymentfrom': 0503456748,
+//     'paymentto': 0503091855,
+//     'price': 50.00,
+//     'isBuying': true
+//   },
+//   {
+//     'currency': currencies[2],
+//     'status': status[1],
+//     'creationdate': DateTime(2021, 03, 27),
+//     'buyrate': buyRate,
+//     'miners fee': 5.67,
+//     'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+//     'paymentfrom': 0503456748,
+//     'paymentto': 0503091855,
+//     'price': 150.00,
+//     'isBuying': false
+//   },
+//   {
+//     'currency': currencies[1],
+//     'status': status[3],
+//     'creationdate': DateTime(2021, 03, 26),
+//     'buyrate': buyRate,
+//     'miners fee': 5.67,
+//     'BTC address': '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+//     'paymentfrom': 0503456748,
+//     'paymentto': 0503091855,
+//     'price': 70.00,
+//     'isBuying': true
+//   }
+// ];

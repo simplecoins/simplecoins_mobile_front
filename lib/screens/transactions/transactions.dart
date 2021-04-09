@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:intl/intl.dart';
+import 'package:simplecoins_0/modals/listview-all.dart';
+import 'package:simplecoins_0/modals/listview-buy.dart';
+import 'package:simplecoins_0/modals/listview-sell.dart';
 
 class Transactions extends StatefulWidget {
   @override
@@ -49,14 +53,10 @@ class _TransactionsState extends State<Transactions>
             ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(7)),
               child: Container(
-                // color: Colors.red
                 width: 335.0,
                 height: 58.0,
                 decoration: BoxDecoration(
                     color: Color(0xFFF5F7FA),
-                    // border: Border.all(
-                    //   color: Colors.red[500],
-                    // ),
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: TabBar(
                   controller: _tabController,
@@ -105,83 +105,17 @@ class _TransactionsState extends State<Transactions>
               ),
             ),
             Container(
-              height: 600,
+              height: 630,
               child: TabBarView(
                 controller: _tabController,
                 children: [
+                  Tab(child: buildListView()),
                   Tab(
-                      child: ListView.builder(
-                    itemCount: transactions.length,
-                    itemBuilder: (context, index) {
-                      return TransactionCard(
-                        press: () {},
-                        imgPath:
-                            'assets/Homescreen/${transactions[index]['currency']}.png',
-                        transType: transactions[index]['status'] ==
-                                'AWAITING PAYMENT'
-                            ? 'Buying ${transactions[index]['currency']}'
-                            : (transactions[index]['status'] == 'PROCESSING'
-                                ? 'Sold ${transactions[index]['currency']}'
-                                : (transactions[index]['status'] == 'PROCESSED'
-                                ? 'Sold ${transactions[index]['currency']}'
-                                : 'Bought ${transactions[index]['currency']}')),
-                        status: transactions[index]['status'],
-                        usdPrice: transactions[index]['isBuying'] ? '\$'+transactions[index]['price'].toString() : '-\$'+transactions[index]['price'].toString(),
-                        ghPrice:
-                            'GHS '+(transactions[index]['price'] * 5.90).toString(),
-                        priceColor: transactions[index]['isBuying']
-                            ? Color(0xFF40A187)
-                            : Color(0xFFE56565),
-                        statusColor: transactions[index]['status'] ==
-                                'AWAITING PAYMENT'
-                            ? Color(0xFF4F49C1)
-                            : (transactions[index]['status'] == 'PROCESSING'
-                                ? Color(0xFFFFB121)
-                                : (transactions[index]['status'] == 'PROCESSED'
-                                ? Color(0xFF40A187)
-                                : Color(0xFFE56565))),
-                      );
-                    },
+                    child: buildListViewBuy(),
+                  ),
+                  Tab(
+                    child: buildListViewSell(),
                   )
-                      // ListView(
-                      //   children: [
-                      //     TransactionCard(
-                      //       press: () {},
-                      //       imgPath: 'assets/Homescreen/Bitcoin.png',
-                      //       transType: 'Buying Bitcoin',
-                      //       status: 'hbdshbfs',
-                      //       usdPrice: '\$250',
-                      //       ghPrice: 'GHS 2457.00',
-                      //     ),
-                      //   ],
-                      // )
-                      //   ListView.builder(
-                      //   itemCount: transactions.length,
-                      //   itemBuilder: (context, index) {
-                      //     return HistoryTile(
-                      //       pickup: transactions[index]['pickup'],
-                      //       destination: transactions[index]['destination'],
-                      //       date: (transactions[index]['date']),
-                      //       // transactions[index]['date']
-                      //     );
-                      //   },
-                      // )
-                      ),
-                  Tab(
-                      child: ListView(
-                    children: [
-                      FlatButton(
-                        onPressed: () {
-                          print(transactions[0]['currency']);
-                        },
-                        child: Text('test'),
-                      ),
-                    ],
-                  )),
-                  Tab(
-                      child: ListView(
-                    children: [Text('Tab')],
-                  )),
                 ],
               ),
             ),
@@ -273,11 +207,10 @@ class TransactionCard extends StatelessWidget {
                     Text(
                       ghPrice,
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14,
-                        color: Color(0xFF757575)
-                      ),
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14,
+                          color: Color(0xFF757575)),
                     )
                   ],
                 )
@@ -292,3 +225,4 @@ class TransactionCard extends StatelessWidget {
     );
   }
 }
+
