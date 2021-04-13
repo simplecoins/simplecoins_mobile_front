@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class UserProfile extends StatefulWidget {
   @override
@@ -65,7 +66,7 @@ class _UserProfileState extends State<UserProfile> {
                       ),
                     ),
                     Text(
-                      '23 Total Orders',
+                      '${transactions.length} Total Orders',
                       style: TextStyle(
                         fontFamily: 'Manrope',
                         fontSize: 12.0,
