@@ -88,6 +88,8 @@ class _EnterSellAmountState extends State<EnterSellAmount> {
             ),
             Spacer(),
             DefaultButton(
+              bcolor: Color(0xFF001233),
+              tcolor: Colors.white,
               text: 'Next',
               press: () {},
             ),

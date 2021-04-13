@@ -44,7 +44,7 @@ class CryptoCard extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w600,
-                      fontSize: 16,
+                      fontSize: 12,
                       color: Color(0xFF37D39B)),
                 ),
               ],

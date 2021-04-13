@@ -85,6 +85,8 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               flex: 4,
             ),
             DefaultButton(
+              bcolor: Color(0xFF001233),
+              tcolor: Colors.white,
               text: 'Next',
               press: () {},
             )

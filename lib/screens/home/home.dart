@@ -52,9 +52,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           ),
         ),
         actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(right: 20.0),
-            child: Image.asset('assets/Homescreen/Ellipse 14.png'),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/userprofile');
+            },
+            child: Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: Image.asset('assets/Homescreen/Ellipse 14.png'),
+            ),
           )
         ],
       ),
@@ -183,7 +188,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           cryptoName: 'Bitcoin',
                           press: () {
                             cryptoType = 'Bitcoin';
-                            Navigator.pushNamed(context, '/enterwalletaddress');
+                            Navigator.pushNamed(context, '/entersellamount');
                           },
                         ),
                         SizedBox(
@@ -194,7 +199,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           cryptoName: 'USDT',
                           press: () {
                             cryptoType = 'USDT';
-                            Navigator.pushNamed(context, '/enterwalletaddress');
+                            Navigator.pushNamed(context, '/entersellamount');
                           },
                         ),
                         SizedBox(
@@ -205,7 +210,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           cryptoName: 'Ripple',
                           press: () {
                             cryptoType = 'Ripple';
-                            Navigator.pushNamed(context, '/enterwalletaddress');
+                            Navigator.pushNamed(context, '/entersellamount');
                           },
                         ),
                       ],
@@ -230,35 +235,33 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       padding: EdgeInsets.all(5.0),
                       child: DefaultButton(
                         text: 'View my transactions',
-                        press: () {},
+                        press: () {
+                          Navigator.pushNamed(context, '/transactions');
+                        },
                         bcolor: Colors.black,
                         tcolor: Colors.white,
                       ),
                     ),
                   ),
                   Positioned(
-                    right: 0.0,
-                    top: 0.0,
-                    child: Container(
-                      height: 20,
-                      width: 20,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        shape: BoxShape.circle
-                      ),
-                      child: Center(
-                        child: Text(
-                          '${transactions.length}',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12.0,
-                            fontFamily: 'Manrope',
-                            fontWeight: FontWeight.w600
+                      right: 0.0,
+                      top: 0.0,
+                      child: Container(
+                        height: 20,
+                        width: 20,
+                        decoration: BoxDecoration(
+                            color: Colors.blue, shape: BoxShape.circle),
+                        child: Center(
+                          child: Text(
+                            '${transactions.length}',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12.0,
+                                fontFamily: 'Manrope',
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
-                      ),
-                    )
-                  ),
+                      )),
                 ],
               ),
             )
@@ -268,4 +271,3 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     );
   }
 }
-
