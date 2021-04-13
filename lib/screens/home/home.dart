@@ -248,7 +248,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       ),
                       child: Center(
                         child: Text(
-                          '2',
+                          '${transactions.length}',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 12.0,
