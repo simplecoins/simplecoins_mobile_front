@@ -72,7 +72,7 @@ List<Transaction> transactions = [
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 150.0,
-      isBuying: true),
+      isBuying: false),
   Transaction(
       currency: currencies[2],
       status: status[2],
@@ -83,7 +83,7 @@ List<Transaction> transactions = [
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 130.0,
-      isBuying: false),
+      isBuying: true),
   Transaction(
       currency: currencies[0],
       status: status[1],
@@ -138,7 +138,7 @@ List<Transaction> transactions = [
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 850.0,
-      isBuying: true),
+      isBuying: false),
 ]..sort((v1, v2) => v2.creationdate - v1.creationdate);
 
 // List<Map> transactions = [

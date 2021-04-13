@@ -1,70 +1,71 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 
 ListView buildListViewBuy() {
-  String prevDay;
-  String today = DateFormat("EEE, MMM d, y").format(DateTime.now());
-  String yesterday = DateFormat("EEE, MMM d, y")
-      .format(DateTime.now().add(Duration(days: -1)));
+  // String prevDay;
+  // String today = DateFormat("EEE, MMM d, y").format(DateTime.now());
+  // String yesterday = DateFormat("EEE, MMM d, y")
+  //     .format(DateTime.now().add(Duration(days: -1)));
 
   return ListView.builder(
     //number of cards
     itemCount: transactions.length,
     itemBuilder: (context, index) {
       Transaction transaction = transactions[index];
-      DateTime date =
-          DateTime.fromMillisecondsSinceEpoch(transaction.creationdate);
-      String dateString = DateFormat("EEE, MMM d, y").format(date);
+      // DateTime date =
+      //     DateTime.fromMillisecondsSinceEpoch(transaction.creationdate);
+      // String dateString = DateFormat("EEE, MMM d, y").format(date);
 
       //setting header date text
-      if (today == dateString) {
-        dateString = "Today";
-      } else if (yesterday == dateString) {
-        dateString = "Yesterday";
-      }
+      // if (today == dateString) {
+      //   dateString = "Today";
+      // } else if (yesterday == dateString) {
+      //   dateString = "Yesterday";
+      // }
 
-      bool showHeader = prevDay != dateString;
-      prevDay = dateString;
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          showHeader
-              ? Container(
-                  padding: EdgeInsets.only(top: 30, bottom: 12, left: 16, right: 16),
-                  child: Text(
-                    dateString,
-                    style: TextStyle(
-                      fontFamily: 'Manrope',
-                      color: Color(0xFF243656),
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.w500
-                    )
-                  ),
-                )
-              : Offstage(),
-          //transaction card build
-          buildItem(index, context, date, transaction),
-        ],
-      );
+      // bool showHeader = prevDay != dateString;
+      // prevDay = dateString;
+      return simpleCoinsCard(transaction, context);
+      // Column(
+      //   crossAxisAlignment: CrossAxisAlignment.start,
+      //   children: <Widget>[
+      //     showHeader && transaction.isBuying
+      //         ? Container(
+      //             padding: EdgeInsets.only(top: 30, bottom: 12, left: 16, right: 16),
+      //             child: Text(
+      //               dateString,
+      //               style: TextStyle(
+      //                 fontFamily: 'Manrope',
+      //                 color: Color(0xFF243656),
+      //                 fontSize: 12.0,
+      //                 fontWeight: FontWeight.w500
+      //               )
+      //             ),
+      //           )
+      //         : Offstage(),
+      //     //transaction card build
+      //     buildItem(index, context, date, transaction),
+      //   ],
+      // );
     },
   );
 }
 
-Widget buildItem(
-    int index, BuildContext context, DateTime date, Transaction transaction) {
-  return IntrinsicHeight(
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        Expanded(
-          flex: 1,
-          child: simpleCoinsCard(transaction, context),
-        ),
-      ],
-    ),
-  );
-}
+// Widget buildItem(
+//     int index, BuildContext context, DateTime date, Transaction transaction) {
+//   return IntrinsicHeight(
+//     child: Row(
+//       crossAxisAlignment: CrossAxisAlignment.stretch,
+//       children: <Widget>[
+//         Expanded(
+//           flex: 1,
+//           child: simpleCoinsCard(transaction, context),
+//         ),
+//       ],
+//     ),
+//   );
+// }
 
 Visibility simpleCoinsCard(Transaction transaction, BuildContext context) {
   return Visibility(
@@ -97,20 +98,32 @@ Visibility simpleCoinsCard(Transaction transaction, BuildContext context) {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      transaction.status == 'AWAITING PAYMENT' && transaction.isBuying == true ? 'Buying ${transaction.currency}' 
-                    : (transaction.status == 'PROCESSING' && transaction.isBuying == true ? 'Buying ${transaction.currency}' : (
-                      transaction.status == 'PROCESSED' && transaction.isBuying == true ? 'Bought ${transaction.currency}' : (
-                      transaction.status == 'CANCELLED' && transaction.isBuying == true ? 'Bought ${transaction.currency}' : (
-                        transaction.status == 'AWAITING PAYMENT' && transaction.isBuying == false ? 'Selling ${transaction.currency}' : (
-                          transaction.status == 'PROCESSING' && transaction.isBuying == false ? 'Selling ${transaction.currency}' : (
-                            transaction.status == 'PROCESSED' && transaction.isBuying == false ? 'Sold ${transaction.currency}' :
-                            'Sold ${transaction.currency}'
-                          )
-                        )
-                      )
-                      )
-                    ) 
-                    ), 
+                      transaction.status == 'AWAITING PAYMENT' &&
+                              transaction.isBuying == true
+                          ? 'Buying ${transaction.currency}'
+                          : (transaction.status == 'PROCESSING' &&
+                                  transaction.isBuying == true
+                              ? 'Buying ${transaction.currency}'
+                              : (transaction.status == 'PROCESSED' &&
+                                      transaction.isBuying == true
+                                  ? 'Bought ${transaction.currency}'
+                                  : (transaction.status == 'CANCELLED' &&
+                                          transaction.isBuying == true
+                                      ? 'Bought ${transaction.currency}'
+                                      : (transaction.status ==
+                                                  'AWAITING PAYMENT' &&
+                                              transaction.isBuying == false
+                                          ? 'Selling ${transaction.currency}'
+                                          : (transaction.status ==
+                                                      'PROCESSING' &&
+                                                  transaction.isBuying == false
+                                              ? 'Selling ${transaction.currency}'
+                                              : (transaction.status ==
+                                                          'PROCESSED' &&
+                                                      transaction.isBuying ==
+                                                          false
+                                                  ? 'Sold ${transaction.currency}'
+                                                  : 'Sold ${transaction.currency}')))))),
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600,
