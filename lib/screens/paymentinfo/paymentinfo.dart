@@ -17,6 +17,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
+        //close button
         actions: [
           IconButton(
             onPressed: () {

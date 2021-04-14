@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
@@ -33,10 +34,11 @@ class _SummaryState extends State<Summary> {
             color: Colors.black,
           ),
         ),
+        //close button
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.popUntil(context, ModalRoute.withName('/home'));
+              showAlertDialog(context);
             },
             icon: Icon(
               Icons.close,
