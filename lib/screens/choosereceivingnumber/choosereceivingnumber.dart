@@ -9,8 +9,9 @@ class ChooseReceivingNumber extends StatefulWidget {
   _ChooseReceivingNumberState createState() => _ChooseReceivingNumberState();
 }
 
-class _ChooseReceivingNumberState extends State<ChooseReceivingNumber> with SingleTickerProviderStateMixin{
-   TabController _tabController;
+class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
+    with SingleTickerProviderStateMixin {
+  TabController _tabController;
   @override
   void initState() {
     // TODO: implement initState
@@ -18,13 +19,12 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber> with Sing
     _tabController = TabController(vsync: this, length: 2);
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-         backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         elevation: 0.0,
         title: Text(
           'Receiving Method',
@@ -217,7 +217,9 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber> with Sing
               visible: isVisible,
               child: DefaultButton(
                 text: 'Next',
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, '/sellsummary');
+                },
               ),
             )
           ],
