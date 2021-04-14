@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/numpad.dart';
 
@@ -45,7 +46,7 @@ class _EnterAmountState extends State<EnterAmount> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.popUntil(context, ModalRoute.withName('/home'));
+              showAlertDialog(context);
             },
             icon: Icon(
               Icons.close,

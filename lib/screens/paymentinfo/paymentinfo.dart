@@ -21,11 +21,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
         actions: [
           IconButton(
             onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return showAlertDialog(context);
-                  });
+              showAlertDialog(context);
             },
             icon: Icon(
               Icons.close,

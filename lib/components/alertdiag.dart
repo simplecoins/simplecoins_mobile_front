@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter/scheduler.dart';
 
 showAlertDialog(BuildContext context) {
   // 'Yes, Discard It' Button
@@ -17,7 +18,10 @@ showAlertDialog(BuildContext context) {
       ),
     ),
     onPressed: () {
-      Navigator.popUntil(context, ModalRoute.withName('/home'));
+      
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Navigator.popUntil(context, ModalRoute.withName('/home'));
+      });
     },
   );
 
@@ -36,8 +40,7 @@ showAlertDialog(BuildContext context) {
         fontWeight: FontWeight.w400,
       ),
     ),
-    onPressed: () {
-    },
+    onPressed: () {},
   );
 
 // set up the AlertDialog
@@ -64,8 +67,8 @@ showAlertDialog(BuildContext context) {
   );
 
   showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return alert;
-    });
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      });
 }
