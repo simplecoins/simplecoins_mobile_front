@@ -9,15 +9,13 @@ class EnterSellAmount extends StatefulWidget {
 }
 
 class _EnterSellAmountState extends State<EnterSellAmount> {
-    String text = '';
+  String text = '';
   _onKeyboardTap(String value) {
     setState(() {
       text = text + value;
       print('$value tapped');
     });
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +24,7 @@ class _EnterSellAmountState extends State<EnterSellAmount> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
+        //back button
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -39,6 +38,7 @@ class _EnterSellAmountState extends State<EnterSellAmount> {
           'Sell Bitcoin',
           style: TextStyle(color: Colors.black),
         ),
+        //close button
         actions: [
           IconButton(
             onPressed: () {
@@ -52,7 +52,7 @@ class _EnterSellAmountState extends State<EnterSellAmount> {
         ],
       ),
       body: Padding(
-          padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -96,7 +96,9 @@ class _EnterSellAmountState extends State<EnterSellAmount> {
               bcolor: Color(0xFF001233),
               tcolor: Colors.white,
               text: 'Next',
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, '/choosereceivingnumber');
+              },
             ),
             SizedBox(
               height: 25.0,
