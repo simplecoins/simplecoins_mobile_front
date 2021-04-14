@@ -20,7 +20,9 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
           style: TextStyle(color: Colors.black),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.chevron_left,
             color: Colors.black,
