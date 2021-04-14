@@ -214,6 +214,9 @@ class _SummaryState extends State<Summary> {
               text: 'Buy Bitcoin',
               press: () {
                 print('clicked');
+                isSummaryChecked 
+                ? Navigator.pushNamed(context, '/paymentinfo') 
+                : print('');
               },
               bcolor: isSummaryChecked ? Colors.black : Color(0xFFF2F2F2),
               tcolor: isSummaryChecked ? Colors.white : Color(0xFFAAABAE),
