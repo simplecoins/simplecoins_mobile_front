@@ -30,8 +30,11 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
           'Receiving Method',
           style: TextStyle(color: Colors.black),
         ),
+        //back button
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.chevron_left,
             color: Colors.black,
