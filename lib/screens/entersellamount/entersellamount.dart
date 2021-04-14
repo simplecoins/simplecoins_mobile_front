@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/numpad.dart';
 
@@ -41,7 +42,7 @@ class _EnterSellAmountState extends State<EnterSellAmount> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              showAlertDialog(context);
             },
             icon: Icon(
               Icons.close,
