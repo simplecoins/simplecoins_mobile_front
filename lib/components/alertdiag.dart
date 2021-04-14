@@ -16,7 +16,9 @@ showAlertDialog(BuildContext context) {
         fontWeight: FontWeight.w400,
       ),
     ),
-    onPressed: () {},
+    onPressed: () {
+      Navigator.popUntil(context, ModalRoute.withName('/home'));
+    },
   );
 
 //'Cancel button'
@@ -35,7 +37,6 @@ showAlertDialog(BuildContext context) {
       ),
     ),
     onPressed: () {
-      Navigator.pop(context);
     },
   );
 
