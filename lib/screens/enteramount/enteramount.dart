@@ -30,7 +30,9 @@ class _EnterAmountState extends State<EnterAmount> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.chevron_left,
             color: Colors.black,
