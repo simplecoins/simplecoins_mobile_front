@@ -35,7 +35,9 @@ class _SummaryState extends State<Summary> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.popUntil(context, ModalRoute.withName('/home'));
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
