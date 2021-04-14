@@ -33,7 +33,9 @@ class _UserProfileState extends State<UserProfile> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
