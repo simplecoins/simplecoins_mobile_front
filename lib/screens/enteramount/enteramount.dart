@@ -79,10 +79,9 @@ class _EnterAmountState extends State<EnterAmount> {
             Text(
               'GHS 0.00',
               style: TextStyle(
-                fontFamily: 'Manrope',
-                fontSize: 16,
-                fontWeight: FontWeight.w600
-              ),
+                  fontFamily: 'Manrope',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: 11.0,
@@ -90,11 +89,10 @@ class _EnterAmountState extends State<EnterAmount> {
             Text(
               'GHS 50.00 Minimum buy',
               style: TextStyle(
-                fontFamily: 'Manrope',
-                fontWeight: FontWeight.w600,
-                fontSize: 12,
-                color: Color(0xFFE56565)
-              ),
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                  color: Color(0xFFE56565)),
             ),
             SizedBox(
               height: 41.0,
@@ -124,7 +122,9 @@ class _EnterAmountState extends State<EnterAmount> {
               bcolor: Color(0xFF001233),
               tcolor: Colors.white,
               text: 'Next',
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, '/payment');
+              },
             ),
             SizedBox(
               height: 25.0,
