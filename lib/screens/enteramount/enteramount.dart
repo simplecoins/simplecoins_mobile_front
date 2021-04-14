@@ -44,7 +44,9 @@ class _EnterAmountState extends State<EnterAmount> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.popUntil(context, ModalRoute.withName('/home'));
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
