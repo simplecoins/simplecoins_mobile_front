@@ -40,7 +40,9 @@ class _EnterSellAmountState extends State<EnterSellAmount> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
