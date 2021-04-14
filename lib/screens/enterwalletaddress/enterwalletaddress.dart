@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 
@@ -31,7 +32,11 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return alert;
+                  });
             },
             icon: Icon(
               Icons.close,

@@ -220,9 +220,9 @@ class _SummaryState extends State<Summary> {
                 print('clicked');
                 isSummaryChecked
                     ? Navigator.pushNamed(context, '/paymentinfo')
-                    : print('');
+                    : print('Summary; invalid tap');
               },
-              bcolor: isSummaryChecked ? Colors.black : Color(0xFFF2F2F2),
+              bcolor: isSummaryChecked ? Color(0xFF001233) : Color(0xFFF2F2F2),
               tcolor: isSummaryChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(

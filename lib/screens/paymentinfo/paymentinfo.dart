@@ -4,7 +4,6 @@ import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/copynumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 
-
 class PaymentInfo extends StatefulWidget {
   @override
   _PaymentInfoState createState() => _PaymentInfoState();
@@ -60,22 +59,19 @@ class _PaymentInfoState extends State<PaymentInfo> {
                 // Note: Styles for TextSpans must be explicitly defined.
                 // Child text spans will inherit styles from parent
                 style: TextStyle(
-                fontFamily: 'Manrope',
-                fontWeight: FontWeight.w400,
-                fontSize: 18,
-                color: Colors.black
-              ),
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: Colors.black),
                 children: <TextSpan>[
                   TextSpan(text: 'Awesome!!\nYou just placed an order to Buy '),
                   TextSpan(
                       text: 'GHS\n 738.00 ',
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontFamily: 'Manrope',
-                        fontWeight: FontWeight.w600
-                      )
-                    ),
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w600)),
                   TextSpan(text: 'worth of Bitcoin.'),
                 ],
               ),
@@ -108,21 +104,18 @@ class _PaymentInfoState extends State<PaymentInfo> {
                     // Note: Styles for TextSpans must be explicitly defined.
                     // Child text spans will inherit styles from parent
                     style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontFamily: 'Manrope',
-                      fontWeight: FontWeight.w400
-                    ),
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'Manrope',
+                        fontWeight: FontWeight.w400),
                     children: <TextSpan>[
                       TextSpan(
-                        text: 'Send 775.32 GHS ',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontFamily: 'Manrope',
-                          fontWeight: FontWeight.w600
-                        )
-                      ),
+                          text: 'Send 775.32 GHS ',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontFamily: 'Manrope',
+                              fontWeight: FontWeight.w600)),
                       TextSpan(text: 'to'),
                     ],
                   ),
@@ -146,15 +139,12 @@ class _PaymentInfoState extends State<PaymentInfo> {
                 SizedBox(
                   width: 5.0,
                 ),
-                Text(
-                  'Use Reference: Simplecoins',
-                  style: TextStyle(
-                    color: Color(0xFF3B32A7),
-                    fontSize: 12,
-                    fontFamily: 'Manrope',
-                    fontWeight: FontWeight.w600
-                  )
-                )
+                Text('Use Reference: Simplecoins',
+                    style: TextStyle(
+                        color: Color(0xFF3B32A7),
+                        fontSize: 12,
+                        fontFamily: 'Manrope',
+                        fontWeight: FontWeight.w600))
               ],
             ),
             SizedBox(
@@ -190,8 +180,11 @@ class _PaymentInfoState extends State<PaymentInfo> {
             DefaultButton(
               text: 'Done',
               press: () {
+                isPInfoChecked
+                    ? Navigator.pushNamed(context, '/home')
+                    : print('Payment Info; invalid tap');
               },
-              bcolor: isPInfoChecked ? Colors.black : Color(0xFFF2F2F2),
+              bcolor: isPInfoChecked ? Color(0xFF001233) : Color(0xFFF2F2F2),
               tcolor: isPInfoChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(
@@ -203,4 +196,3 @@ class _PaymentInfoState extends State<PaymentInfo> {
     );
   }
 }
-
