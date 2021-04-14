@@ -181,12 +181,20 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                           NewNumber(
                             text: 'Vodafone Cash',
                             imgPath: 'assets/MoMo Networks/Vodafone.png',
-                            press: () {},
+                            press: () {
+                              setState(() {
+                                isVisible = !isVisible;
+                              });
+                            },
                           ),
                           NewNumber(
                             text: 'AirtelTigo Money',
                             imgPath: 'assets/MoMo Networks/AirtelTigo.png',
-                            press: () {},
+                            press: () {
+                              setState(() {
+                                isVisible = !isVisible;
+                              });
+                            },
                           )
                         ],
                       ),
@@ -198,19 +206,25 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                             networkText: 'Desmond Sofua',
                             numberText: '0503456748',
                             imgPath: 'assets/MoMo Networks/MTN.png',
-                            press: () {},
+                            press: () {
+                              Navigator.pushNamed(context, '/summary');
+                            },
                           ),
                           SavedNumber(
                             networkText: 'Andy Apenteng',
                             numberText: '0503091855',
                             imgPath: 'assets/MoMo Networks/Vodafone.png',
-                            press: () {},
+                            press: () {
+                              Navigator.pushNamed(context, '/summary');
+                            },
                           ),
                           SavedNumber(
                             networkText: 'Godfrey Ebhohimen',
                             numberText: '0203094567',
                             imgPath: 'assets/MoMo Networks/AirtelTigo.png',
-                            press: () {},
+                            press: () {
+                              Navigator.pushNamed(context, '/summary');
+                            },
                           ),
                         ],
                       ),
@@ -220,8 +234,12 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
             Visibility(
               visible: isVisible,
               child: DefaultButton(
+                bcolor: Color(0xFF001233),
+                tcolor: Colors.white,
                 text: 'Next',
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, '/summary');
+                },
               ),
             )
           ],
