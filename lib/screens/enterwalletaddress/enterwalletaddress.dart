@@ -32,11 +32,7 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
         actions: [
           IconButton(
             onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return alert;
-                  });
+              showAlertDialog(context);
             },
             icon: Icon(
               Icons.close,
@@ -62,10 +58,9 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
                 Text(
                   'Your Bitcoin Address',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
                 )
               ],
             ),
@@ -85,11 +80,10 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               child: Text(
                 'Click to paste address',
                 style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontFamily: 'Manrope',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600
-                ),
+                    decoration: TextDecoration.underline,
+                    fontFamily: 'Manrope',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600),
               ),
             ),
             Spacer(

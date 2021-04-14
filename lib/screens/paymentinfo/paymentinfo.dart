@@ -23,7 +23,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
               showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return alert;
+                    return showAlertDialog(context);
                   });
             },
             icon: Icon(
