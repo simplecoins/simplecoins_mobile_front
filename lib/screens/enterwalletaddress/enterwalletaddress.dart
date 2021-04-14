@@ -76,13 +76,15 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
                       borderRadius: BorderRadius.circular(10.0))),
             ),
             Spacer(),
-            Text(
-              'Click to paste address',
-              style: TextStyle(
-                decoration: TextDecoration.underline,
-                fontFamily: 'Manrope',
-                fontSize: 14,
-                fontWeight: FontWeight.w600
+            GestureDetector(
+              child: Text(
+                'Click to paste address',
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  fontFamily: 'Manrope',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600
+                ),
               ),
             ),
             Spacer(
@@ -92,7 +94,9 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               bcolor: Color(0xFF001233),
               tcolor: Colors.white,
               text: 'Next',
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, '/enteramount');
+              },
             )
           ],
         ),
