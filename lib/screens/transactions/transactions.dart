@@ -38,7 +38,9 @@ class _TransactionsState extends State<Transactions>
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
