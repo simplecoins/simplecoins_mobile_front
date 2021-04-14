@@ -23,7 +23,9 @@ class _UserProfileState extends State<UserProfile> {
               fontSize: 17.0),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.chevron_left,
             color: Colors.black,
@@ -51,11 +53,10 @@ class _UserProfileState extends State<UserProfile> {
                     Text(
                       'GOOD EVENING',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 12.0,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF808080)
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF808080)),
                     ),
                     Text(
                       'Andy Andy Kwesi',
@@ -68,11 +69,10 @@ class _UserProfileState extends State<UserProfile> {
                     Text(
                       '${transactions.length} Total Orders',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 12.0,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF40A187)
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF40A187)),
                     )
                   ],
                 ),
@@ -91,11 +91,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Personal info',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 )
               ],
             ),
@@ -107,11 +106,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'E-mail',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 ),
                 SizedBox(
                   width: 71.0,
@@ -119,11 +117,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'vadikforz@gmail.com',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF243656)),
                 )
               ],
             ),
@@ -135,11 +132,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Phone',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 ),
                 SizedBox(
                   width: 71.0,
@@ -147,11 +143,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   '+4 1782 049 294',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF243656)),
                 )
               ],
             ),
@@ -163,11 +158,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Security',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 )
               ],
             ),
@@ -179,11 +173,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Password',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 ),
                 SizedBox(
                   width: 45.0,
@@ -191,11 +184,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   '··········',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF243656)),
                 ),
                 Spacer(),
                 IconButton(
@@ -212,11 +204,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Identity',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 ),
                 SizedBox(
                   width: 60.0,
@@ -224,12 +215,11 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Verify my identity',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    decoration: TextDecoration.underline,
-                    color: Color(0xFFAAABAE)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      decoration: TextDecoration.underline,
+                      color: Color(0xFFAAABAE)),
                 )
               ],
             ),
@@ -241,11 +231,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Support',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 )
               ],
             ),
@@ -257,11 +246,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Telegram',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 ),
                 SizedBox(
                   width: 48.0,
@@ -269,12 +257,11 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   '@simplecoins',
                   style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF3E8BF7)
-                  ),
+                      decoration: TextDecoration.underline,
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF3E8BF7)),
                 )
               ],
             ),
@@ -286,11 +273,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Twitter',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 ),
                 SizedBox(
                   width: 65.0,
@@ -298,12 +284,11 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   '@simplecoins',
                   style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF3E8BF7)
-                  ),
+                      decoration: TextDecoration.underline,
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF3E8BF7)),
                 )
               ],
             ),
@@ -315,11 +300,10 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'Email',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF243656)
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF243656)),
                 ),
                 SizedBox(
                   width: 77.0,
@@ -327,12 +311,11 @@ class _UserProfileState extends State<UserProfile> {
                 Text(
                   'support@simplecoins.africa',
                   style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontFamily: 'Manrope',
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF3E8BF7)
-                  ),
+                      decoration: TextDecoration.underline,
+                      fontFamily: 'Manrope',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF3E8BF7)),
                 )
               ],
             ),
@@ -355,9 +338,7 @@ class _UserProfileState extends State<UserProfile> {
                     Text(
                       'Logout',
                       style: TextStyle(
-                        color: Color(0xFFE56565),
-                        fontFamily: 'Manrope'
-                        ),
+                          color: Color(0xFFE56565), fontFamily: 'Manrope'),
                     ),
                   ],
                 ),
