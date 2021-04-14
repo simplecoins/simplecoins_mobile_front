@@ -41,7 +41,9 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.popUntil(context, ModalRoute.withName('/home'));
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
