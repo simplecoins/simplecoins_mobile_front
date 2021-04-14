@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/newnumber.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
@@ -42,7 +43,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.popUntil(context, ModalRoute.withName('/home'));
+              showAlertDialog(context);
             },
             icon: Icon(
               Icons.close,
