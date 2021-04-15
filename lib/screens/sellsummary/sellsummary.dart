@@ -14,19 +14,21 @@ class _SellSummaryState extends State<SellSummary> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-         backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         elevation: 0.0,
         title: Text(
           'Checkout',
           style: TextStyle(
-            color: Colors.black,
-            fontFamily: 'Manrope',
-            fontWeight: FontWeight.w600,
-            fontSize: 17.0
-          ),
+              color: Colors.black,
+              fontFamily: 'Manrope',
+              fontWeight: FontWeight.w600,
+              fontSize: 17.0),
         ),
+        //back button
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.chevron_left,
             color: Colors.black,
@@ -54,27 +56,24 @@ class _SellSummaryState extends State<SellSummary> {
                     Text(
                       'YOU ARE SELLING',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
                     ),
                     Text(
                       '\$ 300.00',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 30,
-                        fontWeight: FontWeight.w600
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 30,
+                          fontWeight: FontWeight.w600),
                     ),
                     Text(
                       '0.00034' ' BTC',
                       style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF1857BB)
-                      ),
+                          fontFamily: 'Manrope',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF1857BB)),
                     )
                   ],
                 ),
@@ -89,10 +88,9 @@ class _SellSummaryState extends State<SellSummary> {
                 Text(
                   'You Receive',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
                 )
               ],
             ),
@@ -100,12 +98,11 @@ class _SellSummaryState extends State<SellSummary> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'GHC '+'345.89',
+                  'GHC ' + '345.89',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400),
                 )
               ],
             ),
@@ -147,10 +144,9 @@ class _SellSummaryState extends State<SellSummary> {
                 Text(
                   'Account to receive your funds',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
                 )
               ],
             ),
@@ -196,13 +192,11 @@ class _SellSummaryState extends State<SellSummary> {
                       TextSpan(text: 'and '),
                       TextSpan(text: 'agree\nto the '),
                       TextSpan(
-                        text: 'User Agreement',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          decoration: TextDecoration.underline
-                        )
-                      ),
+                          text: 'User Agreement',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 12,
+                              decoration: TextDecoration.underline)),
                       TextSpan(text: ' and its return, '),
                       TextSpan(text: 'refund and\ncancellation policy'),
                     ],

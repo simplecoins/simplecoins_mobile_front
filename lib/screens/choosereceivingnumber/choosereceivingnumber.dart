@@ -184,12 +184,20 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                           NewNumber(
                             text: 'Vodafone Cash',
                             imgPath: 'assets/MoMo Networks/Vodafone.png',
-                            press: () {},
+                            press: () {
+                              setState(() {
+                                isVisible = !isVisible;
+                              });
+                            },
                           ),
                           NewNumber(
                             text: 'AirtelTigo Money',
                             imgPath: 'assets/MoMo Networks/AirtelTigo.png',
-                            press: () {},
+                            press: () {
+                              setState(() {
+                                isVisible = !isVisible;
+                              });
+                            },
                           )
                         ],
                       ),
@@ -201,19 +209,25 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                             networkText: 'Desmond Sofua',
                             numberText: '0503456748',
                             imgPath: 'assets/MoMo Networks/MTN.png',
-                            press: () {},
+                            press: () {
+                              Navigator.pushNamed(context, '/sellsummary');
+                            },
                           ),
                           SavedNumber(
                             networkText: 'Andy Apenteng',
                             numberText: '0503091855',
                             imgPath: 'assets/MoMo Networks/Vodafone.png',
-                            press: () {},
+                            press: () {
+                              Navigator.pushNamed(context, '/sellsummary');
+                            },
                           ),
                           SavedNumber(
                             networkText: 'Godfrey Ebhohimen',
                             numberText: '0203094567',
                             imgPath: 'assets/MoMo Networks/AirtelTigo.png',
-                            press: () {},
+                            press: () {
+                              Navigator.pushNamed(context, '/sellsummary');
+                            },
                           ),
                         ],
                       ),
