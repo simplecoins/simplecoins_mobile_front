@@ -18,7 +18,6 @@ showAlertDialog(BuildContext context) {
       ),
     ),
     onPressed: () {
-      
       WidgetsBinding.instance.addPostFrameCallback((_) {
         Navigator.popUntil(context, ModalRoute.withName('/home'));
       });
@@ -40,7 +39,9 @@ showAlertDialog(BuildContext context) {
         fontWeight: FontWeight.w400,
       ),
     ),
-    onPressed: () {},
+    onPressed: () {
+      Navigator.pop(context);
+    },
   );
 
 // set up the AlertDialog

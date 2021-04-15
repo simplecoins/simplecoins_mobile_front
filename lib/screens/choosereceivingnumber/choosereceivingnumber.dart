@@ -223,6 +223,8 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
             Visibility(
               visible: isVisible,
               child: DefaultButton(
+                bcolor: Color(0xFF001233),
+                tcolor: Colors.white,
                 text: 'Next',
                 press: () {
                   Navigator.pushNamed(context, '/sellsummary');
