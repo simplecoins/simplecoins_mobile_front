@@ -238,7 +238,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         press: () {
                           Navigator.pushNamed(context, '/transactions');
                         },
-                        bcolor: Colors.black,
+                        bcolor: Color(0xFF001233),
                         tcolor: Colors.white,
                       ),
                     ),

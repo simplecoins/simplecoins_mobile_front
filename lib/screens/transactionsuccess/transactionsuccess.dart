@@ -114,8 +114,12 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
             ),
             Spacer(),
             DefaultButton(
+              bcolor: Color(0xFF001233),
+              tcolor: Colors.white,
               text: 'View my transactions',
-              press: () {},
+              press: () {
+                Navigator.of(context).pushNamedAndRemoveUntil('/transactions', ModalRoute.withName('/home'));
+              },
             ),
             SizedBox(
               height: 15.0,
