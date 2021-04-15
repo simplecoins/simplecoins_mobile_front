@@ -17,8 +17,11 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 8.0),
+            //close button
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.popUntil(context, ModalRoute.withName('/home'));
+              },
               icon: Icon(
                 Icons.close,
                 color: Colors.black,
