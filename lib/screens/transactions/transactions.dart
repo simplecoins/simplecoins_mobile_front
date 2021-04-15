@@ -36,10 +36,11 @@ class _TransactionsState extends State<Transactions>
               fontWeight: FontWeight.w600,
               fontSize: 17.0),
         ),
+        //close button
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.popUntil(context, ModalRoute.withName('/home'));
             },
             icon: Icon(
               Icons.close,
