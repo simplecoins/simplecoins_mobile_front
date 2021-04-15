@@ -182,7 +182,11 @@ class _SellSummaryState extends State<SellSummary> {
             Spacer(),
             DefaultButton(
               text: 'Buy Bitcoin',
-              press: () {},
+              press: () {
+                isSellSummaryChecked
+                    ? Navigator.pushNamed(context, '/coinpayment')
+                    : print('Sell Summary; invalid tap');
+              },
               bcolor: isSellSummaryChecked ? Colors.black : Color(0xFFF2F2F2),
               tcolor: isSellSummaryChecked ? Colors.white : Color(0xFFAAABAE),
             ),
