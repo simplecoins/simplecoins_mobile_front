@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
@@ -34,9 +35,12 @@ class _SellSummaryState extends State<SellSummary> {
             color: Colors.black,
           ),
         ),
+        //close button
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showAlertDialog(context);
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
@@ -109,35 +113,6 @@ class _SellSummaryState extends State<SellSummary> {
             SizedBox(
               height: 25.0,
             ),
-            // Row(
-            //   crossAxisAlignment: CrossAxisAlignment.start,
-            //   children: [
-            //     Text(
-            //       'BTC address',
-            //       style: TextStyle(
-            //         fontFamily: 'Manrope',
-            //         fontSize: 18,
-            //         fontWeight: FontWeight.w500
-            //       ),
-            //     )
-            //   ],
-            // ),
-            // Row(
-            //   crossAxisAlignment: CrossAxisAlignment.start,
-            //   children: [
-            //     Text(
-            //       '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
-            //       style: TextStyle(
-            //         fontFamily: 'Manrope',
-            //         fontSize: 14,
-            //         fontWeight: FontWeight.w500
-            //       ),
-            //     )
-            //   ],
-            // ),
-            // SizedBox(
-            //   height: 60.0,
-            // ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
