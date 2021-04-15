@@ -113,6 +113,7 @@ class _CoinPaymentState extends State<CoinPayment> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
+                  padding: EdgeInsets.only(right: 5.0),
                   height: 75.0,
                   width: 335.0,
                   decoration: BoxDecoration(
@@ -153,7 +154,7 @@ class _CoinPaymentState extends State<CoinPayment> {
                                     fontWeight: FontWeight.w600)),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -203,7 +204,9 @@ class _CoinPaymentState extends State<CoinPayment> {
               bcolor: Color(0xFF001233),
               tcolor: Colors.white,
               text: 'I have made the payment',
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, '/transactionSuccess');
+              },
             ),
             SizedBox(
               height: 15.0,
