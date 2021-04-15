@@ -187,7 +187,7 @@ class _SellSummaryState extends State<SellSummary> {
                     ? Navigator.pushNamed(context, '/coinpayment')
                     : print('Sell Summary; invalid tap');
               },
-              bcolor: isSellSummaryChecked ? Colors.black : Color(0xFFF2F2F2),
+              bcolor: isSellSummaryChecked ? Color(0xFF001233) : Color(0xFFF2F2F2),
               tcolor: isSellSummaryChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(

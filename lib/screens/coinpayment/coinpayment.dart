@@ -22,8 +22,11 @@ class _CoinPaymentState extends State<CoinPayment> {
               fontWeight: FontWeight.w600,
               fontSize: 17.0),
         ),
+        //back button
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.chevron_left,
             color: Colors.black,
@@ -54,10 +57,9 @@ class _CoinPaymentState extends State<CoinPayment> {
                 Text(
                   'You Would Need To',
                   style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                      fontFamily: 'Manrope',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 )
               ],
             ),
@@ -194,6 +196,8 @@ class _CoinPaymentState extends State<CoinPayment> {
             ),
             Spacer(),
             DefaultButton(
+              bcolor: Color(0xFF001233),
+              tcolor: Colors.white,
               text: 'I have made the payment',
               press: () {},
             ),
