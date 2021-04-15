@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 
 class CoinPayment extends StatefulWidget {
@@ -32,9 +33,12 @@ class _CoinPaymentState extends State<CoinPayment> {
             color: Colors.black,
           ),
         ),
+        //close button
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showAlertDialog(context);
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
