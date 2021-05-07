@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/copynumber.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
@@ -85,7 +86,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                               fontWeight: FontWeight.w600),
                         ),
                         Text(
-                          '\$ 250.00',
+                          '\$ ${widget.transaction.price}',
                           style: TextStyle(
                               fontFamily: 'Manrope',
                               fontSize: 30,
@@ -98,7 +99,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          'GHS 1455.00',
+                          'GHS ${widget.transaction.price * buyRate}',
                           style: TextStyle(
                               fontFamily: 'Manrope',
                               fontSize: 16,
@@ -106,7 +107,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                               color: Color(0xFF1857BB)),
                         ),
                         Text(
-                          '0.00034 BTC',
+                          '${widget.transaction.price * btcRate} BTC',
                           style: TextStyle(
                               fontFamily: 'Manrope',
                               fontSize: 14,
@@ -135,7 +136,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '09:20 PM - Jan 03 2021',
+                      '${DateFormat("EEE, MMM d, y").format(DateTime.now())}',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 16,
@@ -162,7 +163,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '5.70 GHS',
+                      '${widget.transaction.buyRate} GHS',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 16,
@@ -189,7 +190,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '\$5.67',
+                      '\$${widget.transaction.minersFee}',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 16,
@@ -216,7 +217,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+                      '${widget.transaction.cryptoAddress}',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 14,
@@ -282,7 +283,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                             fontWeight: FontWeight.w400),
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Send 775.32 GHS ',
+                              text: 'Send ${widget.transaction.price * buyRate} GHS ',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,

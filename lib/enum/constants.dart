@@ -4,11 +4,11 @@ bool isSummaryChecked = false;
 bool isSellSummaryChecked = false;
 bool isPInfoChecked = false;
 
-
 var currencies = ['Bitcoin', 'USDT', 'Ripple'];
 var status = ['AWAITING PAYMENT', 'PROCESSING', 'PROCESSED', 'CANCELLED'];
 
 var buyRate = 5.70;
+var btcRate = 0.000017;
 
 // var compare = DateTime(2021, 02, 02);
 
