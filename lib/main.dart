@@ -40,7 +40,7 @@ void main() {
       '/summary': (context) => Summary(),
       '/paymentinfo': (context) => PaymentInfo(),
       '/transactions': (context) => Transactions(),
-      '/thistory': (context) => THistorySelected(),
+      '/thistory': (context) => THistorySelected(transaction: null,),
       '/userprofile': (context) => UserProfile(),
       '/changepassword': (context) => ChangePassword(),
       '/passwordchangesuccess': (context) => PasswordChangeSuccess(),

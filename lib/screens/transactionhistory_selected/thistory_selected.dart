@@ -5,10 +5,9 @@ import 'package:simplecoins_0/components/savednumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 
 class THistorySelected extends StatefulWidget {
-
   final Transaction transaction;
   THistorySelected({@required this.transaction});
-  
+
   @override
   _THistorySelectedState createState() => _THistorySelectedState();
 }
@@ -30,7 +29,9 @@ class _THistorySelectedState extends State<THistorySelected> {
               fontSize: 17.0),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.chevron_left,
             color: Colors.black,
@@ -301,12 +302,11 @@ class _THistorySelectedState extends State<THistorySelected> {
                       width: 5.0,
                     ),
                     Text('Use Refrence: Simplecoins',
-                      style: TextStyle(
-                        color: Color(0xFF3B32A7),
-                        fontSize: 12,
-                        fontFamily: 'Manrope',
-                        fontWeight: FontWeight.w600)
-                      )
+                        style: TextStyle(
+                            color: Color(0xFF3B32A7),
+                            fontSize: 12,
+                            fontFamily: 'Manrope',
+                            fontWeight: FontWeight.w600))
                   ],
                 ),
                 SizedBox(
