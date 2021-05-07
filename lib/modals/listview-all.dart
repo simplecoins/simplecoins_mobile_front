@@ -1,53 +1,16 @@
 import 'package:flutter/material.dart';
 // import 'package:intl/intl.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/screens/transactionhistory_selected/thistory_selected.dart';
 
 ListView buildListView() {
-  // String prevDay;
-  // String today = DateFormat("EEE, MMM d, y").format(DateTime.now());
-  // String yesterday = DateFormat("EEE, MMM d, y")
-  //     .format(DateTime.now().add(Duration(days: -1)));
 
   return ListView.builder(
     //number of cards
     itemCount: transactions.length,
     itemBuilder: (context, index) {
       Transaction transaction = transactions[index];
-      // DateTime date =
-      //     DateTime.fromMillisecondsSinceEpoch(transaction.creationdate);
-      // String dateString = DateFormat("EEE, MMM d, y").format(date);
-
-      // //setting header date text
-      // if (today == dateString) {
-      //   dateString = "Today";
-      // } else if (yesterday == dateString) {
-      //   dateString = "Yesterday";
-      // }
-
-      // bool showHeader = prevDay != dateString;
-      // prevDay = dateString;
       return simpleCoinsCard(transaction, context);
-      // Column(
-      //   crossAxisAlignment: CrossAxisAlignment.start,
-      //   children: <Widget>[
-      //     showHeader
-      //         ? Container(
-      //             padding: EdgeInsets.only(top: 30, bottom: 12, left: 16, right: 16),
-      //             child: Text(
-      //               dateString,
-      //               style: TextStyle(
-      //                 fontFamily: 'Manrope',
-      //                 color: Color(0xFF243656),
-      //                 fontSize: 12.0,
-      //                 fontWeight: FontWeight.w500
-      //               )
-      //             ),
-      //           )
-      //         : Offstage(),
-      //     //transaction card build
-      //     buildItem(index, context, date, transaction),
-      //   ],
-      // );
     },
   );
 }
@@ -81,7 +44,10 @@ Column simpleCoinsCard(Transaction transaction, BuildContext context) {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
               side: BorderSide(color: Color(0xFFF2F2F2))),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+              MaterialPageRoute(builder: (context) => THistorySelected(transaction: transaction)));
+          },
           child: (Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[

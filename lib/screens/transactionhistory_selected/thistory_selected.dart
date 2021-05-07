@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/copynumber.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class THistorySelected extends StatefulWidget {
+
+  final Transaction transaction;
+  THistorySelected({@required this.transaction});
+  
   @override
   _THistorySelectedState createState() => _THistorySelectedState();
 }
@@ -317,6 +322,8 @@ class _THistorySelectedState extends State<THistorySelected> {
             child: DefaultButton(
               text: 'Done',
               press: () {},
+              bcolor: Color(0xFF001233),
+              tcolor: Colors.white,
             ),
           )
         ],
