@@ -39,7 +39,9 @@ class _THistorySelectedState extends State<THistorySelected> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
