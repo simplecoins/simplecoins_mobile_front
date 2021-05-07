@@ -283,7 +283,8 @@ class _THistorySelectedState extends State<THistorySelected> {
                             fontWeight: FontWeight.w400),
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Send ${widget.transaction.price * buyRate} GHS ',
+                              text:
+                                  'Send ${widget.transaction.price * buyRate} GHS ',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
@@ -332,7 +333,9 @@ class _THistorySelectedState extends State<THistorySelected> {
             right: 32.0,
             child: DefaultButton(
               text: 'Done',
-              press: () {},
+              press: () {
+                Navigator.pop(context);
+              },
               bcolor: Color(0xFF001233),
               tcolor: Colors.white,
             ),
