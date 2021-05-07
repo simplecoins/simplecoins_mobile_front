@@ -58,7 +58,15 @@ class _THistorySelectedState extends State<THistorySelected> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('AWAITING PAYMENT'),
+                    Text(
+                      'AWAITING PAYMENT',
+                      style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFF4F49C1),
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(
