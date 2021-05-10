@@ -248,8 +248,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    //change 'you are paying from' and 'you paid from' in set header text
                     Text(
-                      'You are paying from',
+                      widget.transaction.status == 'PROCESSED' ? 'You paid from' : 'You are paying from',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 14,
