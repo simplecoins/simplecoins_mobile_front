@@ -35,6 +35,31 @@ List<Map<String, String>> pageData = [
   },
 ];
 
+class SavedNumbers {
+  String name;
+  int number;
+
+  SavedNumbers({
+    this.name,
+    this.number,
+  });
+}
+
+List<SavedNumbers> savednumbers = [
+  SavedNumbers(
+    name: 'Desmond Sofua',
+    number: 0503456748
+  ),
+  SavedNumbers(
+    name: 'Andy Apenteng',
+    number: 0503091855
+  ),
+  SavedNumbers(
+    name: 'Godfrey Ebhohimen',
+    number: 0203094567
+  )
+];
+
 class Transaction {
   String currency;
   String status;
@@ -140,5 +165,3 @@ List<Transaction> transactions = [
       price: 850.0,
       isBuying: false),
 ]..sort((v1, v2) => v2.creationdate - v1.creationdate);
-
-
