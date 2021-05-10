@@ -14,8 +14,10 @@ class THistorySelected extends StatefulWidget {
 }
 
 class _THistorySelectedState extends State<THistorySelected> {
+  
   @override
   Widget build(BuildContext context) {
+    bool processedVisibility = widget.transaction.isBuying;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -250,7 +252,9 @@ class _THistorySelectedState extends State<THistorySelected> {
                   children: [
                     //change 'you are paying from' and 'you paid from' in set header text
                     Text(
-                      widget.transaction.status == 'PROCESSED' ? 'You paid from' : 'You are paying from',
+                      widget.transaction.status == 'PROCESSED'
+                          ? 'You paid from'
+                          : 'You are paying from',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 14,
@@ -267,60 +271,68 @@ class _THistorySelectedState extends State<THistorySelected> {
                   networkText: 'Desmond Sofua',
                   press: () {},
                 ),
+                
                 SizedBox(
-                  height: 40.0,
+                  height: 10.0,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    RichText(
-                      text: TextSpan(
-                        // Note: Styles for TextSpans must be explicitly defined.
-                        // Child text spans will inherit styles from parent
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontFamily: 'Manrope',
-                            fontWeight: FontWeight.w400),
-                        children: <TextSpan>[
-                          TextSpan(
-                              text:
-                                  'Send ${widget.transaction.price * buyRate} GHS ',
+                Visibility(
+                  visible: widget.transaction.status == 'PROCESSED' ? false : true,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 40.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          RichText(
+                            text: TextSpan(
+                              // Note: Styles for TextSpans must be explicitly defined.
+                              // Child text spans will inherit styles from parent
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
                                   fontFamily: 'Manrope',
-                                  fontWeight: FontWeight.w600)),
-                          TextSpan(text: 'to'),
+                                  fontWeight: FontWeight.w400),
+                              children: <TextSpan>[
+                                TextSpan(
+                                    text:
+                                        'Send ${widget.transaction.price * buyRate} GHS ',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Manrope',
+                                        fontWeight: FontWeight.w600)),
+                                TextSpan(text: 'to'),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                CopyNumber(),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/Emojis/image 13.png',
-                      height: 15.0,
-                    ),
-                    SizedBox(
-                      width: 5.0,
-                    ),
-                    Text('Use Refrence: Simplecoins',
-                        style: TextStyle(
-                            color: Color(0xFF3B32A7),
-                            fontSize: 12,
-                            fontFamily: 'Manrope',
-                            fontWeight: FontWeight.w600))
-                  ],
+                      CopyNumber(),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/Emojis/image 13.png',
+                            height: 15.0,
+                          ),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          Text('Use Refrence: Simplecoins',
+                              style: TextStyle(
+                                  color: Color(0xFF3B32A7),
+                                  fontSize: 12,
+                                  fontFamily: 'Manrope',
+                                  fontWeight: FontWeight.w600))
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 110.0,

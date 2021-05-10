@@ -42,14 +42,6 @@ class _PaymentInfoState extends State<PaymentInfo> {
             SizedBox(
               height: 19.0,
             ),
-            // Text(
-            //   'Awesome!!',
-            //   style: TextStyle(
-            //     fontFamily: 'Manrope',
-            //     fontWeight: FontWeight.w400,
-            //     fontSize: 18
-            //   ),
-            // ),
             RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
@@ -84,15 +76,6 @@ class _PaymentInfoState extends State<PaymentInfo> {
             SizedBox(
               height: 44.0,
             ),
-            // Row(
-            //   children: [
-            //     Container(
-            //       height: 10.0,
-            //       width: double.infinity,
-            //       child: Placeholder()
-            //     ),
-            //   ],
-            // ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
