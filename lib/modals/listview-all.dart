@@ -4,7 +4,6 @@ import 'package:simplecoins_0/enum/constants.dart';
 import 'package:simplecoins_0/screens/transactionhistory_selected/thistory_selected.dart';
 
 ListView buildListView() {
-
   return ListView.builder(
     //number of cards
     itemCount: transactions.length,
@@ -45,8 +44,11 @@ Column simpleCoinsCard(Transaction transaction, BuildContext context) {
               borderRadius: BorderRadius.circular(12),
               side: BorderSide(color: Color(0xFFF2F2F2))),
           onPressed: () {
-            Navigator.push(context,
-              MaterialPageRoute(builder: (context) => THistorySelected(transaction: transaction)));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        THistorySelected(transaction: transaction)));
           },
           child: (Row(
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/copynumber.dart';
+import 'package:simplecoins_0/components/cryptocard.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 
@@ -17,7 +18,7 @@ class _THistorySelectedState extends State<THistorySelected> {
   
   @override
   Widget build(BuildContext context) {
-    bool processedVisibility = widget.transaction.isBuying;
+    // bool processedVisibility = widget.transaction.isBuying;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -61,19 +62,34 @@ class _THistorySelectedState extends State<THistorySelected> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'AWAITING PAYMENT',
-                      style: TextStyle(
-                        fontFamily: 'Manrope',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xFF4F49C1),
+                    Visibility(
+                      visible: widget.transaction.status == 'PROCESSED' ? false : true,
+                      child: Column(
+                        children: [
+                          Text(
+                            'AWAITING PAYMENT',
+                            style: TextStyle(
+                              fontFamily: 'Manrope',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xFF4F49C1),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 50.0,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Visibility(
+                      visible: widget.transaction.status == 'PROCESSED' ? true : false,
+                      child: CryptoCard(
+                        imgPath: 'assets/Homescreen/${widget.transaction.currency}.png',
+                        cryptoName: widget.transaction.currency,
+                        press: () {},
                       ),
                     ),
                   ],
-                ),
-                SizedBox(
-                  height: 50.0,
                 ),
                 Row(
                   children: [
