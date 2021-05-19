@@ -1,3 +1,4 @@
+//checks and verifying values
 String cryptoType = '';
 bool isVisible = false;
 bool isSummaryChecked = false;
@@ -16,10 +17,11 @@ int paymentToTemp;
 double priceTemp;
 bool isBuyingTemp;
 
-
+//array values
 var currencies = ['Bitcoin', 'USDT', 'Ripple'];
 var status = ['AWAITING PAYMENT', 'PROCESSING', 'PROCESSED', 'CANCELLED'];
 
+//values to get from live API
 var buyRate = 5.70;
 var btcRate = 0.000017;
 
