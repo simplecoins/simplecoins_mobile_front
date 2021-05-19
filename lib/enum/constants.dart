@@ -4,6 +4,19 @@ bool isSummaryChecked = false;
 bool isSellSummaryChecked = false;
 bool isPInfoChecked = false;
 
+//temporary variables to be pushed at the end of order process
+String currencyTemp;
+String statusTemp;
+var creationdateTemp;
+double buyRateTemp;
+double minersFeeTemp;
+String cryptoAddressTemp;
+int paymentFromTemp;
+int paymentToTemp;
+double priceTemp;
+bool isBuyingTemp;
+
+
 var currencies = ['Bitcoin', 'USDT', 'Ripple'];
 var status = ['AWAITING PAYMENT', 'PROCESSING', 'PROCESSED', 'CANCELLED'];
 
