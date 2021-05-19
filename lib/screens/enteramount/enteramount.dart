@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/numpad.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class EnterAmount extends StatefulWidget {
   @override
@@ -67,6 +68,7 @@ class _EnterAmountState extends State<EnterAmount> {
             SizedBox(
               height: 10.0,
             ),
+            //change to richtext
             Text(
               '\$ $text',
               style: TextStyle(
@@ -124,6 +126,8 @@ class _EnterAmountState extends State<EnterAmount> {
               tcolor: Colors.white,
               text: 'Next',
               press: () {
+                priceTemp = double.parse(text);
+                print(text);
                 Navigator.pushNamed(context, '/payment');
               },
             ),
