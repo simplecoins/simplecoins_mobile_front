@@ -96,7 +96,8 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               tcolor: Colors.white,
               text: 'Next',
               press: () {
-
+                cryptoAddressTemp = cryptoAddressController.text;
+                print(cryptoAddressController.text);
                 Navigator.pushNamed(context, '/enteramount');
               },
             )
