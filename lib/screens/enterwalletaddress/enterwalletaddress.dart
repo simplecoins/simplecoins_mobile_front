@@ -9,6 +9,7 @@ class EnterWalletAddress extends StatefulWidget {
 }
 
 class _EnterWalletAddressState extends State<EnterWalletAddress> {
+  TextEditingController cryptoAddressController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +69,7 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               height: 10.0,
             ),
             TextField(
+              controller: cryptoAddressController,
               autofocus: false,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
@@ -94,6 +96,7 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               tcolor: Colors.white,
               text: 'Next',
               press: () {
+
                 Navigator.pushNamed(context, '/enteramount');
               },
             )
