@@ -83,10 +83,17 @@ class _THistorySelectedState extends State<THistorySelected> {
                     ),
                     Visibility(
                       visible: widget.transaction.status == 'PROCESSED' ? true : false,
-                      child: CryptoCard(
-                        imgPath: 'assets/Homescreen/${widget.transaction.currency}.png',
-                        cryptoName: widget.transaction.currency,
-                        press: () {},
+                      child: Column(
+                        children: [
+                          CryptoCard(
+                            imgPath: 'assets/Homescreen/${widget.transaction.currency}.png',
+                            cryptoName: widget.transaction.currency,
+                            press: () {},
+                          ),
+                          SizedBox(
+                            height: 30.0,
+                          )
+                        ],
                       ),
                     ),
                   ],
@@ -154,7 +161,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${DateFormat("EEE, MMM d, y").format(DateTime.now())}',
+                      '${DateFormat("H:m - MMM d, y").format(DateTime.now())}',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 16,
