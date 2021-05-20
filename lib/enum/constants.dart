@@ -12,6 +12,7 @@ var creationdateTemp;
 double buyRateTemp;
 double minersFeeTemp;
 String cryptoAddressTemp;
+String paymentFromNameTemp;
 int paymentFromTemp;
 int paymentToTemp;
 double priceTemp;

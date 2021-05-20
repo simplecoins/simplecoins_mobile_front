@@ -152,6 +152,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           cryptoName: 'Bitcoin',
                           press: () {
                             cryptoType = 'Bitcoin';
+                            currencyTemp = currencies[0];
                             isBuyingTemp = true;
                             Navigator.pushNamed(context, '/enterwalletaddress');
                           },
@@ -164,6 +165,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           cryptoName: 'USDT',
                           press: () {
                             cryptoType = 'USDT';
+                            currencyTemp = currencies[1];
                             isBuyingTemp = true;
                             Navigator.pushNamed(context, '/enterwalletaddress');
                           },
@@ -176,6 +178,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           cryptoName: 'Ripple',
                           press: () {
                             cryptoType = 'Ripple';
+                            currencyTemp = currencies[2];
                             isBuyingTemp = true;
                             Navigator.pushNamed(context, '/enterwalletaddress');
                           },
@@ -191,6 +194,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           cryptoName: 'Bitcoin',
                           press: () {
                             cryptoType = 'Bitcoin';
+                            currencyTemp = currencies[0];
                             isBuyingTemp = false;
                             Navigator.pushNamed(context, '/entersellamount');
                           },
@@ -203,6 +207,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           cryptoName: 'USDT',
                           press: () {
                             cryptoType = 'USDT';
+                            currencyTemp = currencies[1];
                             isBuyingTemp = false;
                             Navigator.pushNamed(context, '/entersellamount');
                           },
@@ -215,6 +220,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           cryptoName: 'Ripple',
                           press: () {
                             cryptoType = 'Ripple';
+                            currencyTemp = currencies[2];
                             isBuyingTemp = false;
                             Navigator.pushNamed(context, '/entersellamount');
                           },

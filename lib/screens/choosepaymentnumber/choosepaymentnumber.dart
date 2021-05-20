@@ -241,6 +241,10 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                 text: 'Next',
                 press: () {
                   print(savednumbers.length);
+                  paymentFromNameTemp = accName.text;
+                  paymentFromTemp = int.parse(accNumber.text);
+                  print(accName.text);
+                  print(accNumber.text);
                   Navigator.pushNamed(context, '/summary');
                 },
               ),
