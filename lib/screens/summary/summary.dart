@@ -220,6 +220,7 @@ class _SummaryState extends State<Summary> {
               text: 'Buy Bitcoin',
               press: () {
                 print('clicked');
+                statusTemp = status[0];
                 isSummaryChecked
                     ? Navigator.pushNamed(context, '/paymentinfo')
                     : print('Summary; invalid tap');

@@ -209,6 +209,8 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                             numberText: '0503456748',
                             imgPath: 'assets/MoMo Networks/MTN.png',
                             press: () {
+                              paymentFromNameTemp = 'Desmond Sofua';
+                              paymentFromTemp = 0503456748;
                               Navigator.pushNamed(context, '/summary');
                             },
                           ),
@@ -217,6 +219,8 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                             numberText: '0503091855',
                             imgPath: 'assets/MoMo Networks/Vodafone.png',
                             press: () {
+                              paymentFromNameTemp = 'Andy Apenteng';
+                              paymentFromTemp = 0503091855;
                               Navigator.pushNamed(context, '/summary');
                             },
                           ),
@@ -225,6 +229,8 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                             numberText: '0203094567',
                             imgPath: 'assets/MoMo Networks/AirtelTigo.png',
                             press: () {
+                              paymentFromNameTemp = 'Godfrey Ebhohimen';
+                              paymentFromTemp = 0203094567;
                               Navigator.pushNamed(context, '/summary');
                             },
                           ),
