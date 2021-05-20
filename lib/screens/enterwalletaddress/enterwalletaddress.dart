@@ -97,6 +97,8 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               text: 'Next',
               press: () {
                 cryptoAddressTemp = cryptoAddressController.text;
+                //grab rate from API
+                buyRateTemp = buyRate;
                 print(cryptoAddressController.text);
                 Navigator.pushNamed(context, '/enteramount');
               },
