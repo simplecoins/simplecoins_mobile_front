@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class CoinPayment extends StatefulWidget {
   @override
@@ -205,6 +206,7 @@ class _CoinPaymentState extends State<CoinPayment> {
               tcolor: Colors.white,
               text: 'I have made the payment',
               press: () {
+                statusTemp = status[0];
                 Navigator.pushNamed(context, '/transactionSuccess');
               },
             ),
