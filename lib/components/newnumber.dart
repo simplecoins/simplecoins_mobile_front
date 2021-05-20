@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 
+TextEditingController accName = TextEditingController();
+TextEditingController accNumber = TextEditingController();
+
 class NewNumber extends StatelessWidget {
   const NewNumber({
     Key key,
@@ -76,6 +79,7 @@ class NewNumber extends StatelessWidget {
                 height: 10.0,
               ),
               TextField(
+                controller: accName,
                 autofocus: false,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
@@ -99,6 +103,7 @@ class NewNumber extends StatelessWidget {
                 height: 10.0,
               ),
               TextField(
+                controller: accNumber,
                 autofocus: false,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(

@@ -61,18 +61,9 @@ class SavedNumbers {
 }
 
 List<SavedNumbers> savednumbers = [
-  SavedNumbers(
-    name: 'Desmond Sofua',
-    number: 0503456748
-  ),
-  SavedNumbers(
-    name: 'Andy Apenteng',
-    number: 0503091855
-  ),
-  SavedNumbers(
-    name: 'Godfrey Ebhohimen',
-    number: 0203094567
-  )
+  SavedNumbers(name: 'Desmond Sofua', number: 0503456748),
+  SavedNumbers(name: 'Andy Apenteng', number: 0503091855),
+  SavedNumbers(name: 'Godfrey Ebhohimen', number: 0203094567)
 ];
 
 class Transaction {
@@ -82,6 +73,8 @@ class Transaction {
   double buyRate;
   double minersFee;
   String cryptoAddress;
+  //continue from here
+  String paymentFromName;
   int paymentFrom;
   int paymentTo;
   double price;
@@ -95,6 +88,7 @@ class Transaction {
     this.cryptoAddress,
     this.isBuying,
     this.minersFee,
+    this.paymentFromName,
     this.paymentFrom,
     this.paymentTo,
     this.price,
@@ -109,6 +103,7 @@ List<Transaction> transactions = [
       buyRate: buyRate,
       minersFee: 5.67,
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 150.0,
@@ -120,6 +115,7 @@ List<Transaction> transactions = [
       buyRate: buyRate,
       minersFee: 5.67,
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 130.0,
@@ -131,6 +127,7 @@ List<Transaction> transactions = [
       buyRate: buyRate,
       minersFee: 5.67,
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 70.0,
@@ -142,6 +139,7 @@ List<Transaction> transactions = [
       buyRate: buyRate,
       minersFee: 5.67,
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 1200.0,
@@ -153,6 +151,7 @@ List<Transaction> transactions = [
       buyRate: buyRate,
       minersFee: 5.67,
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 1000.0,
@@ -164,6 +163,7 @@ List<Transaction> transactions = [
       buyRate: buyRate,
       minersFee: 5.67,
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 70.0,
@@ -175,6 +175,7 @@ List<Transaction> transactions = [
       buyRate: buyRate,
       minersFee: 5.67,
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+      paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
       paymentTo: 0503091855,
       price: 850.0,

@@ -240,6 +240,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                 tcolor: Colors.white,
                 text: 'Next',
                 press: () {
+                  print(savednumbers.length);
                   Navigator.pushNamed(context, '/summary');
                 },
               ),
