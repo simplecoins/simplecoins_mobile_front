@@ -183,6 +183,7 @@ class _SellSummaryState extends State<SellSummary> {
             DefaultButton(
               text: 'Buy Bitcoin',
               press: () {
+                statusTemp = status[0];
                 isSellSummaryChecked
                     ? Navigator.pushNamed(context, '/coinpayment')
                     : print('Sell Summary; invalid tap');
