@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/numpad.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class EnterSellAmount extends StatefulWidget {
   @override
@@ -60,6 +61,7 @@ class _EnterSellAmountState extends State<EnterSellAmount> {
             SizedBox(
               height: 10.0,
             ),
+            //change to richtext
             Text(
               '\$ $text',
               style: TextStyle(
@@ -97,6 +99,11 @@ class _EnterSellAmountState extends State<EnterSellAmount> {
               tcolor: Colors.white,
               text: 'Next',
               press: () {
+                priceTemp = double.parse(text);
+                print(text);
+                minersFeeTemp = 0;
+                print(minersFeeTemp);
+                creationdateTemp = DateTime.now();
                 Navigator.pushNamed(context, '/choosereceivingnumber');
               },
             ),
