@@ -210,6 +210,8 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                             numberText: '0503456748',
                             imgPath: 'assets/MoMo Networks/MTN.png',
                             press: () {
+                              paymentToNameTemp = 'Desmond Sofua';
+                              paymentToTemp = 0503456748;
                               Navigator.pushNamed(context, '/sellsummary');
                             },
                           ),
@@ -218,6 +220,8 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                             numberText: '0503091855',
                             imgPath: 'assets/MoMo Networks/Vodafone.png',
                             press: () {
+                              paymentToNameTemp = 'Andy Apenteng';
+                              paymentToTemp = 0503091855;
                               Navigator.pushNamed(context, '/sellsummary');
                             },
                           ),
@@ -226,6 +230,8 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                             numberText: '0203094567',
                             imgPath: 'assets/MoMo Networks/AirtelTigo.png',
                             press: () {
+                              paymentToNameTemp = 'Godfrey Ebhohimen';
+                              paymentToTemp = 0203094567;
                               Navigator.pushNamed(context, '/sellsummary');
                             },
                           ),
@@ -241,6 +247,10 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                 tcolor: Colors.white,
                 text: 'Next',
                 press: () {
+                  paymentFromNameTemp = accName.text;
+                  paymentFromTemp = int.parse(accNumber.text);
+                  print(accName.text);
+                  print(accNumber.text);
                   Navigator.pushNamed(context, '/sellsummary');
                 },
               ),
