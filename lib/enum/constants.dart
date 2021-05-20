@@ -13,6 +13,7 @@ double buyRateTemp;
 double minersFeeTemp;
 String cryptoAddressTemp;
 String paymentFromNameTemp;
+String paymentToNameTemp;
 int paymentFromTemp;
 int paymentToTemp;
 double priceTemp;
@@ -75,6 +76,7 @@ class Transaction {
   double minersFee;
   String cryptoAddress;
   //continue from here
+  String paymentToName;
   String paymentFromName;
   int paymentFrom;
   int paymentTo;
@@ -90,6 +92,7 @@ class Transaction {
     this.isBuying,
     this.minersFee,
     this.paymentFromName,
+    this.paymentToName,
     this.paymentFrom,
     this.paymentTo,
     this.price,
@@ -106,6 +109,7 @@ List<Transaction> transactions = [
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
       paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
+      paymentToName: '',
       paymentTo: 0503091855,
       price: 150.0,
       isBuying: false),
@@ -118,6 +122,7 @@ List<Transaction> transactions = [
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
       paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
+      paymentToName: '',
       paymentTo: 0503091855,
       price: 130.0,
       isBuying: true),
@@ -130,6 +135,7 @@ List<Transaction> transactions = [
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
       paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
+      paymentToName: '',
       paymentTo: 0503091855,
       price: 70.0,
       isBuying: true),
@@ -142,6 +148,7 @@ List<Transaction> transactions = [
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
       paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
+      paymentToName: '',
       paymentTo: 0503091855,
       price: 1200.0,
       isBuying: true),
@@ -154,6 +161,7 @@ List<Transaction> transactions = [
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
       paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
+      paymentToName: '',
       paymentTo: 0503091855,
       price: 1000.0,
       isBuying: true),
@@ -166,6 +174,7 @@ List<Transaction> transactions = [
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
       paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
+      paymentToName: '',
       paymentTo: 0503091855,
       price: 70.0,
       isBuying: false),
@@ -178,6 +187,7 @@ List<Transaction> transactions = [
       cryptoAddress: '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
       paymentFromName: 'Desmond Sofua',
       paymentFrom: 0503456748,
+      paymentToName: '',
       paymentTo: 0503091855,
       price: 850.0,
       isBuying: false),
