@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 
 class TransactionSuccess extends StatefulWidget {
   @override
@@ -118,6 +119,21 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
               tcolor: Colors.white,
               text: 'View my transactions',
               press: () {
+                transactions.add(
+                  Transaction(
+                    currency: currencies[0],
+                    status: statusTemp,
+                    creationdate: creationdateTemp,
+                    buyRate: buyRateTemp,
+                    minersFee: minersFeeTemp,
+                    cryptoAddress: cryptoAddressTemp,
+                    paymentFromName: paymentFromNameTemp,
+                    paymentFrom: paymentFromTemp,
+                    paymentTo: paymentToTemp,
+                    price: priceTemp,
+                    isBuying: isBuyingTemp
+                  )
+                );
                 Navigator.of(context).pushNamedAndRemoveUntil('/transactions', ModalRoute.withName('/home'));
               },
             ),
