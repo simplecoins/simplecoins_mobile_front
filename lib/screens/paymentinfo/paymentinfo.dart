@@ -160,6 +160,21 @@ class _PaymentInfoState extends State<PaymentInfo> {
             DefaultButton(
               text: 'Done',
               press: () {
+                transactions.add(
+                  Transaction(
+                    currency: currencies[0],
+                    status: statusTemp,
+                    creationdate: creationdateTemp,
+                    buyRate: buyRateTemp,
+                    minersFee: minersFeeTemp,
+                    cryptoAddress: cryptoAddressTemp,
+                    paymentFromName: paymentFromNameTemp,
+                    paymentFrom: paymentFromTemp,
+                    paymentTo: paymentToTemp,
+                    price: priceTemp,
+                    isBuying: isBuyingTemp
+                  )
+                );
                 isPInfoChecked
                     ? Navigator.pushNamed(context, '/home')
                     : print('Payment Info; invalid tap');
