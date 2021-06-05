@@ -9,8 +9,8 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     //Splash duration
-    new Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushNamed(context, '/home');
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.popAndPushNamed(context, '/home');
     });
     return Container(
       decoration: BoxDecoration(
