@@ -175,29 +175,14 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                           NewNumber(
                             text: 'MTN Mobile Money',
                             imgPath: 'assets/MoMo Networks/MTN.png',
-                            press: () {
-                              setState(() {
-                                isVisible = !isVisible;
-                              });
-                            },
                           ),
                           NewNumber(
                             text: 'Vodafone Cash',
                             imgPath: 'assets/MoMo Networks/Vodafone.png',
-                            press: () {
-                              setState(() {
-                                isVisible = !isVisible;
-                              });
-                            },
                           ),
                           NewNumber(
                             text: 'AirtelTigo Money',
                             imgPath: 'assets/MoMo Networks/AirtelTigo.png',
-                            press: () {
-                              setState(() {
-                                isVisible = !isVisible;
-                              });
-                            },
                           )
                         ],
                       ),

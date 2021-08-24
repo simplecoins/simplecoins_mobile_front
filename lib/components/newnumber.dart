@@ -4,17 +4,19 @@ import 'package:simplecoins_0/enum/constants.dart';
 TextEditingController accName = TextEditingController();
 TextEditingController accNumber = TextEditingController();
 
-class NewNumber extends StatelessWidget {
-  const NewNumber({
-    Key key,
-    this.imgPath,
-    this.text,
-    this.press,
-  }) : super(key: key);
+class NewNumber extends StatefulWidget {
+  const NewNumber({Key key, this.imgPath, this.text, this.stateSetter})
+      : super(key: key);
   final String imgPath;
   final String text;
-  final Function press;
+  final VoidCallback stateSetter;
 
+  @override
+  _NewNumberState createState() => _NewNumberState();
+}
+
+class _NewNumberState extends State<NewNumber> {
+  bool isCardVisible = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,12 +28,16 @@ class NewNumber extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
                 side: BorderSide(color: Color(0xFFF2F2F2))),
-            onPressed: press,
+            onPressed: () {
+              setState(() {
+                isCardVisible = !isCardVisible;
+              });
+            },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
-                  imgPath,
+                  widget.imgPath,
                   width: 52,
                 ),
                 SizedBox(
@@ -42,7 +48,7 @@ class NewNumber extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      text,
+                      widget.text,
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w500,
@@ -59,62 +65,60 @@ class NewNumber extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        Visibility(
-          visible: isVisible,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 19.0,
-              ),
-              Text(
-                'Account Name',
-                style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14
-                ),
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              TextField(
-                controller: accName,
-                autofocus: false,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                    //hintText: 'Email',
-                    contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0))),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Text(
-                'Account Number',
-                style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14
-                ),
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              TextField(
-                controller: accNumber,
-                autofocus: false,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                    //hintText: 'Email',
-                    contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0))),
-              ),
-            ],
-          ),
-        )
+        Container(
+            child: isCardVisible
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 19.0,
+                      ),
+                      Text(
+                        'Account Name',
+                        style: TextStyle(
+                            fontFamily: 'Manrope',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      TextField(
+                        controller: accName,
+                        autofocus: false,
+                        keyboardType: TextInputType.name,
+                        decoration: InputDecoration(
+                            //hintText: 'Email',
+                            contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0))),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Text(
+                        'Account Number',
+                        style: TextStyle(
+                            fontFamily: 'Manrope',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      TextField(
+                        controller: accNumber,
+                        autofocus: false,
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                            //hintText: 'Email',
+                            contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0))),
+                      ),
+                    ],
+                  )
+                : Offstage())
       ],
     );
   }

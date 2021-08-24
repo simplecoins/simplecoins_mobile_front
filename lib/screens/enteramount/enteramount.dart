@@ -3,6 +3,7 @@ import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/numpad.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class EnterAmount extends StatefulWidget {
   @override
@@ -57,48 +58,61 @@ class _EnterAmountState extends State<EnterAmount> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(getProportionateScreenWidth(10.0)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(
-              height: 28.0,
+              height: getProportionateScreenHeight(28.0),
             ),
             Text('How much BTC you wish to buy'),
             SizedBox(
-              height: 10.0,
+              height: getProportionateScreenHeight(10.0),
             ),
-            //change to richtext
-            Text(
-              '\$ $text',
-              style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 60),
+            RichText(
+              text: TextSpan(
+                // Note: Styles for TextSpans must be explicitly defined.
+                // Child text spans will inherit styles from parent
+                style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w600,
+                    fontSize: getProportionateScreenWidth(60)),
+                children: <TextSpan>[
+                  TextSpan(text: '\$ '),
+                  TextSpan(
+                      text: '$text',
+                      style: TextStyle(
+                          color: Color(0xFF757575),
+                          fontFamily: 'Manrope',
+                          fontWeight: FontWeight.w600,
+                          fontSize: getProportionateScreenWidth(60))),
+                ],
+              ),
             ),
             SizedBox(
-              height: 35.0,
+              height: getProportionateScreenHeight(34.0),
             ),
             Text(
               'GHS 0.00',
               style: TextStyle(
                   fontFamily: 'Manrope',
-                  fontSize: 16,
+                  fontSize: getProportionateScreenWidth(16),
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(
-              height: 11.0,
+              height: getProportionateScreenHeight(11.0),
             ),
             Text(
               'GHS 50.00 Minimum buy',
               style: TextStyle(
                   fontFamily: 'Manrope',
                   fontWeight: FontWeight.w600,
-                  fontSize: 12,
+                  fontSize: getProportionateScreenWidth(12),
                   color: Color(0xFFE56565)),
             ),
             SizedBox(
-              height: 41.0,
+              height: getProportionateScreenHeight(41.0),
             ),
             NumericKeyboard(
               onKeyboardTap: _onKeyboardTap,
@@ -135,7 +149,7 @@ class _EnterAmountState extends State<EnterAmount> {
               },
             ),
             SizedBox(
-              height: 25.0,
+              height: getProportionateScreenHeight(25.0),
             )
           ],
         ),

@@ -3,6 +3,7 @@ import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class Summary extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _SummaryState extends State<Summary> {
               color: Colors.black,
               fontFamily: 'Manrope',
               fontWeight: FontWeight.w600,
-              fontSize: 17.0),
+              fontSize: getProportionateScreenWidth(17.0)),
         ),
         leading: IconButton(
           onPressed: () {
@@ -48,7 +49,7 @@ class _SummaryState extends State<Summary> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(getProportionateScreenWidth(20.0)),
         child: Column(
           children: [
             Row(
@@ -60,14 +61,14 @@ class _SummaryState extends State<Summary> {
                       'YOU ARE BUYING',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 14,
+                          fontSize: getProportionateScreenWidth(14),
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
                       '\$ 300.00',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 30,
+                          fontSize: getProportionateScreenWidth(30),
                           fontWeight: FontWeight.w600),
                     )
                   ],
@@ -80,7 +81,7 @@ class _SummaryState extends State<Summary> {
                       'GHS 1740.00',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 16,
+                          fontSize: getProportionateScreenWidth(16),
                           fontWeight: FontWeight.w700,
                           color: Color(0xFF1857BB)),
                     ),
@@ -88,7 +89,7 @@ class _SummaryState extends State<Summary> {
                       '0.00034 BTC',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 14,
+                          fontSize: getProportionateScreenWidth(14),
                           fontWeight: FontWeight.w600),
                     )
                   ],
@@ -96,7 +97,7 @@ class _SummaryState extends State<Summary> {
               ],
             ),
             SizedBox(
-              height: 50.0,
+              height: getProportionateScreenHeight(50.0),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,7 +106,7 @@ class _SummaryState extends State<Summary> {
                   'Miner fee',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 18,
+                      fontSize: getProportionateScreenWidth(18),
                       fontWeight: FontWeight.w500),
                 )
               ],
@@ -117,13 +118,13 @@ class _SummaryState extends State<Summary> {
                   '\$5.67',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16,
+                      fontSize: getProportionateScreenWidth(16),
                       fontWeight: FontWeight.w400),
                 )
               ],
             ),
             SizedBox(
-              height: 25.0,
+              height: getProportionateScreenHeight(25.0),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,7 +133,7 @@ class _SummaryState extends State<Summary> {
                   'BTC address',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 18,
+                      fontSize: getProportionateScreenWidth(18),
                       fontWeight: FontWeight.w500),
                 )
               ],
@@ -144,13 +145,13 @@ class _SummaryState extends State<Summary> {
                   '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 14,
+                      fontSize: getProportionateScreenWidth(14),
                       fontWeight: FontWeight.w500),
                 )
               ],
             ),
             SizedBox(
-              height: 60.0,
+              height: getProportionateScreenHeight(60.0),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,13 +160,13 @@ class _SummaryState extends State<Summary> {
                   'You are paying from',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 14,
+                      fontSize: getProportionateScreenWidth(14),
                       fontWeight: FontWeight.w500),
                 )
               ],
             ),
             SizedBox(
-              height: 10.0,
+              height: getProportionateScreenHeight(10.0),
             ),
             SavedNumber(
               imgPath: 'assets/MoMo Networks/MTN.png',
@@ -174,7 +175,7 @@ class _SummaryState extends State<Summary> {
               press: () {},
             ),
             SizedBox(
-              height: 68.0,
+              height: getProportionateScreenHeight(68.0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -193,7 +194,7 @@ class _SummaryState extends State<Summary> {
                     // Note: Styles for TextSpans must be explicitly defined.
                     // Child text spans will inherit styles from parent
                     style: TextStyle(
-                      fontSize: 12.0,
+                      fontSize: getProportionateScreenWidth(12.0),
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF757575),
@@ -202,12 +203,16 @@ class _SummaryState extends State<Summary> {
                       TextSpan(text: 'I certify that I am '),
                       TextSpan(
                           text: '18 years of age or older, ',
-                          style: TextStyle(color: Colors.black, fontSize: 12)),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: getProportionateScreenWidth(12.0))),
                       TextSpan(text: 'and'),
                       TextSpan(text: '\nagree to the '),
                       TextSpan(
                           text: 'User Agreement',
-                          style: TextStyle(color: Colors.black, fontSize: 12)),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: getProportionateScreenWidth(12.0))),
                       TextSpan(text: ' and its return, '),
                       TextSpan(text: '\nrefund and cancellation policy'),
                     ],
@@ -229,7 +234,7 @@ class _SummaryState extends State<Summary> {
               tcolor: isSummaryChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(
-              height: 15.0,
+              height: getProportionateScreenHeight(15.0),
             )
           ],
         ),
