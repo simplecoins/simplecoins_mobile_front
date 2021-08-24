@@ -3,6 +3,7 @@ import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/copynumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class PaymentInfo extends StatefulWidget {
   @override
@@ -31,16 +32,16 @@ class _PaymentInfoState extends State<PaymentInfo> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(getProportionateScreenWidth(20.0)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               'assets/Success Gif/giphy.gif',
-              height: 123.0,
+              height: getProportionateScreenHeight(123.0),
             ),
             SizedBox(
-              height: 19.0,
+              height: getProportionateScreenHeight(19.0),
             ),
             RichText(
               textAlign: TextAlign.center,
@@ -50,7 +51,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                 style: TextStyle(
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w400,
-                    fontSize: 18,
+                    fontSize: getProportionateScreenWidth(18),
                     color: Colors.black),
                 children: <TextSpan>[
                   TextSpan(text: 'Awesome!!\nYou just placed an order to Buy '),
@@ -58,7 +59,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                       text: 'GHS\n 738.00 ',
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 18,
+                          fontSize: getProportionateScreenWidth(18),
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600)),
                   TextSpan(text: 'worth of Bitcoin.'),
@@ -66,15 +67,15 @@ class _PaymentInfoState extends State<PaymentInfo> {
               ),
             ),
             SizedBox(
-              height: 44.0,
+              height: getProportionateScreenHeight(44.0),
             ),
             Image.asset(
               'assets/Payment Info/akar-icons_arrow-down.png',
               // width: 14.0,
-              height: 26.0,
+              height: getProportionateScreenHeight(26.0),
             ),
             SizedBox(
-              height: 44.0,
+              height: getProportionateScreenHeight(44.0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -85,7 +86,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                     // Child text spans will inherit styles from parent
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: 16,
+                        fontSize: getProportionateScreenWidth(16),
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w400),
                     children: <TextSpan>[
@@ -93,7 +94,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                           text: 'Send 775.32 GHS ',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 16,
+                              fontSize: getProportionateScreenWidth(16),
                               fontFamily: 'Manrope',
                               fontWeight: FontWeight.w600)),
                       TextSpan(text: 'to'),
@@ -107,28 +108,28 @@ class _PaymentInfoState extends State<PaymentInfo> {
 
             CopyNumber(),
             SizedBox(
-              height: 20.0,
+              height: getProportionateScreenHeight(20),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
                   'assets/Emojis/image 13.png',
-                  height: 15.0,
+                  height: getProportionateScreenHeight(15.0),
                 ),
                 SizedBox(
-                  width: 5.0,
+                  width: getProportionateScreenWidth(5.0),
                 ),
                 Text('Use Reference: Simplecoins',
                     style: TextStyle(
                         color: Color(0xFF3B32A7),
-                        fontSize: 12,
+                        fontSize: getProportionateScreenWidth(12),
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w600))
               ],
             ),
             SizedBox(
-              height: 30,
+              height: getProportionateScreenHeight(30),
             ),
             Row(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -143,12 +144,12 @@ class _PaymentInfoState extends State<PaymentInfo> {
                   },
                 ),
                 SizedBox(
-                  width: 33.0,
+                  width: getProportionateScreenWidth(33.0),
                 ),
                 Text(
                   'Select to confirm you have made the above payment',
                   style: TextStyle(
-                    fontSize: 12.0,
+                    fontSize: getProportionateScreenWidth(12.0),
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w400,
                     color: Color(0xFF757575),
@@ -183,7 +184,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
               tcolor: isPInfoChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(
-              height: 15.0,
+              height: getProportionateScreenHeight(15.0),
             )
           ],
         ),
