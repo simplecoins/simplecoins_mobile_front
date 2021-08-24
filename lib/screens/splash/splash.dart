@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -8,6 +9,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     //Splash duration
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.popAndPushNamed(context, '/home');
@@ -20,7 +22,7 @@ class _SplashState extends State<Splash> {
         children: [
           Spacer(),
           Padding(
-            padding: const EdgeInsets.all(120.0),
+            padding: EdgeInsets.all(getProportionateScreenWidth(120.0)),
             child: Image(
               image: AssetImage('assets/Splashscreen/SimplecoinsLogo.png'),
             ),
