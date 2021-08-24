@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class EnterWalletAddress extends StatefulWidget {
   @override
@@ -42,68 +43,81 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
           )
         ],
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              'assets/Homescreen/$cryptoType.png',
-              width: 52.0,
-            ),
-            Spacer(
-              flex: 2,
-            ),
-            Row(
-              children: <Widget>[
-                Text(
-                  'Your Bitcoin Address',
-                  style: TextStyle(
-                      fontFamily: 'Manrope',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            TextField(
-              controller: cryptoAddressController,
-              autofocus: false,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0))),
-            ),
-            Spacer(),
-            GestureDetector(
-              child: Text(
-                'Click to paste address',
-                style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontFamily: 'Manrope',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600),
+      body: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus &&
+              currentFocus.focusedChild != null) {
+            currentFocus.focusedChild.unfocus();
+          }
+        },
+        child: Padding(
+          padding: EdgeInsets.all(getProportionateScreenWidth(20.0)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Image.asset(
+                'assets/Homescreen/$cryptoType.png',
+                width: getProportionateScreenWidth(52.0),
               ),
-            ),
-            Spacer(
-              flex: 4,
-            ),
-            DefaultButton(
-              bcolor: Color(0xFF001233),
-              tcolor: Colors.white,
-              text: 'Next',
-              press: () {
-                cryptoAddressTemp = cryptoAddressController.text;
-                //grab rate from API
-                buyRateTemp = buyRate;
-                print(cryptoAddressController.text);
-                Navigator.pushNamed(context, '/enteramount');
-              },
-            )
-          ],
+              Spacer(
+                flex: 2,
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Your Bitcoin Address',
+                    style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: getProportionateScreenWidth(14),
+                        fontWeight: FontWeight.w600),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: getProportionateScreenHeight(10.0),
+              ),
+              TextField(
+                controller: cryptoAddressController,
+                autofocus: false,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.fromLTRB(
+                        getProportionateScreenWidth(20),
+                        getProportionateScreenHeight(25),
+                        getProportionateScreenWidth(20),
+                        getProportionateScreenHeight(25)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0))),
+              ),
+              Spacer(),
+              GestureDetector(
+                child: Text(
+                  'Click to paste address',
+                  style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      fontFamily: 'Manrope',
+                      fontSize: getProportionateScreenWidth(14),
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+              Spacer(
+                flex: 4,
+              ),
+              DefaultButton(
+                bcolor: Color(0xFF001233),
+                tcolor: Colors.white,
+                text: 'Next',
+                press: () {
+                  cryptoAddressTemp = cryptoAddressController.text;
+                  //grab rate from API
+                  buyRateTemp = buyRate;
+                  print(cryptoAddressController.text);
+                  Navigator.pushNamed(context, '/enteramount');
+                },
+              )
+            ],
+          ),
         ),
       ),
     );
