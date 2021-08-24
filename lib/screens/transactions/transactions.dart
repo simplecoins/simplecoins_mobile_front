@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:simplecoins_0/modals/listview-all.dart';
 import 'package:simplecoins_0/modals/listview-buy.dart';
 import 'package:simplecoins_0/modals/listview-sell.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class Transactions extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class Transactions extends StatefulWidget {
 
 class _TransactionsState extends State<Transactions>
     with SingleTickerProviderStateMixin {
-  final testvar = 70.0;
+  // final testvar = 70.0;
   TabController _tabController;
   @override
   void initState() {
@@ -34,7 +35,7 @@ class _TransactionsState extends State<Transactions>
               color: Colors.black,
               fontFamily: 'Manrope',
               fontWeight: FontWeight.w600,
-              fontSize: 17.0),
+              fontSize: getProportionateScreenWidth(17.0)),
         ),
         //close button
         actions: [
@@ -50,31 +51,33 @@ class _TransactionsState extends State<Transactions>
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+        padding: EdgeInsets.only(
+            top: getProportionateScreenHeight(20),
+            left: getProportionateScreenWidth(20),
+            right: getProportionateScreenWidth(20)),
         child: Column(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(7)),
               child: Container(
-                width: 335.0,
-                height: 58.0,
+                width: getProportionateScreenWidth(335.0),
+                height: getProportionateScreenHeight(58.0),
                 decoration: BoxDecoration(
                     color: Color(0xFFF5F7FA),
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: TabBar(
                   controller: _tabController,
-                  isScrollable: true,
                   indicator: BoxDecoration(color: Colors.black),
                   indicatorColor: Colors.transparent,
                   labelColor: Colors.white,
                   labelStyle: TextStyle(
-                      fontSize: 14,
+                      fontSize: getProportionateScreenWidth(14),
                       color: Colors.white,
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w600),
                   unselectedLabelColor: Color(0xFFA5AEBC),
                   unselectedLabelStyle: TextStyle(
-                      fontSize: 16,
+                      fontSize: getProportionateScreenWidth(16),
                       color: Colors.red,
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w400),
@@ -85,7 +88,7 @@ class _TransactionsState extends State<Transactions>
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600,
-                          fontSize: 14),
+                          fontSize: getProportionateScreenWidth(14)),
                     )),
                     Tab(
                         child: Text(
@@ -93,7 +96,7 @@ class _TransactionsState extends State<Transactions>
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600,
-                          fontSize: 14),
+                          fontSize: getProportionateScreenWidth(14)),
                     )),
                     Tab(
                         child: Text(
@@ -101,14 +104,13 @@ class _TransactionsState extends State<Transactions>
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600,
-                          fontSize: 14),
+                          fontSize: getProportionateScreenWidth(14)),
                     )),
                   ],
                 ),
               ),
             ),
-            Container(
-              height: 630,
+            Expanded(
               child: TabBarView(
                 controller: _tabController,
                 children: [

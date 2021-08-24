@@ -35,12 +35,12 @@ class _SplashState extends State<Splash> {
             style: TextStyle(
               fontFamily: 'Manrope',
               fontWeight: FontWeight.w400,
-              fontSize: 12,
+              fontSize: getProportionateScreenWidth(12),
               color: Colors.black
             ),
           ),
           SizedBox(
-            height: 25.0,
+            height: getProportionateScreenHeight(25.0),
           )
         ],
       ),

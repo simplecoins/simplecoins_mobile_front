@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/cryptocard.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -27,7 +28,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         centerTitle: false,
         backgroundColor: Colors.white,
         title: Padding(
-          padding: EdgeInsets.only(left: 21.0),
+          padding: EdgeInsets.only(left: getProportionateScreenWidth(21)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -57,14 +58,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               Navigator.pushNamed(context, '/userprofile');
             },
             child: Padding(
-              padding: EdgeInsets.only(right: 20.0),
+              padding: EdgeInsets.only(right: getProportionateScreenWidth(20)),
               child: Image.asset('assets/Homescreen/Ellipse 14.png'),
             ),
           )
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(32.0),
+        padding: EdgeInsets.all(getProportionateScreenWidth(32)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -83,7 +84,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   fontSize: 14),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 31.0),
+              padding: EdgeInsets.only(top: getProportionateScreenHeight(31.0)),
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(7)),
                 child: Container(
@@ -98,18 +99,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: TabBar(
                     controller: _tabController,
-                    isScrollable: true,
+                    // isScrollable: true,
                     indicator: BoxDecoration(color: Colors.black),
                     indicatorColor: Colors.transparent,
                     labelColor: Colors.white,
                     labelStyle: TextStyle(
-                        fontSize: 14,
+                        fontSize: getProportionateScreenWidth(14),
                         color: Colors.white,
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w600),
                     unselectedLabelColor: Color(0xFFA5AEBC),
                     unselectedLabelStyle: TextStyle(
-                        fontSize: 16,
+                        fontSize: getProportionateScreenWidth(16),
                         color: Colors.red,
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w400),
@@ -120,7 +121,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         style: TextStyle(
                             fontFamily: 'Manrope',
                             fontWeight: FontWeight.w600,
-                            fontSize: 14),
+                            fontSize: getProportionateScreenWidth(14)),
                       )),
                       Tab(
                           child: Text(
@@ -128,7 +129,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         style: TextStyle(
                             fontFamily: 'Manrope',
                             fontWeight: FontWeight.w600,
-                            fontSize: 14),
+                            fontSize: getProportionateScreenWidth(14)),
                       )),
                     ],
                   ),
@@ -136,11 +137,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               ),
             ),
             SizedBox(
-              height: 60.0,
+              height: getProportionateScreenHeight(60),
             ),
             Container(
-              height: 250.0,
-              width: 335.0,
+              height: getProportionateScreenHeight(250),
+              width: getProportionateScreenWidth(335.0),
               child: TabBarView(
                 controller: _tabController,
                 children: [
@@ -158,7 +159,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           },
                         ),
                         SizedBox(
-                          height: 10.0,
+                          height: getProportionateScreenHeight(10.0),
                         ),
                         CryptoCard(
                           imgPath: 'assets/Homescreen/USDT.png',
@@ -171,7 +172,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           },
                         ),
                         SizedBox(
-                          height: 10.0,
+                          height: getProportionateScreenHeight(10.0),
                         ),
                         CryptoCard(
                           imgPath: 'assets/Homescreen/Ripple.png',
@@ -200,7 +201,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           },
                         ),
                         SizedBox(
-                          height: 10.0,
+                          height: getProportionateScreenHeight(10.0),
                         ),
                         CryptoCard(
                           imgPath: 'assets/Homescreen/USDT.png',
@@ -213,7 +214,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           },
                         ),
                         SizedBox(
-                          height: 10.0,
+                          height: getProportionateScreenHeight(10.0),
                         ),
                         CryptoCard(
                           imgPath: 'assets/Homescreen/Ripple.png',
@@ -232,10 +233,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               ),
             ),
             SizedBox(
-              height: 90.0,
+              height: getProportionateScreenHeight(90.0),
             ),
             SizedBox(
-              height: 100.0,
+              height: getProportionateScreenHeight(100.0),
               width: double.infinity,
               child: Stack(
                 children: <Widget>[
@@ -259,8 +260,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       right: 0.0,
                       top: 0.0,
                       child: Container(
-                        height: 20,
-                        width: 20,
+                        height: getProportionateScreenHeight(20),
+                        width: getProportionateScreenWidth(20),
                         decoration: BoxDecoration(
                             color: Colors.blue, shape: BoxShape.circle),
                         child: Center(
@@ -268,7 +269,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             '${transactions.length}',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 12.0,
+                                fontSize: getProportionateScreenWidth(12.0),
                                 fontFamily: 'Manrope',
                                 fontWeight: FontWeight.w600),
                           ),
