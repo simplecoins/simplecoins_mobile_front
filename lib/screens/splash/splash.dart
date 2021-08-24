@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class Splash extends StatefulWidget {
@@ -23,9 +24,10 @@ class _SplashState extends State<Splash> {
           Spacer(),
           Padding(
             padding: EdgeInsets.all(getProportionateScreenWidth(120.0)),
-            child: Image(
-              image: AssetImage('assets/Splashscreen/SimplecoinsLogo.png'),
-            ),
+            child: SvgPicture.asset(
+                'assets/Splashscreen/simplecoinslogonew.svg',
+                height: 83.0,
+              )
           ),
           Spacer(),
           Text(
