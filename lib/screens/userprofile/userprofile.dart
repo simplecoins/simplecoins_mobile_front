@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class UserProfile extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _UserProfileState extends State<UserProfile> {
               color: Colors.black,
               fontFamily: 'Manrope',
               fontWeight: FontWeight.w600,
-              fontSize: 17.0),
+              fontSize: getProportionateScreenWidth(17.0)),
         ),
         leading: IconButton(
           onPressed: () {
@@ -44,7 +45,7 @@ class _UserProfileState extends State<UserProfile> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(getProportionateScreenWidth(20.0)),
         child: Column(
           children: [
             Row(
@@ -56,7 +57,7 @@ class _UserProfileState extends State<UserProfile> {
                       'GOOD EVENING',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 12.0,
+                          fontSize: getProportionateScreenWidth(12.0),
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF808080)),
                     ),
@@ -64,7 +65,7 @@ class _UserProfileState extends State<UserProfile> {
                       'Andy Andy Kwesi',
                       style: TextStyle(
                         fontFamily: 'Manrope',
-                        fontSize: 16.0,
+                        fontSize: getProportionateScreenWidth(16.0),
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -72,7 +73,7 @@ class _UserProfileState extends State<UserProfile> {
                       '${transactions.length} Total Orders',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 12.0,
+                          fontSize: getProportionateScreenWidth(12.0),
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF40A187)),
                     )
@@ -81,12 +82,12 @@ class _UserProfileState extends State<UserProfile> {
                 Spacer(),
                 Image.asset(
                   'assets/Homescreen/Ellipse 14.png',
-                  width: 93.0,
+                  width: getProportionateScreenWidth(93.0),
                 )
               ],
             ),
             SizedBox(
-              height: 56.0,
+              height: getProportionateScreenHeight(56.0),
             ),
             Row(
               children: [
@@ -94,14 +95,14 @@ class _UserProfileState extends State<UserProfile> {
                   'Personal info',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 12.0,
+                      fontSize: getProportionateScreenWidth(12.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 )
               ],
             ),
             SizedBox(
-              height: 16.0,
+              height: getProportionateScreenHeight(16.0),
             ),
             Row(
               children: [
@@ -109,25 +110,25 @@ class _UserProfileState extends State<UserProfile> {
                   'E-mail',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 ),
                 SizedBox(
-                  width: 71.0,
+                  width: getProportionateScreenWidth(71.0),
                 ),
                 Text(
                   'vadikforz@gmail.com',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w600,
                       color: Color(0xFF243656)),
                 )
               ],
             ),
             SizedBox(
-              height: 18.0,
+              height: getProportionateScreenHeight(18.0),
             ),
             Row(
               children: [
@@ -135,25 +136,25 @@ class _UserProfileState extends State<UserProfile> {
                   'Phone',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 ),
                 SizedBox(
-                  width: 71.0,
+                  width: getProportionateScreenWidth(71.0),
                 ),
                 Text(
                   '+4 1782 049 294',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w600,
                       color: Color(0xFF243656)),
                 )
               ],
             ),
             SizedBox(
-              height: 40.0,
+              height: getProportionateScreenHeight(40.0),
             ),
             Row(
               children: [
@@ -161,14 +162,14 @@ class _UserProfileState extends State<UserProfile> {
                   'Security',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 12.0,
+                      fontSize: getProportionateScreenWidth(12.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 )
               ],
             ),
             SizedBox(
-              height: 16.0,
+              height: getProportionateScreenHeight(16.0),
             ),
             Row(
               children: [
@@ -176,18 +177,18 @@ class _UserProfileState extends State<UserProfile> {
                   'Password',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 ),
                 SizedBox(
-                  width: 45.0,
+                  width: getProportionateScreenWidth(45.0),
                 ),
                 Text(
                   '··········',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 30.0,
+                      fontSize: getProportionateScreenWidth(30.0),
                       fontWeight: FontWeight.w600,
                       color: Color(0xFF243656)),
                 ),
@@ -197,7 +198,9 @@ class _UserProfileState extends State<UserProfile> {
                     Icons.edit,
                     color: Color(0xFF3E8BF7),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/changepassword');
+                  },
                 )
               ],
             ),
@@ -207,18 +210,18 @@ class _UserProfileState extends State<UserProfile> {
                   'Identity',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 ),
                 SizedBox(
-                  width: 60.0,
+                  width: getProportionateScreenWidth(60.0),
                 ),
                 Text(
                   'Verify my identity',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w400,
                       decoration: TextDecoration.underline,
                       color: Color(0xFFAAABAE)),
@@ -226,7 +229,7 @@ class _UserProfileState extends State<UserProfile> {
               ],
             ),
             SizedBox(
-              height: 40.0,
+              height: getProportionateScreenHeight(40.0),
             ),
             Row(
               children: [
@@ -234,14 +237,14 @@ class _UserProfileState extends State<UserProfile> {
                   'Support',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 12.0,
+                      fontSize: getProportionateScreenWidth(12.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 )
               ],
             ),
             SizedBox(
-              height: 16.0,
+              height: getProportionateScreenHeight(16.0),
             ),
             Row(
               children: [
@@ -249,26 +252,26 @@ class _UserProfileState extends State<UserProfile> {
                   'Telegram',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 ),
                 SizedBox(
-                  width: 48.0,
+                  width: getProportionateScreenWidth(48.0),
                 ),
                 Text(
                   '@simplecoins',
                   style: TextStyle(
                       decoration: TextDecoration.underline,
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w600,
                       color: Color(0xFF3E8BF7)),
                 )
               ],
             ),
             SizedBox(
-              height: 17.0,
+              height: getProportionateScreenHeight(17.0),
             ),
             Row(
               children: [
@@ -276,26 +279,26 @@ class _UserProfileState extends State<UserProfile> {
                   'Twitter',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 ),
                 SizedBox(
-                  width: 65.0,
+                  width: getProportionateScreenWidth(65.0),
                 ),
                 Text(
                   '@simplecoins',
                   style: TextStyle(
                       decoration: TextDecoration.underline,
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w600,
                       color: Color(0xFF3E8BF7)),
                 )
               ],
             ),
             SizedBox(
-              height: 17.0,
+              height: getProportionateScreenHeight(17.0),
             ),
             Row(
               children: [
@@ -303,19 +306,19 @@ class _UserProfileState extends State<UserProfile> {
                   'Email',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF243656)),
                 ),
                 SizedBox(
-                  width: 77.0,
+                  width: getProportionateScreenWidth(77.0),
                 ),
                 Text(
                   'support@simplecoins.africa',
                   style: TextStyle(
                       decoration: TextDecoration.underline,
                       fontFamily: 'Manrope',
-                      fontSize: 16.0,
+                      fontSize: getProportionateScreenWidth(16.0),
                       fontWeight: FontWeight.w600,
                       color: Color(0xFF3E8BF7)),
                 )
@@ -326,10 +329,10 @@ class _UserProfileState extends State<UserProfile> {
             // ),
             Spacer(),
             SizedBox(
-              height: 64,
-              width: 311,
+              height: getProportionateScreenHeight(64.0),
+              width: getProportionateScreenWidth(311),
               child: FlatButton(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(getProportionateScreenWidth(20.0)),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                     side: BorderSide(color: Color(0xFFE56565))),
@@ -348,7 +351,7 @@ class _UserProfileState extends State<UserProfile> {
               ),
             ),
             SizedBox(
-              height: 15.0,
+              height: getProportionateScreenHeight(15.0),
             )
           ],
         ),

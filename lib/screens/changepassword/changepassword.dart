@@ -23,7 +23,9 @@ class _ChangePasswordState extends State<ChangePassword> {
               fontSize: 17.0),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.chevron_left,
             color: Colors.black,
@@ -31,7 +33,9 @@ class _ChangePasswordState extends State<ChangePassword> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: Icon(
               Icons.close,
               color: Colors.black,
@@ -39,94 +43,105 @@ class _ChangePasswordState extends State<ChangePassword> {
           )
         ],
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text(
-                  'Current Password',
-                  style: TextStyle(
-                      fontFamily: 'Manrope',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w600),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            TextFormField(
-              autofocus: false,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0))),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Row(
-              children: [
-                Text(
-                  'New Password',
-                  style: TextStyle(
-                      fontFamily: 'Manrope',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w600),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            TextFormField(
-              autofocus: false,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0))),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Row(
-              children: [
-                Text(
-                  'Confirm New Password',
-                  style: TextStyle(
-                      fontFamily: 'Manrope',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w600),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            TextFormField(
-              autofocus: false,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0))),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Spacer(),
-            DefaultButton(
-              text: 'Change Password',
-              press: () {},
-            ),
-            SizedBox(
-              height: 15.0,
-            )
-          ],
+      body: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus &&
+              currentFocus.focusedChild != null) {
+            currentFocus.focusedChild.unfocus();
+          }
+        },
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: ListView(
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'Current Password',
+                    style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w600),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              TextFormField(
+                autofocus: false,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0))),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Row(
+                children: [
+                  Text(
+                    'New Password',
+                    style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w600),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              TextFormField(
+                autofocus: false,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0))),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Row(
+                children: [
+                  Text(
+                    'Confirm New Password',
+                    style: TextStyle(
+                        fontFamily: 'Manrope',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w600),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              TextFormField(
+                autofocus: false,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.fromLTRB(20, 25, 20, 25),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0))),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Spacer(),
+              DefaultButton(
+                text: 'Change Password',
+                press: () {},
+                bcolor: Color(0xFF001233),
+                tcolor: Colors.white,
+              ),
+              SizedBox(
+                height: 15.0,
+              )
+            ],
+          ),
         ),
       ),
     );
