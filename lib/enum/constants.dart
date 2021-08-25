@@ -48,7 +48,8 @@ List<Map<String, String>> pageData = [
     "image": "assets/Onboarding/ScribbleArt_03.png",
     "text": "Super Secure",
     "emoji": "assets/Onboarding/Shield.png",
-    "subtitle": "With simple but secure accounts and transactions you can trust"
+    "subtitle":
+        "With simple but secure accounts and transactions you can trust\n "
   },
 ];
 
