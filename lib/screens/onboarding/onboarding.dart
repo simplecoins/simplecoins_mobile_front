@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/googlebutton.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class Onboarding extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   int currentPage = 0;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +39,11 @@ class _OnboardingState extends State<Onboarding> {
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                  padding: EdgeInsets.fromLTRB(
+                      getProportionateScreenWidth(20),
+                      getProportionateScreenHeight(5),
+                      getProportionateScreenWidth(20),
+                      getProportionateScreenHeight(5)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: List.generate(
@@ -50,11 +55,17 @@ class _OnboardingState extends State<Onboarding> {
                 Spacer(
                   flex: 2,
                 ),
-                GoogleButton(),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.popAndPushNamed(context, '/signin');
+                    },
+                    child: GoogleButton()),
                 Spacer(),
                 DefaultButton(
                   text: 'Sign Me Up',
-                  press: () {},
+                  press: () {
+                    Navigator.popAndPushNamed(context, '/signup');
+                  },
                   bcolor: Colors.black,
                   tcolor: Colors.white,
                 ),
@@ -72,9 +83,9 @@ class _OnboardingState extends State<Onboarding> {
   AnimatedContainer buildDot(int index) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 200),
-      margin: EdgeInsets.only(right: 5),
-      height: 4,
-      width: 23,
+      margin: EdgeInsets.only(right: getProportionateScreenWidth(5)),
+      height: getProportionateScreenHeight(4),
+      width: getProportionateScreenWidth(23),
       decoration: BoxDecoration(
           color: currentPage == index ? Colors.black : Color(0xFFE3E9F0),
           borderRadius: BorderRadius.circular(3)),
@@ -103,7 +114,11 @@ class PageContent extends StatelessWidget {
         ),
         Spacer(),
         Padding(
-          padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+          padding: EdgeInsets.fromLTRB(
+              getProportionateScreenWidth(20),
+              getProportionateScreenHeight(5),
+              getProportionateScreenWidth(20),
+              getProportionateScreenHeight(5)),
           child: Row(
             children: <Widget>[
               Text(
@@ -111,22 +126,26 @@ class PageContent extends StatelessWidget {
                 style: TextStyle(
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w800,
-                    fontSize: 30,
+                    fontSize: getProportionateScreenWidth(30),
                     color: Colors.black),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: getProportionateScreenWidth(10)),
               Image.asset(image1)
             ],
           ),
         ),
         Padding(
-          padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+          padding: EdgeInsets.fromLTRB(
+              getProportionateScreenWidth(20),
+              getProportionateScreenHeight(5),
+              getProportionateScreenWidth(20),
+              getProportionateScreenHeight(5)),
           child: Text(
             text1,
             style: TextStyle(
                 fontFamily: 'Manrope',
                 fontWeight: FontWeight.w500,
-                fontSize: 18,
+                fontSize: getProportionateScreenWidth(18),
                 color: Colors.black),
           ),
         ),

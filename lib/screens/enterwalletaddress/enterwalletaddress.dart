@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/enum/constants.dart';
@@ -80,7 +81,7 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               TextField(
                 controller: cryptoAddressController,
                 autofocus: false,
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.fromLTRB(
                         getProportionateScreenWidth(20),
@@ -92,6 +93,11 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               ),
               Spacer(),
               GestureDetector(
+                onTap: () async {
+                  // paste from clipboard
+                  ClipboardData data = await Clipboard.getData('text/plain');
+                  cryptoAddressController.text = data.text;
+                },
                 child: Text(
                   'Click to paste address',
                   style: TextStyle(

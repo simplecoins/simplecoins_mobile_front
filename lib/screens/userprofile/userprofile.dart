@@ -347,7 +347,10 @@ class _UserProfileState extends State<UserProfile> {
                     ),
                   ],
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/signin', ModalRoute.withName('/onboarding'));
+                },
               ),
             ),
             SizedBox(
