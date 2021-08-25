@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class TransactionSuccess extends StatefulWidget {
   @override
@@ -17,7 +18,7 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
         elevation: 0.0,
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 8.0),
+            padding: EdgeInsets.only(right: getProportionateScreenWidth(8.0)),
             //close button
             child: IconButton(
               onPressed: () {
@@ -32,11 +33,11 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(getProportionateScreenWidth(12.0)),
         child: Column(
           children: [
             SizedBox(
-              height: 151.0,
+              height: getProportionateScreenHeight(151.0),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,7 +45,7 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
               children: [
                 Image.asset(
                   'assets/Success Gif/giphy.gif',
-                  width: 104.0,
+                  width: getProportionateScreenWidth(104.0),
                 ),
               ],
             ),
@@ -56,7 +57,7 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
                 style: TextStyle(
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w400,
-                    fontSize: 18,
+                    fontSize: getProportionateScreenWidth(18),
                     color: Colors.black),
                 children: <TextSpan>[
                   TextSpan(
@@ -65,7 +66,7 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
                       text: 'GHS 738.00 ',
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 18,
+                          fontSize: getProportionateScreenWidth(18),
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600)),
                   TextSpan(text: 'worth of Bitcoin.'),
@@ -73,7 +74,7 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
               ),
             ),
             SizedBox(
-              height: 41.0,
+              height: getProportionateScreenHeight(41.0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -83,12 +84,12 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w400,
-                      fontSize: 18,
+                      fontSize: getProportionateScreenWidth(18),
                       color: Colors.black),
                 ),
                 Container(
-                  width: 122.0,
-                  height: 27,
+                  width: getProportionateScreenWidth(122.0),
+                  height: getProportionateScreenHeight(27.0),
                   decoration: BoxDecoration(
                       color: Color(0xFFDCE1FF),
                       borderRadius: BorderRadius.circular(52.0)),
@@ -97,7 +98,7 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
                       'PROCESSING',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 12.0,
+                          fontSize: getProportionateScreenWidth(12.0),
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF4F49C1)),
                     ),
@@ -108,7 +109,7 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w400,
-                      fontSize: 18,
+                      fontSize: getProportionateScreenWidth(18),
                       color: Colors.black),
                 ),
               ],
@@ -138,7 +139,7 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
               },
             ),
             SizedBox(
-              height: 15.0,
+              height: getProportionateScreenHeight(15.0),
             )
           ],
         ),
