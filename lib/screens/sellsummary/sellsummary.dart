@@ -3,6 +3,7 @@ import 'package:simplecoins_0/components/alertdiag.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class SellSummary extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _SellSummaryState extends State<SellSummary> {
               color: Colors.black,
               fontFamily: 'Manrope',
               fontWeight: FontWeight.w600,
-              fontSize: 17.0),
+              fontSize: getProportionateScreenWidth(17.0)),
         ),
         //back button
         leading: IconButton(
@@ -49,7 +50,7 @@ class _SellSummaryState extends State<SellSummary> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(getProportionateScreenWidth(20.0)),
         child: Column(
           children: [
             Row(
@@ -61,21 +62,21 @@ class _SellSummaryState extends State<SellSummary> {
                       'YOU ARE SELLING',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 14,
+                          fontSize: getProportionateScreenWidth(14),
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
                       '\$ 300.00',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 30,
+                          fontSize: getProportionateScreenWidth(30),
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
                       '0.00034' ' BTC',
                       style: TextStyle(
                           fontFamily: 'Manrope',
-                          fontSize: 14,
+                          fontSize: getProportionateScreenWidth(14),
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF1857BB)),
                     )
@@ -84,7 +85,7 @@ class _SellSummaryState extends State<SellSummary> {
               ],
             ),
             SizedBox(
-              height: 50.0,
+              height: getProportionateScreenHeight(50.0),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +94,7 @@ class _SellSummaryState extends State<SellSummary> {
                   'You Receive',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 18,
+                      fontSize: getProportionateScreenWidth(18),
                       fontWeight: FontWeight.w500),
                 )
               ],
@@ -105,13 +106,13 @@ class _SellSummaryState extends State<SellSummary> {
                   'GHC ' + '345.89',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 16,
+                      fontSize: getProportionateScreenWidth(16),
                       fontWeight: FontWeight.w400),
                 )
               ],
             ),
             SizedBox(
-              height: 25.0,
+              height: getProportionateScreenHeight(25.0),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,13 +121,13 @@ class _SellSummaryState extends State<SellSummary> {
                   'Account to receive your funds',
                   style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 14,
+                      fontSize: getProportionateScreenWidth(14),
                       fontWeight: FontWeight.w500),
                 )
               ],
             ),
             SizedBox(
-              height: 10.0,
+              height: getProportionateScreenHeight(10.0),
             ),
             SavedNumber(
               imgPath: 'assets/MoMo Networks/MTN.png',
@@ -135,7 +136,7 @@ class _SellSummaryState extends State<SellSummary> {
               press: () {},
             ),
             SizedBox(
-              height: 68.0,
+              height: getProportionateScreenHeight(68.0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -154,7 +155,7 @@ class _SellSummaryState extends State<SellSummary> {
                     // Note: Styles for TextSpans must be explicitly defined.
                     // Child text spans will inherit styles from parent
                     style: TextStyle(
-                      fontSize: 12.0,
+                      fontSize: getProportionateScreenWidth(12.0),
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF757575),
@@ -170,7 +171,7 @@ class _SellSummaryState extends State<SellSummary> {
                           text: 'User Agreement',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 12,
+                              fontSize: getProportionateScreenWidth(12),
                               decoration: TextDecoration.underline)),
                       TextSpan(text: ' and its return, '),
                       TextSpan(text: 'refund and\ncancellation policy'),
@@ -191,7 +192,7 @@ class _SellSummaryState extends State<SellSummary> {
               tcolor: isSellSummaryChecked ? Colors.white : Color(0xFFAAABAE),
             ),
             SizedBox(
-              height: 15.0,
+              height: getProportionateScreenHeight(15.0),
             )
           ],
         ),
