@@ -6,6 +6,10 @@ import 'package:simplecoins_0/enum/constants.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class Summary extends StatefulWidget {
+  final String accountName;
+  final int numberText;
+  final String imagePath;
+  Summary({this.accountName, this.imagePath, this.numberText});
   @override
   _SummaryState createState() => _SummaryState();
 }
@@ -65,7 +69,7 @@ class _SummaryState extends State<Summary> {
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      '\$ 300.00',
+                      '\$ $priceTemp',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: getProportionateScreenWidth(30),
@@ -78,7 +82,7 @@ class _SummaryState extends State<Summary> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      'GHS 1740.00',
+                      'GHS ${priceTemp * buyRate}',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: getProportionateScreenWidth(16),
@@ -86,7 +90,7 @@ class _SummaryState extends State<Summary> {
                           color: Color(0xFF1857BB)),
                     ),
                     Text(
-                      '0.00034 BTC',
+                      '${priceTemp * btcRate} BTC',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: getProportionateScreenWidth(14),
@@ -142,7 +146,7 @@ class _SummaryState extends State<Summary> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '136z1Buef4G8gC7yXnsWp2RAoEngHjJmS4',
+                  cryptoAddressTemp,
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontSize: getProportionateScreenWidth(14),
@@ -168,12 +172,69 @@ class _SummaryState extends State<Summary> {
             SizedBox(
               height: getProportionateScreenHeight(10.0),
             ),
-            SavedNumber(
-              imgPath: 'assets/MoMo Networks/MTN.png',
-              numberText: '0503456748',
-              networkText: 'Desmond Sofua',
-              press: () {},
+            // SavedNumber(
+            //   imgPath: widget.imagePath,
+            //   numberText: widget.numberText.toString(),
+            //   networkText: widget.accountName,
+            //   press: () {},
+            // ),
+            Column(
+              children: [
+                SizedBox(
+                  height: 75.0,
+                  width: 335.0,
+                  child: FlatButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        side: BorderSide(color: Color(0xFFF2F2F2))),
+                    onPressed: () {},
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset(
+                          'assets/MoMo Networks/MTN.png',
+                          width: 52,
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Desmond Sofua',
+                              style: TextStyle(
+                                  fontFamily: 'Manrope',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16),
+                            ),
+                            Text(
+                              '0503456748',
+                              style: TextStyle(
+                                  fontFamily: 'Manrope',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14),
+                            ),
+                          ],
+                        ),
+                        Spacer(),
+                        // Icon(Icons.chevron_right),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 10.0,
+                )
+              ],
             ),
+            // SavedNumber(
+            //   imgPath: 'assets/MoMo Networks/MTN.png',
+            //   numberText: '0503456748',
+            //   networkText: 'Desmond Sofua',
+            //   press: () {},
+            // ),
             SizedBox(
               height: getProportionateScreenHeight(68.0),
             ),

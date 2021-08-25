@@ -85,7 +85,7 @@ class _CoinPaymentState extends State<CoinPayment> {
                         color: Color(0xFF787879)),
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'Send 3324 XRP ',
+                          text: 'Send ${priceTemp * btcRate} $currencyTemp ',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: getProportionateScreenWidth(16),
@@ -93,7 +93,7 @@ class _CoinPaymentState extends State<CoinPayment> {
                               fontWeight: FontWeight.w600)),
                       TextSpan(text: 'to '),
                       TextSpan(
-                          text: 'our XRP Wallet ',
+                          text: 'our $currencyTemp \n',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: getProportionateScreenWidth(16),
@@ -101,7 +101,7 @@ class _CoinPaymentState extends State<CoinPayment> {
                               fontWeight: FontWeight.w600)),
                       TextSpan(
                           text:
-                              'address\n below and you will automatically receive\nyour Mobile Money transfer after\nconfirmation.'),
+                              'Wallet address\n below and you will automatically receive\nyour Mobile Money transfer after\nconfirmation.'),
                       TextSpan(text: 'worth of Bitcoin.'),
                     ],
                   ),

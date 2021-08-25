@@ -4,6 +4,7 @@ import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/newnumber.dart';
 import 'package:simplecoins_0/components/savednumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/screens/summary/summary.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class ChoosePaymentNumber extends StatefulWidget {
@@ -81,7 +82,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                           fontSize: getProportionateScreenWidth(20)),
                     ),
                     Text(
-                      '\$50 BTC',
+                      '\$$priceTemp BTC',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w500,
@@ -95,7 +96,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                     Text(
                       //CHANGE TO AMOUNT ENTERED IN CHOOSE AMOUNT PAGE. GLOBALIZE AMOUNT
 
-                      '(GHS 34.56)',
+                      '(GHS ${priceTemp * buyRate.roundToDouble()})',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w400,
@@ -212,7 +213,17 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                                 press: () {
                                   paymentFromNameTemp = 'Desmond Sofua';
                                   paymentFromTemp = 0503456748;
-                                  Navigator.pushNamed(context, '/summary');
+                                  var imagePathTemp =
+                                      'assets/MoMo Networks/MTN.png';
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Summary(
+                                          accountName: paymentFromNameTemp,
+                                          imagePath: imagePathTemp,
+                                          numberText: paymentFromTemp,
+                                        ),
+                                      ));
                                 },
                               ),
                               SavedNumber(
@@ -222,7 +233,17 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                                 press: () {
                                   paymentFromNameTemp = 'Andy Apenteng';
                                   paymentFromTemp = 0503091855;
-                                  Navigator.pushNamed(context, '/summary');
+                                  var imagePathTemp =
+                                      'assets/MoMo Networks/Vodafone.png';
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Summary(
+                                          accountName: paymentFromNameTemp,
+                                          imagePath: imagePathTemp,
+                                          numberText: paymentFromTemp,
+                                        ),
+                                      ));
                                 },
                               ),
                               SavedNumber(
@@ -232,7 +253,17 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                                 press: () {
                                   paymentFromNameTemp = 'Godfrey Ebhohimen';
                                   paymentFromTemp = 0203094567;
-                                  Navigator.pushNamed(context, '/summary');
+                                  var imagePathTemp =
+                                      'assets/MoMo Networks/AirtelTigo.png';
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Summary(
+                                          accountName: paymentFromNameTemp,
+                                          imagePath: imagePathTemp,
+                                          numberText: paymentFromTemp,
+                                        ),
+                                      ));
                                 },
                               ),
                             ],
@@ -245,6 +276,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                   tcolor: Colors.white,
                   text: 'Next',
                   press: () {
+                    print(NewNumber().text);
                     // print(savednumbers.length);
                     // paymentFromNameTemp = accName.text;
                     // paymentFromTemp = int.parse(accNumber.text);

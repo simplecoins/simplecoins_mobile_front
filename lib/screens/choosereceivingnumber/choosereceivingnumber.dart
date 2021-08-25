@@ -83,7 +83,7 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                           fontSize: 20),
                     ),
                     Text(
-                      '\$50 BTC',
+                      '\$$priceTemp BTC',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w500,
@@ -97,7 +97,7 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                     Text(
                       //CHANGE TO AMOUNT ENTERED IN CHOOSE AMOUNT PAGE. GLOBALIZE AMOUNT
 
-                      '(GHS 34.56)',
+                      '(GHS ${priceTemp * buyRate})',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w400,
