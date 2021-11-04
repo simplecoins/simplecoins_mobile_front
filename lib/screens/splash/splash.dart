@@ -13,7 +13,7 @@ class _SplashState extends State<Splash> {
     SizeConfig().init(context);
     //Splash duration
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.popAndPushNamed(context, '/onboarding');
+      Navigator.pushReplacementNamed(context, '/onboarding');
     });
     return Container(
       decoration: BoxDecoration(

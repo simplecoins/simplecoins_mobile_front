@@ -276,7 +276,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                   tcolor: Colors.white,
                   text: 'Next',
                   press: () {
-                    print(NewNumber().text);
+                    // print(NewNumber());
                     // print(savednumbers.length);
                     // paymentFromNameTemp = accName.text;
                     // paymentFromTemp = int.parse(accNumber.text);
