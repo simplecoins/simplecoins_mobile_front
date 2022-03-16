@@ -14,4 +14,11 @@ class User extends ChangeNotifier {
     this.phone,
     this.token,
   });
+
+  User _user;
+
+  void setUser(User user) {
+    _user = user;
+    notifyListeners();
+  }
 }
