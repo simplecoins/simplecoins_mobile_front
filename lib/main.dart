@@ -22,6 +22,7 @@ import 'package:simplecoins_0/screens/transactions/transactions.dart';
 import 'package:simplecoins_0/screens/transactionsuccess/transactionsuccess.dart';
 import 'package:simplecoins_0/screens/userprofile/userprofile.dart';
 import 'package:simplecoins_0/screens/wrapper/wrapper.dart';
+import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 void main() {
   runApp(MediaQ());
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return MaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: '/splash',
