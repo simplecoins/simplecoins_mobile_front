@@ -55,7 +55,7 @@ class _SignUpState extends State<SignUp> {
               //crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 SizedBox(
-                  height: getProportionateScreenHeight(34.0),
+                  height: getProportionateScreenHeight(14.0),
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -226,7 +226,7 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
                 SizedBox(
-                  height: getProportionateScreenHeight(30.0),
+                  height: getProportionateScreenHeight(20.0),
                 ),
                 DefaultButton(
                   text: 'Sign Up',

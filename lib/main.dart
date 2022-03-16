@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
     SizeConfig().init(context);
     return MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/splash',
+        initialRoute: '/onboarding',
     routes: {
       '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
