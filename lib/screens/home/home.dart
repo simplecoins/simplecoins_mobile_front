@@ -34,20 +34,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             children: <Widget>[
               Text(
                 'GOOD EVENING',
-                style: TextStyle(
-                    fontFamily: 'Manrope',
-                    fontWeight: FontWeight.w600,
-                    fontSize: 12,
-                    color: Color(0xFF808080)),
+                  style: Theme.of(context).textTheme.headline3
               ),
               Text(
                 'Andy Andy Kwesi',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16,
-                ),
+                  style: Theme.of(context).textTheme.headline2
               )
             ],
           ),
@@ -65,23 +56,21 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(getProportionateScreenWidth(32)),
+        padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(32)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+          children: [
+            SizedBox(
+              height: getProportionateScreenHeight(70.0),
+            ),
             Text(
               'Buy Crypto. Sell for Cash',
-              style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16),
+                style: Theme.of(context).textTheme.subtitle1
             ),
             Text(
               'Easily buy and sell Crypto from us and pay\nwith Mobile money',
-              style: TextStyle(
-                  fontFamily: 'Manrope',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14),
+                style: Theme.of(context).textTheme.bodyText1
             ),
             Padding(
               padding: EdgeInsets.only(top: getProportionateScreenHeight(31.0)),
@@ -89,8 +78,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 borderRadius: BorderRadius.all(Radius.circular(7)),
                 child: Container(
                   // color: Colors.red
-                  width: 335.0,
-                  height: 58.0,
+                  width: getProportionateScreenWidth(335.0),
+                  height: getProportionateScreenHeight(58.0),
                   decoration: BoxDecoration(
                       color: Color(0xFFF5F7FA),
                       // border: Border.all(
@@ -117,7 +106,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     tabs: [
                       Tab(
                           child: Text(
-                        '             Buy Crypto             ',
+                        'Buy Crypto',
                         style: TextStyle(
                             fontFamily: 'Manrope',
                             fontWeight: FontWeight.w600,
@@ -125,7 +114,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       )),
                       Tab(
                           child: Text(
-                        '             Sell Crypto             ',
+                        'Sell Crypto',
                         style: TextStyle(
                             fontFamily: 'Manrope',
                             fontWeight: FontWeight.w600,
@@ -236,7 +225,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               height: getProportionateScreenHeight(90.0),
             ),
             SizedBox(
-              height: getProportionateScreenHeight(100.0),
+              height: getProportionateScreenHeight(90.0),
               width: double.infinity,
               child: Stack(
                 children: <Widget>[

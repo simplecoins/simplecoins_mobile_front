@@ -14,6 +14,7 @@ class Transaction extends ChangeNotifier {
   int paymentTo;
   double price;
   bool isBuying;
+  List<Transaction> _transactions = [];
 
   Transaction({
     this.currency,
@@ -29,4 +30,6 @@ class Transaction extends ChangeNotifier {
     this.paymentTo,
     this.price,
   });
+
+  List<Transaction> get transactions => _transactions;
 }

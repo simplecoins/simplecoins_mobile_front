@@ -50,6 +50,30 @@ class MyApp extends StatelessWidget {
     SizeConfig().init(context);
     return MaterialApp(
     debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            fontFamily: 'Manrope',
+            textTheme: TextTheme(
+                headline2: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w500,
+                  fontSize: getProportionateScreenWidth(16),
+                ),
+                headline3: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w600,
+                    fontSize: getProportionateScreenWidth(12),
+                    color: Color(0xFF808080)),
+                subtitle1: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w600,
+                  fontSize: getProportionateScreenWidth(16),
+                ),
+                bodyText1: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontWeight: FontWeight.w500,
+                    fontSize: getProportionateScreenWidth(14)))),
         initialRoute: '/onboarding',
     routes: {
       '/': (context) => Wrapper(),
