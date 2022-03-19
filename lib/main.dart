@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:simplecoins_0/models/user.dart';
 import 'package:simplecoins_0/screens/changepassword/changepassword.dart';
 import 'package:simplecoins_0/screens/choosepaymentnumber/choosepaymentnumber.dart';
@@ -25,7 +26,12 @@ import 'package:simplecoins_0/screens/userprofile/userprofile.dart';
 import 'package:simplecoins_0/screens/wrapper/wrapper.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
-void main() {
+bool isFirstTime;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences pref = await SharedPreferences.getInstance();
+  isFirstTime = pref.getBool('first_time');
   runApp(MultiProvider(
     providers: [ChangeNotifierProvider<User>(create: (context) => User())],
     child: MediaQ(),
@@ -78,9 +84,10 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w500,
                     fontSize: getProportionateScreenWidth(14)))),
-        initialRoute: '/onboarding',
+        initialRoute:
+            isFirstTime.toString() == 'true' ? '/onboarding' : '/signin',
     routes: {
-      '/': (context) => Wrapper(),
+          // '/': (context) => Wrapper(),
       '/splash': (context) => Splash(),
       '/onboarding': (context) => Onboarding(),
       '/signin': (context) => SignIn(),

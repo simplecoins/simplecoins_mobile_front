@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/googlebutton.dart';
+import 'package:simplecoins_0/helpers/assistant_methods.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class SignIn extends StatefulWidget {
@@ -128,7 +129,7 @@ class _SignInState extends State<SignIn> {
                   press: () {
                     _emailController.text.isNotEmpty &&
                             _passwordController.text.isNotEmpty
-                        ? Navigator.popAndPushNamed(context, '/home')
+                        ? Navigator.pushReplacementNamed(context, '/home')
                         : print('signin; invalid navigation');
                   },
                   bcolor: _emailController.text.isNotEmpty &&
@@ -153,7 +154,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.popAndPushNamed(context, '/signup');
+                    Navigator.pushReplacementNamed(context, '/signup');
                   },
                   child: Text(
                     "I don't have an account",

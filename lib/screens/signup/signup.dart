@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/components/button.dart';
+import 'package:simplecoins_0/helpers/assistant_methods.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class SignUp extends StatefulWidget {
@@ -238,6 +239,7 @@ class _SignUpState extends State<SignUp> {
                             _isChecked
                         ? Navigator.popAndPushNamed(context, '/home')
                         : print('Signup; invalid navigation');
+                    isFirstTime();
                   },
                   bcolor: _cpController.text.isNotEmpty &&
                           _pController.text.isNotEmpty &&
@@ -259,7 +261,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.popAndPushNamed(context, '/signin');
+                    Navigator.pushReplacementNamed(context, '/signin');
                   },
                   child: Text(
                     "I already have an account",
