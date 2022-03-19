@@ -82,8 +82,8 @@ showAlertDialog(BuildContext context) {
   );
 
   showDialog(
-      useRootNavigator: false,
       context: context,
+      useRootNavigator: false,
       builder: (BuildContext context) {
         return alert;
       });
