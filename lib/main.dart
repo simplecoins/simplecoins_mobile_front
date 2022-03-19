@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:simplecoins_0/models/user.dart';
 import 'package:simplecoins_0/screens/changepassword/changepassword.dart';
 import 'package:simplecoins_0/screens/choosepaymentnumber/choosepaymentnumber.dart';
 import 'package:simplecoins_0/screens/choosereceivingnumber/choosereceivingnumber.dart';
@@ -25,7 +26,10 @@ import 'package:simplecoins_0/screens/wrapper/wrapper.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 void main() {
-  runApp(MediaQ());
+  runApp(MultiProvider(
+    providers: [ChangeNotifierProvider<User>(create: (context) => User())],
+    child: MediaQ(),
+  ));
 }
 
 class MediaQ extends StatelessWidget {
