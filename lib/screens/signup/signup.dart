@@ -239,6 +239,7 @@ class _SignUpState extends State<SignUp> {
                             _isChecked
                         ? Navigator.popAndPushNamed(context, '/home')
                         : print('Signup; invalid navigation');
+                    setUserLogin('24yetbf8214g7b34t943df3');
                     isFirstTime();
                   },
                   bcolor: _cpController.text.isNotEmpty &&

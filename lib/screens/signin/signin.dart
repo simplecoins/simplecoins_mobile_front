@@ -131,6 +131,8 @@ class _SignInState extends State<SignIn> {
                             _passwordController.text.isNotEmpty
                         ? Navigator.pushReplacementNamed(context, '/home')
                         : print('signin; invalid navigation');
+                    setUserLogin('24yetbf8214g7b34t943df3');
+                    isFirstTime();
                   },
                   bcolor: _emailController.text.isNotEmpty &&
                           _passwordController.text.isNotEmpty

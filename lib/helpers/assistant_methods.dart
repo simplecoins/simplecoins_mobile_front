@@ -11,3 +11,15 @@ Future<bool> isFirstTime() async {
     return true;
   }
 }
+
+Future<void> setUserLogin(String authToken) async {
+  SharedPreferences pref = await SharedPreferences.getInstance();
+  pref.setString("jwt", authToken);
+  pref.setBool("is_login", true);
+}
+
+Future<void> clearUserLogin() async {
+  SharedPreferences pref = await SharedPreferences.getInstance();
+  pref.remove('jwt');
+  pref.setBool("is_login", false);
+}

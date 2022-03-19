@@ -27,11 +27,16 @@ import 'package:simplecoins_0/screens/wrapper/wrapper.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 bool isFirstTime;
+bool isLoggedIn;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   SharedPreferences pref = await SharedPreferences.getInstance();
   isFirstTime = pref.getBool('first_time');
+  isLoggedIn = pref.getBool('is_login');
+  print(isLoggedIn);
+
   runApp(MultiProvider(
     providers: [ChangeNotifierProvider<User>(create: (context) => User())],
     child: MediaQ(),
@@ -43,7 +48,6 @@ class MediaQ extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -59,7 +63,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return MaterialApp(
-    debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
             fontFamily: 'Manrope',
             textTheme: TextTheme(
@@ -84,31 +88,33 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w500,
                     fontSize: getProportionateScreenWidth(14)))),
-        initialRoute:
-            isFirstTime.toString() == 'true' ? '/onboarding' : '/signin',
-    routes: {
+        initialRoute: isFirstTime == null
+        ? '/onboarding'
+        : isLoggedIn.toString() == 'true' ? '/home' : '/signin',
+        routes: {
           // '/': (context) => Wrapper(),
-      '/splash': (context) => Splash(),
-      '/onboarding': (context) => Onboarding(),
-      '/signin': (context) => SignIn(),
-      '/signup': (context) => SignUp(),
-      '/home': (context) => Home(),
-      '/enterwalletaddress': (context) => EnterWalletAddress(),
-      '/enteramount': (context) => EnterAmount(),
-      '/payment': (context) => ChoosePaymentNumber(),
-      '/summary': (context) => Summary(),
-      '/paymentinfo': (context) => PaymentInfo(),
-      '/transactions': (context) => Transactions(),
-      '/thistory': (context) => THistorySelected(transaction: null,),
-      '/userprofile': (context) => UserProfile(),
-      '/changepassword': (context) => ChangePassword(),
-      '/passwordchangesuccess': (context) => PasswordChangeSuccess(),
-      '/entersellamount': (context) => EnterSellAmount(),
-      '/choosereceivingnumber': (context) => ChooseReceivingNumber(),
-      '/sellsummary': (context) => SellSummary(),
-      '/coinpayment': (context) => CoinPayment(),
-      '/transactionSuccess': (context) => TransactionSuccess()
-    }
-  );
+          '/splash': (context) => Splash(),
+          '/onboarding': (context) => Onboarding(),
+          '/signin': (context) => SignIn(),
+          '/signup': (context) => SignUp(),
+          '/home': (context) => Home(),
+          '/enterwalletaddress': (context) => EnterWalletAddress(),
+          '/enteramount': (context) => EnterAmount(),
+          '/payment': (context) => ChoosePaymentNumber(),
+          '/summary': (context) => Summary(),
+          '/paymentinfo': (context) => PaymentInfo(),
+          '/transactions': (context) => Transactions(),
+          '/thistory': (context) => THistorySelected(
+                transaction: null,
+              ),
+          '/userprofile': (context) => UserProfile(),
+          '/changepassword': (context) => ChangePassword(),
+          '/passwordchangesuccess': (context) => PasswordChangeSuccess(),
+          '/entersellamount': (context) => EnterSellAmount(),
+          '/choosereceivingnumber': (context) => ChooseReceivingNumber(),
+          '/sellsummary': (context) => SellSummary(),
+          '/coinpayment': (context) => CoinPayment(),
+          '/transactionSuccess': (context) => TransactionSuccess()
+        });
   }
 }

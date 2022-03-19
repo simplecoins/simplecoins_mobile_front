@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/helpers/assistant_methods.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class UserProfile extends StatefulWidget {
@@ -347,7 +348,8 @@ class _UserProfileState extends State<UserProfile> {
                     ),
                   ],
                 ),
-                onPressed: () {
+                onPressed: () async {
+                  clearUserLogin();
                   Navigator.pushNamedAndRemoveUntil(
                       context, '/signin', ModalRoute.withName('/onboarding'));
                 },
