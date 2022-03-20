@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:simplecoins_0/models/app_data.dart';
 import 'package:simplecoins_0/models/user.dart';
 import 'package:simplecoins_0/screens/changepassword/changepassword.dart';
 import 'package:simplecoins_0/screens/choosepaymentnumber/choosepaymentnumber.dart';
@@ -38,7 +39,10 @@ Future<void> main() async {
   print(isLoggedIn);
 
   runApp(MultiProvider(
-    providers: [ChangeNotifierProvider<User>(create: (context) => User())],
+    providers: [
+      ChangeNotifierProvider<User>(create: (context) => User()),
+      ChangeNotifierProvider<AppData>(create: (context) => AppData())
+    ],
     child: MediaQ(),
   ));
 }
