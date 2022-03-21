@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 import 'package:simplecoins_0/helpers/assistant_methods.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class UserProfile extends StatefulWidget {
   @override
@@ -9,6 +10,13 @@ class UserProfile extends StatefulWidget {
 }
 
 class _UserProfileState extends State<UserProfile> {
+  final Uri params = Uri(
+    scheme: 'mailto',
+    path: 'support@simplecoins.africa',
+    query:
+        'subject=App Feedback&body=App Version 3.23', //add subject and body here
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -287,14 +295,24 @@ class _UserProfileState extends State<UserProfile> {
                 SizedBox(
                   width: getProportionateScreenWidth(65.0),
                 ),
-                Text(
-                  '@simplecoins',
-                  style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      fontFamily: 'Manrope',
-                      fontSize: getProportionateScreenWidth(16.0),
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF3E8BF7)),
+                GestureDetector(
+                  onTap: () async {
+                    const url = "https://twitter.com/simplecoins";
+                    if (await canLaunch(url))
+                      await launch(url);
+                    else
+                      // can't launch url, there is some error
+                      throw "Could not launch $url";
+                  },
+                  child: Text(
+                    '@simplecoins',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontFamily: 'Manrope',
+                        fontSize: getProportionateScreenWidth(16.0),
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF3E8BF7)),
+                  ),
                 )
               ],
             ),
@@ -314,14 +332,24 @@ class _UserProfileState extends State<UserProfile> {
                 SizedBox(
                   width: getProportionateScreenWidth(77.0),
                 ),
-                Text(
-                  'support@simplecoins.africa',
-                  style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      fontFamily: 'Manrope',
-                      fontSize: getProportionateScreenWidth(16.0),
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF3E8BF7)),
+                GestureDetector(
+                  onTap: () async {
+                    var url = params.toString();
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: Text(
+                    'support@simplecoins.africa',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontFamily: 'Manrope',
+                        fontSize: getProportionateScreenWidth(16.0),
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF3E8BF7)),
+                  ),
                 )
               ],
             ),
