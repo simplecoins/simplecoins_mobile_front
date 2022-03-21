@@ -135,7 +135,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 controller: _tabController,
                 children: [
                   Tab(
-                    child: ListView(
+                    child: Column(
                       children: [
                         CryptoCard(
                           imgPath: 'assets/Homescreen/Bitcoin.png',
@@ -225,7 +225,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               height: getProportionateScreenHeight(90.0),
             ),
             SizedBox(
-              height: getProportionateScreenHeight(90.0),
+              height: getProportionateScreenHeight(70.0),
               width: double.infinity,
               child: Stack(
                 children: <Widget>[
