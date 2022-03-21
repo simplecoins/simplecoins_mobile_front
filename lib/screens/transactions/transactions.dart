@@ -84,7 +84,7 @@ class _TransactionsState extends State<Transactions>
                   tabs: [
                     Tab(
                         child: Text(
-                      '             All             ',
+                      'All',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600,
@@ -92,7 +92,7 @@ class _TransactionsState extends State<Transactions>
                     )),
                     Tab(
                         child: Text(
-                      '             Buy             ',
+                      'Buy',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600,
@@ -100,7 +100,7 @@ class _TransactionsState extends State<Transactions>
                     )),
                     Tab(
                         child: Text(
-                      '             Sell             ',
+                      'Sell',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w600,
