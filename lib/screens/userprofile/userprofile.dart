@@ -63,7 +63,11 @@ class _UserProfileState extends State<UserProfile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'GOOD EVENING',
+                      DateTime.now().hour < 10
+                          ? 'GOOD MORNING'
+                          : DateTime.now().hour < 18
+                              ? 'GOOD DAY'
+                              : 'GOOD EVENING',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: getProportionateScreenWidth(12.0),
@@ -127,7 +131,7 @@ class _UserProfileState extends State<UserProfile> {
                   width: getProportionateScreenWidth(71.0),
                 ),
                 Text(
-                  'vadikforz@gmail.com',
+                  'mrsofua@gmail.com',
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontSize: getProportionateScreenWidth(16.0),
@@ -153,7 +157,7 @@ class _UserProfileState extends State<UserProfile> {
                   width: getProportionateScreenWidth(71.0),
                 ),
                 Text(
-                  '+4 1782 049 294',
+                  '+233 55 711 3242',
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontSize: getProportionateScreenWidth(16.0),
@@ -268,14 +272,24 @@ class _UserProfileState extends State<UserProfile> {
                 SizedBox(
                   width: getProportionateScreenWidth(48.0),
                 ),
-                Text(
-                  '@simplecoins',
-                  style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      fontFamily: 'Manrope',
-                      fontSize: getProportionateScreenWidth(16.0),
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF3E8BF7)),
+                GestureDetector(
+                  onTap: () async {
+                    const url = "https://t.me/atsigndreezy";
+                    if (await canLaunch(url))
+                      await launch(url);
+                    else
+                      // can't launch url, there is some error
+                      throw "Could not launch $url";
+                  },
+                  child: Text(
+                    '@simplecoins',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontFamily: 'Manrope',
+                        fontSize: getProportionateScreenWidth(16.0),
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF3E8BF7)),
+                  ),
                 )
               ],
             ),
