@@ -104,7 +104,13 @@ class _THistorySelectedState extends State<THistorySelected> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'YOU ARE BUYING',
+                          widget.transaction.status == 'PROCESSING' ||
+                                  widget.transaction.status ==
+                                      'AWAITING PAYMENT'
+                              ? 'YOU ARE BUYING'
+                              : widget.transaction.status == 'PROCESSED'
+                                  ? 'YOU HAVE BOUGHT'
+                                  : '',
                           style: TextStyle(
                               fontFamily: 'Manrope',
                               fontSize: 14,

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:simplecoins_0/enum/constants.dart';
-// import 'package:intl/intl.dart';
 import 'package:simplecoins_0/modals/listview-all.dart';
 import 'package:simplecoins_0/modals/listview-buy.dart';
 import 'package:simplecoins_0/modals/listview-sell.dart';
@@ -13,7 +11,7 @@ class Transactions extends StatefulWidget {
 
 class _TransactionsState extends State<Transactions>
     with SingleTickerProviderStateMixin {
-  // final testvar = 70.0;
+      
   TabController _tabController;
   @override
   void initState() {
