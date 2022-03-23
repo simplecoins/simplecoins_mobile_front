@@ -85,7 +85,7 @@ class _CoinPaymentState extends State<CoinPayment> {
                         color: Color(0xFF787879)),
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'Send ${priceTemp * btcRate} $currencyTemp ',
+                          text: 'Send ${priceTemp! * btcRate} $currencyTemp ',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: getProportionateScreenWidth(16),

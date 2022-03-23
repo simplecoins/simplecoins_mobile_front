@@ -56,7 +56,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                 children: <TextSpan>[
                   TextSpan(text: 'Awesome!!\nYou just placed an order to Buy '),
                   TextSpan(
-                      text: 'GHS\n ${priceTemp * buyRate} ',
+                      text: 'GHS\n ${priceTemp! * buyRate} ',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: getProportionateScreenWidth(18),
@@ -91,7 +91,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                         fontWeight: FontWeight.w400),
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'Send ${priceTemp * buyRate} GHS ',
+                          text: 'Send ${priceTemp! * buyRate} GHS ',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: getProportionateScreenWidth(16),

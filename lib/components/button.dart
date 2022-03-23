@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
-    Key key,
+    Key? key,
     this.text,
     this.press,
     this.bcolor,
     this.tcolor,
   }) : super(key: key);
-  final String text;
-  final Function press;
-  final Color bcolor;
-  final Color tcolor;
+  final String? text;
+  final Function? press;
+  final Color? bcolor;
+  final Color? tcolor;
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +22,17 @@ class DefaultButton extends StatelessWidget {
         padding: EdgeInsets.all(20.0),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: bcolor)),
+            side: BorderSide(color: bcolor!)),
         color: bcolor,
         child: Text(
-          text,
+          text!,
           style: TextStyle(
               color: tcolor,
               fontFamily: 'Manrope',
               fontWeight: FontWeight.w600,
               fontSize: 16),
         ),
-        onPressed: press,
+        onPressed: press as void Function()?,
       ),
     );
   }

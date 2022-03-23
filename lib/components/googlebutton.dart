@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class GoogleButton extends StatelessWidget {
   const GoogleButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

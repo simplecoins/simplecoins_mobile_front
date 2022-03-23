@@ -13,7 +13,7 @@ class ChooseReceivingNumber extends StatefulWidget {
 
 class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  TabController? _tabController;
   @override
   void initState() {
     // TODO: implement initState
@@ -60,7 +60,7 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
           FocusScopeNode currentFocus = FocusScope.of(context);
           if (!currentFocus.hasPrimaryFocus &&
               currentFocus.focusedChild != null) {
-            currentFocus.focusedChild.unfocus();
+            currentFocus.focusedChild!.unfocus();
           }
         },
         child: Padding(
@@ -97,7 +97,7 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                     Text(
                       //CHANGE TO AMOUNT ENTERED IN CHOOSE AMOUNT PAGE. GLOBALIZE AMOUNT
 
-                      '(GHS ${priceTemp * buyRate})',
+                      '(GHS ${priceTemp! * buyRate})',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w400,

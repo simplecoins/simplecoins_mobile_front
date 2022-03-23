@@ -14,7 +14,7 @@ class _SignInState extends State<SignIn> {
   TextEditingController _passwordController = TextEditingController();
 
   bool _isHidden = true;
-  String _password;
+  String? _password;
 
   void _toggle() {
     setState(() {
@@ -39,7 +39,7 @@ class _SignInState extends State<SignIn> {
           FocusScopeNode currentFocus = FocusScope.of(context);
           if (!currentFocus.hasPrimaryFocus &&
               currentFocus.focusedChild != null) {
-            currentFocus.focusedChild.unfocus();
+            currentFocus.focusedChild!.unfocus();
           }
         },
         child: Padding(

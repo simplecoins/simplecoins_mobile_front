@@ -5,11 +5,11 @@ TextEditingController accName = TextEditingController();
 TextEditingController accNumber = TextEditingController();
 
 class NewNumber extends StatefulWidget {
-  const NewNumber({Key key, this.imgPath, this.text, this.stateSetter})
+  const NewNumber({Key? key, this.imgPath, this.text, this.stateSetter})
       : super(key: key);
-  final String imgPath;
-  final String text;
-  final VoidCallback stateSetter;
+  final String? imgPath;
+  final String? text;
+  final VoidCallback? stateSetter;
 
   @override
   _NewNumberState createState() => _NewNumberState();
@@ -37,7 +37,7 @@ class _NewNumberState extends State<NewNumber> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
-                  widget.imgPath,
+                  widget.imgPath!,
                   width: 52,
                 ),
                 SizedBox(
@@ -48,7 +48,7 @@ class _NewNumberState extends State<NewNumber> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      widget.text,
+                      widget.text!,
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w500,

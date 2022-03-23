@@ -27,8 +27,8 @@ import 'package:simplecoins_0/screens/userprofile/userprofile.dart';
 import 'package:simplecoins_0/screens/wrapper/wrapper.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
-bool isFirstTime;
-bool isLoggedIn;
+bool? isFirstTime;
+bool? isLoggedIn;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,7 +60,7 @@ class MediaQ extends StatelessWidget {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

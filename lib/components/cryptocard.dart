@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CryptoCard extends StatelessWidget {
-  const CryptoCard({Key key, this.cryptoName, this.imgPath, this.press})
+  const CryptoCard({Key? key, this.cryptoName, this.imgPath, this.press})
       : super(key: key);
-  final String imgPath;
-  final String cryptoName;
-  final Function press;
+  final String? imgPath;
+  final String? cryptoName;
+  final Function? press;
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +16,13 @@ class CryptoCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: BorderSide(color: Color(0xFFF2F2F2))),
-        onPressed: press,
+        onPressed: press as void Function()?,
         child: (Row(
           //mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              imgPath,
+              imgPath!,
               width: 52,
             ),
             SizedBox(
@@ -33,7 +33,7 @@ class CryptoCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  cryptoName,
+                  cryptoName!,
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontWeight: FontWeight.w600,

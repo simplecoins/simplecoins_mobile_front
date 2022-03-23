@@ -4,7 +4,7 @@ import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class CopyNumber extends StatelessWidget {
   const CopyNumber({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

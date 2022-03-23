@@ -6,9 +6,9 @@ import 'package:simplecoins_0/enum/constants.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class Summary extends StatefulWidget {
-  final String accountName;
-  final int numberText;
-  final String imagePath;
+  final String? accountName;
+  final int? numberText;
+  final String? imagePath;
   Summary({this.accountName, this.imagePath, this.numberText});
   @override
   _SummaryState createState() => _SummaryState();
@@ -82,7 +82,7 @@ class _SummaryState extends State<Summary> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      'GHS ${priceTemp * buyRate}',
+                      'GHS ${priceTemp! * buyRate}',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: getProportionateScreenWidth(16),
@@ -90,7 +90,7 @@ class _SummaryState extends State<Summary> {
                           color: Color(0xFF1857BB)),
                     ),
                     Text(
-                      '${priceTemp * btcRate} BTC',
+                      '${priceTemp! * btcRate} BTC',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: getProportionateScreenWidth(14),
@@ -146,7 +146,7 @@ class _SummaryState extends State<Summary> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  cryptoAddressTemp,
+                  cryptoAddressTemp!,
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontSize: getProportionateScreenWidth(14),

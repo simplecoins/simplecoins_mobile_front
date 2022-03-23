@@ -14,7 +14,7 @@ class ChoosePaymentNumber extends StatefulWidget {
 
 class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  TabController? _tabController;
   @override
   void initState() {
     // TODO: implement initState
@@ -29,7 +29,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
         FocusScopeNode currentFocus = FocusScope.of(context);
         if (!currentFocus.hasPrimaryFocus &&
             currentFocus.focusedChild != null) {
-          currentFocus.focusedChild.unfocus();
+          currentFocus.focusedChild!.unfocus();
         }
       },
       child: Scaffold(
@@ -96,7 +96,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                     Text(
                       //CHANGE TO AMOUNT ENTERED IN CHOOSE AMOUNT PAGE. GLOBALIZE AMOUNT
 
-                      '(GHS ${priceTemp * buyRate.roundToDouble()})',
+                      '(GHS ${priceTemp! * buyRate.roundToDouble()})',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w400,

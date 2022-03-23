@@ -49,7 +49,7 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
           FocusScopeNode currentFocus = FocusScope.of(context);
           if (!currentFocus.hasPrimaryFocus &&
               currentFocus.focusedChild != null) {
-            currentFocus.focusedChild.unfocus();
+            currentFocus.focusedChild!.unfocus();
           }
         },
         child: Padding(
@@ -95,8 +95,9 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
               GestureDetector(
                 onTap: () async {
                   // paste from clipboard
-                  ClipboardData data = await Clipboard.getData('text/plain');
-                  cryptoAddressController.text = data.text;
+                  ClipboardData data = await (Clipboard.getData('text/plain')
+                      as Future<ClipboardData>);
+                  cryptoAddressController.text = data.text!;
                 },
                 child: Text(
                   'Click to paste address',

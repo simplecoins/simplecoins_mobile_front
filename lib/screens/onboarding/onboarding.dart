@@ -95,13 +95,13 @@ class _OnboardingState extends State<Onboarding> {
 
 class PageContent extends StatelessWidget {
   const PageContent({
-    Key key,
+    Key? key,
     this.text,
     this.image,
     this.text1,
     this.image1,
   }) : super(key: key);
-  final String text, image, text1, image1;
+  final String? text, image, text1, image1;
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +109,7 @@ class PageContent extends StatelessWidget {
       children: <Widget>[
         Spacer(),
         Image.asset(
-          image,
+          image!,
           fit: BoxFit.fitWidth,
         ),
         Spacer(),
@@ -122,7 +122,7 @@ class PageContent extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Text(
-                text,
+                text!,
                 style: TextStyle(
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w800,
@@ -130,7 +130,7 @@ class PageContent extends StatelessWidget {
                     color: Colors.black),
               ),
               SizedBox(width: getProportionateScreenWidth(10)),
-              Image.asset(image1)
+              Image.asset(image1!)
             ],
           ),
         ),
@@ -141,7 +141,7 @@ class PageContent extends StatelessWidget {
               getProportionateScreenWidth(20),
               getProportionateScreenHeight(5)),
           child: Text(
-            text1,
+            text1!,
             style: TextStyle(
                 fontFamily: 'Manrope',
                 fontWeight: FontWeight.w500,

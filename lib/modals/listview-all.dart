@@ -96,7 +96,7 @@ Column simpleCoinsCard(Transaction transaction, BuildContext context) {
                         fontSize: 14),
                   ),
                   Text(
-                    transaction.status,
+                    transaction.status!,
                     style: TextStyle(
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w700,
@@ -122,12 +122,12 @@ Column simpleCoinsCard(Transaction transaction, BuildContext context) {
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w600,
                         fontSize: 14,
-                        color: transaction.isBuying
+                        color: transaction.isBuying!
                             ? Color(0xFF40A187)
                             : Color(0xFFE56565)),
                   ),
                   Text(
-                    'GHS ' + (transaction.price * 5.90).toString(),
+                    'GHS ' + (transaction.price! * 5.90).toString(),
                     style: TextStyle(
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w600,

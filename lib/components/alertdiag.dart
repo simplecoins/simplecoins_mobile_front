@@ -23,7 +23,7 @@ showAlertDialog(BuildContext context) {
       ),
     ),
     onPressed: () {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
+      WidgetsBinding.instance!.addPostFrameCallback((_) {
         Navigator.popUntil(context, ModalRoute.withName('/home'));
       });
     },

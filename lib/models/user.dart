@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class User extends ChangeNotifier {
-  String id;
-  String email;
-  String name;
-  String phone;
-  String token;
+  String? id;
+  String? email;
+  String? name;
+  String? phone;
+  String? token;
 
   User({
     this.id,
@@ -15,9 +15,9 @@ class User extends ChangeNotifier {
     this.token,
   });
 
-  User _user;
+  User? _user;
 
-  User get user => _user;
+  User? get user => _user;
 
   void setUser(User user) {
     _user = user;

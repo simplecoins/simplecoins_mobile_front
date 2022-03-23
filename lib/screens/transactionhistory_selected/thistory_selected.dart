@@ -7,8 +7,8 @@ import 'package:simplecoins_0/components/savednumber.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 
 class THistorySelected extends StatefulWidget {
-  final Transaction transaction;
-  THistorySelected({@required this.transaction});
+  final Transaction? transaction;
+  THistorySelected({required this.transaction});
 
   @override
   _THistorySelectedState createState() => _THistorySelectedState();
@@ -63,7 +63,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Visibility(
-                      visible: widget.transaction.status == 'PROCESSED' ? false : true,
+                      visible: widget.transaction!.status == 'PROCESSED' ? false : true,
                       child: Column(
                         children: [
                           Text(
@@ -82,12 +82,12 @@ class _THistorySelectedState extends State<THistorySelected> {
                       ),
                     ),
                     Visibility(
-                      visible: widget.transaction.status == 'PROCESSED' ? true : false,
+                      visible: widget.transaction!.status == 'PROCESSED' ? true : false,
                       child: Column(
                         children: [
                           CryptoCard(
-                            imgPath: 'assets/Homescreen/${widget.transaction.currency}.png',
-                            cryptoName: widget.transaction.currency,
+                            imgPath: 'assets/Homescreen/${widget.transaction!.currency}.png',
+                            cryptoName: widget.transaction!.currency,
                             press: () {},
                           ),
                           SizedBox(
@@ -104,11 +104,11 @@ class _THistorySelectedState extends State<THistorySelected> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.transaction.status == 'PROCESSING' ||
-                                  widget.transaction.status ==
+                          widget.transaction!.status == 'PROCESSING' ||
+                                  widget.transaction!.status ==
                                       'AWAITING PAYMENT'
                               ? 'YOU ARE BUYING'
-                              : widget.transaction.status == 'PROCESSED'
+                              : widget.transaction!.status == 'PROCESSED'
                                   ? 'YOU HAVE BOUGHT'
                                   : '',
                           style: TextStyle(
@@ -117,7 +117,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                               fontWeight: FontWeight.w600),
                         ),
                         Text(
-                          '\$ ${widget.transaction.price}',
+                          '\$ ${widget.transaction!.price}',
                           style: TextStyle(
                               fontFamily: 'Manrope',
                               fontSize: 30,
@@ -130,7 +130,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          'GHS ${widget.transaction.price * buyRate}',
+                          'GHS ${widget.transaction!.price! * buyRate}',
                           style: TextStyle(
                               fontFamily: 'Manrope',
                               fontSize: 16,
@@ -138,7 +138,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                               color: Color(0xFF1857BB)),
                         ),
                         Text(
-                          '${widget.transaction.price * btcRate} BTC',
+                          '${widget.transaction!.price! * btcRate} BTC',
                           style: TextStyle(
                               fontFamily: 'Manrope',
                               fontSize: 14,
@@ -194,7 +194,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${widget.transaction.buyRate} GHS',
+                      '${widget.transaction!.buyRate} GHS',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 16,
@@ -221,7 +221,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '\$${widget.transaction.minersFee}',
+                      '\$${widget.transaction!.minersFee}',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 16,
@@ -248,7 +248,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${widget.transaction.cryptoAddress}',
+                      '${widget.transaction!.cryptoAddress}',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: 14,
@@ -281,7 +281,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   children: [
                     //change 'you are paying from' and 'you paid from' in set header text
                     Text(
-                      widget.transaction.status == 'PROCESSED'
+                      widget.transaction!.status == 'PROCESSED'
                           ? 'You paid from'
                           : 'You are paying from',
                       style: TextStyle(
@@ -305,7 +305,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                   height: 10.0,
                 ),
                 Visibility(
-                  visible: widget.transaction.status == 'PROCESSED' ? false : true,
+                  visible: widget.transaction!.status == 'PROCESSED' ? false : true,
                   child: Column(
                     children: [
                       SizedBox(
@@ -326,7 +326,7 @@ class _THistorySelectedState extends State<THistorySelected> {
                               children: <TextSpan>[
                                 TextSpan(
                                     text:
-                                        'Send ${widget.transaction.price * buyRate} GHS ',
+                                        'Send ${widget.transaction!.price! * buyRate} GHS ',
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 16,

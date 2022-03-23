@@ -73,7 +73,7 @@ class _SellSummaryState extends State<SellSummary> {
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      '${priceTemp * btcRate} BTC',
+                      '${priceTemp! * btcRate} BTC',
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontSize: getProportionateScreenWidth(14),
@@ -103,7 +103,7 @@ class _SellSummaryState extends State<SellSummary> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'GHC ' + '${priceTemp * buyRate}',
+                  'GHC ' + '${priceTemp! * buyRate}',
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontSize: getProportionateScreenWidth(16),

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 class Transaction extends ChangeNotifier {
-  String currency;
-  String status;
+  String? currency;
+  String? status;
   var creationdate;
-  double buyRate;
-  double minersFee;
-  String cryptoAddress;
+  double? buyRate;
+  double? minersFee;
+  String? cryptoAddress;
   //continue from here
-  String paymentToName;
-  String paymentFromName;
-  int paymentFrom;
-  int paymentTo;
-  double price;
-  bool isBuying;
+  String? paymentToName;
+  String? paymentFromName;
+  int? paymentFrom;
+  int? paymentTo;
+  double? price;
+  bool? isBuying;
   List<Transaction> _transactions = [];
 
   Transaction({

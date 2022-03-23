@@ -15,7 +15,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController _cpController = new TextEditingController();
   bool _isChecked = false;
   bool _isHidden = true;
-  String _password;
+  String? _password;
 
   void _togglePass() {
     setState(() {
@@ -46,7 +46,7 @@ class _SignUpState extends State<SignUp> {
           FocusScopeNode currentFocus = FocusScope.of(context);
           if (!currentFocus.hasPrimaryFocus &&
               currentFocus.focusedChild != null) {
-            currentFocus.focusedChild.unfocus();
+            currentFocus.focusedChild!.unfocus();
           }
         },
         child: Padding(

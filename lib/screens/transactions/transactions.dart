@@ -12,7 +12,7 @@ class Transactions extends StatefulWidget {
 class _TransactionsState extends State<Transactions>
     with SingleTickerProviderStateMixin {
       
-  TabController _tabController;
+  TabController? _tabController;
   @override
   void initState() {
     // TODO: implement initState

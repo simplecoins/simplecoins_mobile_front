@@ -142,7 +142,7 @@ class _EnterAmountState extends State<EnterAmount> {
               press: () {
                 priceTemp = double.parse(text);
                 print(text);
-                minersFeeTemp = priceTemp * 0.01;
+                minersFeeTemp = priceTemp! * 0.01;
                 print(minersFeeTemp);
                 creationdateTemp = DateTime.now();
                 Navigator.pushNamed(context, '/payment');

@@ -63,7 +63,7 @@ class _TransactionSuccessState extends State<TransactionSuccess> {
                   TextSpan(
                       text: 'Awesome!!\nYou just placed an order to Buy\n'),
                   TextSpan(
-                      text: 'GHS ${priceTemp * buyRate} ',
+                      text: 'GHS ${priceTemp! * buyRate} ',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: getProportionateScreenWidth(18),

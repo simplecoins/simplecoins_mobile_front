@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class SavedNumber extends StatelessWidget {
   const SavedNumber({
-    Key key,
+    Key? key,
     this.imgPath,
     this.networkText,
     this.press,
     this.numberText,
   }) : super(key: key);
-  final String imgPath;
-  final String networkText;
-  final String numberText;
-  final Function press;
+  final String? imgPath;
+  final String? networkText;
+  final String? numberText;
+  final Function? press;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +24,12 @@ class SavedNumber extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
                 side: BorderSide(color: Color(0xFFF2F2F2))),
-            onPressed: press,
+            onPressed: press as void Function()?,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
-                  imgPath,
+                  imgPath!,
                   width: 52,
                 ),
                 SizedBox(
@@ -40,14 +40,14 @@ class SavedNumber extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      networkText,
+                      networkText!,
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w500,
                           fontSize: 16),
                     ),
                     Text(
-                      numberText,
+                      numberText!,
                       style: TextStyle(
                           fontFamily: 'Manrope',
                           fontWeight: FontWeight.w400,

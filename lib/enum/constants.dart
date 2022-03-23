@@ -8,18 +8,18 @@ bool isSellSummaryChecked = false;
 bool isPInfoChecked = false;
 
 //temporary variables to be pushed at the end of order process
-String currencyTemp;
-String statusTemp;
+String? currencyTemp;
+String? statusTemp;
 var creationdateTemp;
-double buyRateTemp;
-double minersFeeTemp;
-String cryptoAddressTemp;
-String paymentFromNameTemp;
-String paymentToNameTemp;
-int paymentFromTemp;
-int paymentToTemp;
-double priceTemp;
-bool isBuyingTemp;
+double? buyRateTemp;
+double? minersFeeTemp;
+String? cryptoAddressTemp;
+String? paymentFromNameTemp;
+String? paymentToNameTemp;
+int? paymentFromTemp;
+int? paymentToTemp;
+double? priceTemp;
+bool? isBuyingTemp;
 
 //array values
 var currencies = ['Bitcoin', 'USDT', 'Ripple'];
@@ -56,8 +56,8 @@ List<Map<String, String>> pageData = [
 ];
 
 class SavedNumbers {
-  String name;
-  int number;
+  String? name;
+  int? number;
 
   SavedNumbers({
     this.name,
@@ -72,19 +72,19 @@ List<SavedNumbers> savednumbers = [
 ];
 
 class Transaction {
-  String currency;
-  String status;
+  String? currency;
+  String? status;
   var creationdate;
-  double buyRate;
-  double minersFee;
-  String cryptoAddress;
+  double? buyRate;
+  double? minersFee;
+  String? cryptoAddress;
   //continue from here
-  String paymentToName;
-  String paymentFromName;
-  int paymentFrom;
-  int paymentTo;
-  double price;
-  bool isBuying;
+  String? paymentToName;
+  String? paymentFromName;
+  int? paymentFrom;
+  int? paymentTo;
+  double? price;
+  bool? isBuying;
 
   Transaction({
     this.currency,
