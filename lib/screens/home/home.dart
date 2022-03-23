@@ -33,7 +33,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'GOOD EVENING',
+                  DateTime.now().hour < 10
+                      ? 'GOOD MORNING'
+                      : DateTime.now().hour < 18
+                          ? 'GOOD DAY'
+                          : 'GOOD EVENING',
                   style: Theme.of(context).textTheme.headline3
               ),
               Text(

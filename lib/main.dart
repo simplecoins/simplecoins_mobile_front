@@ -36,7 +36,6 @@ Future<void> main() async {
   SharedPreferences pref = await SharedPreferences.getInstance();
   isFirstTime = pref.getBool('first_time');
   isLoggedIn = pref.getBool('is_login');
-  print(isLoggedIn);
 
   runApp(MultiProvider(
     providers: [
