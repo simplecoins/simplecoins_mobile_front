@@ -15,7 +15,8 @@ class _SignUpState extends State<SignUp> {
   TextEditingController _cpController = new TextEditingController();
   bool _isChecked = false;
   bool _isHidden = true;
-  String? _password;
+  bool _isactive = false;
+  bool _passwordEmpty = true;
 
   void _togglePass() {
     setState(() {
@@ -23,14 +24,45 @@ class _SignUpState extends State<SignUp> {
     });
   }
 
-  // void _toggleTnA() {
-  //   setState(() {
-  //     _isChecked = !_isChecked;
-  //   });
-  // }
+  void assertPassEmpty() {
+    setState(() {
+      if (_emailController.text.isNotEmpty) {
+        _passwordEmpty = false;
+      } else {
+        _passwordEmpty = true;
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the
+    // widget tree.
+    _nameController.dispose();
+    _emailController.dispose();
+    _pController.dispose();
+    _cpController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Start listening to changes.
+    _emailController.addListener(assertPassEmpty);
+    _nameController.addListener(assertPassEmpty);
+    _cpController.addListener(assertPassEmpty);
+    _pController.addListener(assertPassEmpty);
+  }
 
   @override
   Widget build(BuildContext context) {
+    _emailController.text.isNotEmpty &&
+            _nameController.text.isNotEmpty &&
+            _cpController.text.isNotEmpty &&
+            _pController.text.isNotEmpty
+        ? _isactive = true
+        : _isactive = false;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -123,7 +155,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 TextFormField(
                   controller: _pController,
-                  onSaved: (val) => _password = val,
+                  // onSaved: (val) => _password = val,
                   autofocus: false,
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: _isHidden,
@@ -150,7 +182,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 TextFormField(
                   controller: _cpController,
-                  onSaved: (val) => _password = val,
+                  // onSaved: (val) => _password = val,
                   autofocus: false,
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: _isHidden,
@@ -231,31 +263,13 @@ class _SignUpState extends State<SignUp> {
                 ),
                 DefaultButton(
                   text: 'Sign Up',
+                  isActive: _isactive && _isChecked,
                   press: () {
-                    _cpController.text.isNotEmpty &&
-                            _pController.text.isNotEmpty &&
-                            _emailController.text.isNotEmpty &&
-                            _nameController.text.isNotEmpty &&
-                            _isChecked
-                        ? Navigator.popAndPushNamed(context, '/home')
-                        : print('Signup; invalid navigation');
-                    setUserLogin('24yetbf8214g7b34t943df3');
+                    Navigator.popAndPushNamed(context, '/home');
+                    signUp(
+                        context, _nameController.text, _emailController.text);
                     isFirstTime();
                   },
-                  bcolor: _cpController.text.isNotEmpty &&
-                          _pController.text.isNotEmpty &&
-                          _emailController.text.isNotEmpty &&
-                          _nameController.text.isNotEmpty &&
-                          _isChecked
-                      ? Colors.black
-                      : Color(0xFFF2F2F2),
-                  tcolor: _cpController.text.isNotEmpty &&
-                          _pController.text.isNotEmpty &&
-                          _emailController.text.isNotEmpty &&
-                          _nameController.text.isNotEmpty &&
-                          _isChecked
-                      ? Colors.white
-                      : Color(0xFFAAABAE),
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(36.0),

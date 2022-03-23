@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/cryptocard.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/models/user.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 class Home extends StatefulWidget {
@@ -11,11 +13,14 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   TabController? _tabController;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _tabController = TabController(vsync: this, length: 2);
+    var _user = Provider.of<User>(context, listen: false).user!.name;
+    print(_user);
   }
 
   @override
@@ -38,12 +43,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       : DateTime.now().hour < 18
                           ? 'GOOD DAY'
                           : 'GOOD EVENING',
-                  style: Theme.of(context).textTheme.headline3
-              ),
-              Text(
-                'Andy Andy Kwesi',
-                  style: Theme.of(context).textTheme.headline2
-              )
+                  style: Theme.of(context).textTheme.headline3),
+              Text('Andy Andy Kwesi',
+                  style: Theme.of(context).textTheme.headline2)
             ],
           ),
         ),
@@ -68,14 +70,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             SizedBox(
               height: getProportionateScreenHeight(70.0),
             ),
+            Text('Buy Crypto. Sell for Cash',
+                style: Theme.of(context).textTheme.subtitle1),
             Text(
-              'Buy Crypto. Sell for Cash',
-                style: Theme.of(context).textTheme.subtitle1
-            ),
-            Text(
-              'Easily buy and sell Crypto from us and pay\nwith Mobile money',
-                style: Theme.of(context).textTheme.bodyText1
-            ),
+                'Easily buy and sell Crypto from us and pay\nwith Mobile money',
+                style: Theme.of(context).textTheme.bodyText1),
             Padding(
               padding: EdgeInsets.only(top: getProportionateScreenHeight(31.0)),
               child: ClipRRect(
