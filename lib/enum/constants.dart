@@ -1,4 +1,6 @@
 //checks and verifying values
+import 'package:simplecoins_0/models/user.dart';
+
 String cryptoType = '';
 bool isVisible = false;
 bool isSignInFilled = false;
@@ -24,6 +26,8 @@ bool? isBuyingTemp;
 //array values
 var currencies = ['Bitcoin', 'USDT', 'Ripple'];
 var status = ['AWAITING PAYMENT', 'PROCESSING', 'PROCESSED', 'CANCELLED'];
+
+User? userLogin = User(name: '', id: '', email: '', token: '', phone: '');
 
 //values to get from live API
 var buyRate = 5.70;

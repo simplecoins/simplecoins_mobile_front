@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:simplecoins_0/components/button.dart';
 import 'package:simplecoins_0/components/cryptocard.dart';
 import 'package:simplecoins_0/enum/constants.dart';
+import 'package:simplecoins_0/helpers/assistant_methods.dart';
 import 'package:simplecoins_0/models/user.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 
@@ -19,8 +20,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     // TODO: implement initState
     super.initState();
     _tabController = TabController(vsync: this, length: 2);
-    var _user = Provider.of<User>(context, listen: false).user!.name;
-    print(_user);
+    
+    // var _user = Provider.of<User>(context, listen: false).name;
+    // print(userLogin!.name);
+    // print(_user);
   }
 
   @override
@@ -44,7 +47,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           ? 'GOOD DAY'
                           : 'GOOD EVENING',
                   style: Theme.of(context).textTheme.headline3),
-              Text('Andy Andy Kwesi',
+              Text(userLogin!.name!,
+                  // Provider.of<User>(context, listen: false).name! == null
+                  //     ? ''
+                  //     : Provider.of<User>(context, listen: false).name!,
                   style: Theme.of(context).textTheme.headline2)
             ],
           ),

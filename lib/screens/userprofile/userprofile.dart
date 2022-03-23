@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 import 'package:simplecoins_0/helpers/assistant_methods.dart';
+import 'package:simplecoins_0/models/user.dart';
 import 'package:simplecoins_0/utils/sizeConfig.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -75,7 +77,8 @@ class _UserProfileState extends State<UserProfile> {
                           color: Color(0xFF808080)),
                     ),
                     Text(
-                      'Andy Andy Kwesi',
+                      // Provider.of<User>(context, listen: false).name!,
+                      userLogin!.name!,
                       style: TextStyle(
                         fontFamily: 'Manrope',
                         fontSize: getProportionateScreenWidth(16.0),
@@ -131,7 +134,8 @@ class _UserProfileState extends State<UserProfile> {
                   width: getProportionateScreenWidth(71.0),
                 ),
                 Text(
-                  'mrsofua@gmail.com',
+                  // Provider.of<User>(context, listen: false).email!,
+                  userLogin!.email!,
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontSize: getProportionateScreenWidth(16.0),
@@ -157,7 +161,7 @@ class _UserProfileState extends State<UserProfile> {
                   width: getProportionateScreenWidth(71.0),
                 ),
                 Text(
-                  '+233 55 711 3242',
+                  '+${userLogin!.phone!}',
                   style: TextStyle(
                       fontFamily: 'Manrope',
                       fontSize: getProportionateScreenWidth(16.0),

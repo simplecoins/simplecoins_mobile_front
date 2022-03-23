@@ -1,6 +1,45 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:simplecoins_0/enum/constants.dart';
 import 'package:simplecoins_0/models/user.dart';
+
+class AssistantMethods with ChangeNotifier {
+  // Future<void> getSavedPrefs(context) async {
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   Provider.of<User>(context, listen: false).setUser(
+  //       '11',
+  //       pref.getString('email')!,
+  //       pref.getString('phone')!,
+  //       pref.getString('name')!,
+  //       'sadafasfakfjbwi2');
+  //   notifyListeners();
+  // }
+}
+
+setUserLogins() async {
+  SharedPreferences pref = await SharedPreferences.getInstance();
+  userLogin!.name = await pref.getString('name');
+  userLogin!.email = await pref.getString('email');
+  userLogin!.id = await pref.getString('id');
+  userLogin!.phone = await pref.getString('phone');
+  userLogin!.token = await pref.getString('token');
+  print(pref.getString('token'));
+  print(pref.getString('id'));
+}
+
+// void getPrefs() async {
+//   SharedPreferences pref = await SharedPreferences.getInstance();
+//   print(pref.getString('phone'));
+//   User().setUser(User(
+//       id: '11',
+//       email: pref.getString('email'),
+//       phone: pref.getString('phone'),
+//       name: pref.getString('name'),
+//       token: 'sadafasfakfjbwi2'));
+// }
 
 Future<bool> isFirstTime() async {
   SharedPreferences pref = await SharedPreferences.getInstance();
@@ -21,7 +60,8 @@ Future<void> signUp(context, String name, String email) async {
   pref.setString('name', name);
   pref.setString('email', email);
   pref.setString('phone', '233557113242');
-  Provider.of<User>(context, listen: false).setUser(User(
+  pref.setString('id', '101');
+  Provider.of<User>(context, listen: false).setUserObj(User(
       id: '11',
       email: pref.getString('email'),
       phone: pref.getString('phone'),
@@ -34,8 +74,11 @@ Future<void> signIn(context, String email, String password) async {
   pref.setString("jwt", '24yetbf8214g7b34t943df3');
   pref.setBool("is_login", true);
   pref.setString('email', email);
+  pref.setString('name', 'Desmond Sofua');
   pref.setString('password', password);
-  Provider.of<User>(context, listen: false).setUser(User(
+  pref.setString('token', 'sadafasfakfjbwi2');
+  pref.setString('id', '101');
+  Provider.of<User>(context, listen: false).setUserObj(User(
       id: '11',
       email: pref.getString('email'),
       phone: '233557113242',

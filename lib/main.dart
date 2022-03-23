@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:simplecoins_0/helpers/assistant_methods.dart';
 import 'package:simplecoins_0/models/app_data.dart';
 import 'package:simplecoins_0/models/user.dart';
 import 'package:simplecoins_0/screens/changepassword/changepassword.dart';
@@ -29,6 +30,7 @@ import 'package:simplecoins_0/utils/sizeConfig.dart';
 
 bool? isFirstTime;
 bool? isLoggedIn;
+String? name, phone, email;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,11 +38,20 @@ Future<void> main() async {
   SharedPreferences pref = await SharedPreferences.getInstance();
   isFirstTime = pref.getBool('first_time');
   isLoggedIn = pref.getBool('is_login');
+  name = pref.getString('name');
+  phone = pref.getString('phone');
+  email = pref.getString('email');
+  if (isLoggedIn == true) {
+    setUserLogins();
+
+  }
 
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider<User>(create: (context) => User()),
-      ChangeNotifierProvider<AppData>(create: (context) => AppData())
+      ChangeNotifierProvider<AppData>(create: (context) => AppData()),
+      ChangeNotifierProvider<AssistantMethods>(
+          create: (context) => AssistantMethods())
     ],
     child: MediaQ(),
   ));
@@ -52,6 +63,7 @@ class MediaQ extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MyApp(),
@@ -92,8 +104,10 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontSize: getProportionateScreenWidth(14)))),
         initialRoute: isFirstTime == null
-        ? '/onboarding'
-        : isLoggedIn.toString() == 'true' ? '/home' : '/signin',
+            ? '/onboarding'
+            : isLoggedIn.toString() == 'true'
+                ? '/home'
+                : '/signin',
         routes: {
           // '/': (context) => Wrapper(),
           '/splash': (context) => Splash(),
