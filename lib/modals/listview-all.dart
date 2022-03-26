@@ -90,6 +90,7 @@ Column simpleCoinsCard(Transaction transaction, BuildContext context) {
                                                         false
                                                 ? 'Sold ${transaction.currency}'
                                                 : 'Sold ${transaction.currency}')))))),
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w600,
@@ -118,6 +119,7 @@ Column simpleCoinsCard(Transaction transaction, BuildContext context) {
                 children: [
                   Text(
                     '\$${transaction.price.toString()}',
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w600,
@@ -128,6 +130,7 @@ Column simpleCoinsCard(Transaction transaction, BuildContext context) {
                   ),
                   Text(
                     'GHS ' + (transaction.price! * 5.90).toString(),
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w600,

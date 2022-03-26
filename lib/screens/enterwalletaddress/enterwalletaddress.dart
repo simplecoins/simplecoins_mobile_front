@@ -11,9 +11,41 @@ class EnterWalletAddress extends StatefulWidget {
 }
 
 class _EnterWalletAddressState extends State<EnterWalletAddress> {
-  TextEditingController cryptoAddressController = TextEditingController();
+  TextEditingController _cryptoAddressController = TextEditingController();
+
+  bool _emailEmpty = true;
+  bool _isactive = false;
+
+  void assertEmailEmpty() {
+    setState(() {
+      if (_cryptoAddressController.text.isNotEmpty) {
+        _emailEmpty = false;
+      } else {
+        _emailEmpty = true;
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Start listening to changes.
+    _cryptoAddressController.addListener(assertEmailEmpty);
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the
+    // widget tree.
+    _cryptoAddressController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _cryptoAddressController.text.isNotEmpty
+        ? _isactive = true
+        : _isactive = false;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -53,7 +85,8 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
           }
         },
         child: Padding(
-          padding: EdgeInsets.all(getProportionateScreenWidth(20.0)),
+          padding: EdgeInsets.symmetric(
+              horizontal: getProportionateScreenWidth(20.0)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -62,7 +95,7 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
                 width: getProportionateScreenWidth(52.0),
               ),
               Spacer(
-                flex: 2,
+                flex: 4,
               ),
               Row(
                 children: <Widget>[
@@ -79,7 +112,7 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
                 height: getProportionateScreenHeight(10.0),
               ),
               TextField(
-                controller: cryptoAddressController,
+                controller: _cryptoAddressController,
                 autofocus: false,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
@@ -97,7 +130,7 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
                   // paste from clipboard
                   ClipboardData data = await (Clipboard.getData('text/plain')
                       as Future<ClipboardData>);
-                  cryptoAddressController.text = data.text!;
+                  _cryptoAddressController.text = data.text!;
                 },
                 child: Text(
                   'Click to paste address',
@@ -109,19 +142,21 @@ class _EnterWalletAddressState extends State<EnterWalletAddress> {
                 ),
               ),
               Spacer(
-                flex: 4,
+                flex: 8,
               ),
               DefaultButton(
-                bcolor: Color(0xFF001233),
-                tcolor: Colors.white,
                 text: 'Next',
+                isActive: _isactive,
                 press: () {
-                  cryptoAddressTemp = cryptoAddressController.text;
+                  cryptoAddressTemp = _cryptoAddressController.text;
                   //grab rate from API
                   buyRateTemp = buyRate;
-                  print(cryptoAddressController.text);
+                  print(_cryptoAddressController.text);
                   Navigator.pushNamed(context, '/enteramount');
                 },
+              ),
+              Spacer(
+                flex: 1,
               )
             ],
           ),

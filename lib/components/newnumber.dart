@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:simplecoins_0/enum/constants.dart';
 
-TextEditingController accName = TextEditingController();
-TextEditingController accNumber = TextEditingController();
+// TextEditingController accName = TextEditingController();
+// TextEditingController accNumber = TextEditingController();
 
 class NewNumber extends StatefulWidget {
-  const NewNumber({Key? key, this.imgPath, this.text, this.stateSetter})
+  NewNumber(
+      {Key? key,
+      this.imgPath,
+      this.text,
+      this.stateSetter,
+      required this.nameController,
+      required this.numberController})
       : super(key: key);
   final String? imgPath;
   final String? text;
   final VoidCallback? stateSetter;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController numberController = TextEditingController();
 
   @override
   _NewNumberState createState() => _NewNumberState();
@@ -84,7 +92,7 @@ class _NewNumberState extends State<NewNumber> {
                         height: 10.0,
                       ),
                       TextField(
-                        controller: accName,
+                        controller: widget.nameController,
                         autofocus: false,
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
@@ -107,7 +115,7 @@ class _NewNumberState extends State<NewNumber> {
                         height: 10.0,
                       ),
                       TextField(
-                        controller: accNumber,
+                        controller: widget.numberController,
                         autofocus: false,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(

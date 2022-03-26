@@ -13,6 +13,8 @@ class ChooseReceivingNumber extends StatefulWidget {
 
 class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
     with SingleTickerProviderStateMixin {
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _numberController = TextEditingController();
   TabController? _tabController;
   @override
   void initState() {
@@ -187,14 +189,20 @@ class _ChooseReceivingNumberState extends State<ChooseReceivingNumber>
                               NewNumber(
                                 text: 'MTN Mobile Money',
                                 imgPath: 'assets/MoMo Networks/MTN.png',
+                                nameController: _nameController,
+                                numberController: _numberController,
                               ),
                               NewNumber(
                                 text: 'Vodafone Cash',
                                 imgPath: 'assets/MoMo Networks/Vodafone.png',
+                                nameController: _nameController,
+                                numberController: _numberController,
                               ),
                               NewNumber(
                                 text: 'AirtelTigo Money',
                                 imgPath: 'assets/MoMo Networks/AirtelTigo.png',
+                                nameController: _nameController,
+                                numberController: _numberController,
                               ),
                               SizedBox(
                                 height: getProportionateScreenHeight(15.0),

@@ -11,11 +11,15 @@ class EnterAmount extends StatefulWidget {
 }
 
 class _EnterAmountState extends State<EnterAmount> {
+  // TextEditingController _controller = TextEditingController();
   String text = '';
+  bool _isactive = false;
+
   _onKeyboardTap(String value) {
     setState(() {
       text = text + value;
       print('$value tapped');
+      print(int.parse(text));
     });
   }
 
@@ -58,7 +62,8 @@ class _EnterAmountState extends State<EnterAmount> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(getProportionateScreenWidth(10.0)),
+        padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(10.0)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -70,6 +75,8 @@ class _EnterAmountState extends State<EnterAmount> {
               height: getProportionateScreenHeight(10.0),
             ),
             RichText(
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               text: TextSpan(
                 // Note: Styles for TextSpans must be explicitly defined.
                 // Child text spans will inherit styles from parent
@@ -81,7 +88,7 @@ class _EnterAmountState extends State<EnterAmount> {
                 children: <TextSpan>[
                   TextSpan(text: '\$ '),
                   TextSpan(
-                      text: '$text',
+                      text: text.isEmpty ? '0.00' : text,
                       style: TextStyle(
                           color: Color(0xFF757575),
                           fontFamily: 'Manrope',
@@ -103,6 +110,8 @@ class _EnterAmountState extends State<EnterAmount> {
             SizedBox(
               height: getProportionateScreenHeight(11.0),
             ),
+            // int.parse(text) < 50
+            //     ?
             Text(
               'GHS 50.00 Minimum buy',
               style: TextStyle(
@@ -111,8 +120,9 @@ class _EnterAmountState extends State<EnterAmount> {
                   fontSize: getProportionateScreenWidth(12),
                   color: Color(0xFFE56565)),
             ),
+            //     : Offstage(),
             SizedBox(
-              height: getProportionateScreenHeight(41.0),
+              height: getProportionateScreenHeight(40.0),
             ),
             NumericKeyboard(
               onKeyboardTap: _onKeyboardTap,
@@ -136,8 +146,9 @@ class _EnterAmountState extends State<EnterAmount> {
             ),
             Spacer(),
             DefaultButton(
-              bcolor: Color(0xFF001233),
-              tcolor: Colors.white,
+              // bcolor: Color(0xFF001233),
+              // tcolor: Colors.white,
+              isActive: text == null || text == '' ? false : true,
               text: 'Next',
               press: () {
                 priceTemp = double.parse(text);

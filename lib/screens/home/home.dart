@@ -36,7 +36,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         centerTitle: false,
         backgroundColor: Colors.white,
         title: Padding(
-          padding: EdgeInsets.only(left: getProportionateScreenWidth(21)),
+          padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[

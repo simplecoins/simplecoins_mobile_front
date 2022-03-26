@@ -134,17 +134,21 @@ class _PaymentInfoState extends State<PaymentInfo> {
             Row(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Checkbox(
-                  activeColor: Colors.black,
-                  value: isPInfoChecked,
-                  onChanged: (value) {
-                    setState(() {
-                      isPInfoChecked = !isPInfoChecked;
-                    });
-                  },
+                SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: Checkbox(
+                    activeColor: Colors.black,
+                    value: isPInfoChecked,
+                    onChanged: (value) {
+                      setState(() {
+                        isPInfoChecked = !isPInfoChecked;
+                      });
+                    },
+                  ),
                 ),
                 SizedBox(
-                  width: getProportionateScreenWidth(33.0),
+                  width: getProportionateScreenWidth(03.0),
                 ),
                 Text(
                   'Select to confirm you have made the above payment',

@@ -14,6 +14,8 @@ class ChoosePaymentNumber extends StatefulWidget {
 
 class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
     with SingleTickerProviderStateMixin {
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _numberController = TextEditingController();
   TabController? _tabController;
   @override
   void initState() {
@@ -153,7 +155,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                       tabs: [
                         Tab(
                             child: Text(
-                          '             New Number             ',
+                          'New Number',
                           style: TextStyle(
                               fontFamily: 'Manrope',
                               fontWeight: FontWeight.w600,
@@ -161,7 +163,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                         )),
                         Tab(
                             child: Text(
-                          '             Saved Number             ',
+                          'Saved Number',
                           style: TextStyle(
                               fontFamily: 'Manrope',
                               fontWeight: FontWeight.w600,
@@ -176,7 +178,7 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                 ),
                 Container(
                     width: getProportionateScreenWidth(335.0),
-                    height: getProportionateScreenHeight(435.0),
+                    height: getProportionateScreenHeight(415.0),
                     child: TabBarView(
                       controller: _tabController,
                       children: [
@@ -187,14 +189,20 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                               NewNumber(
                                 text: 'MTN Mobile Money',
                                 imgPath: 'assets/MoMo Networks/MTN.png',
+                                nameController: _nameController,
+                                numberController: _numberController,
                               ),
                               NewNumber(
                                 text: 'Vodafone Cash',
                                 imgPath: 'assets/MoMo Networks/Vodafone.png',
+                                nameController: _nameController,
+                                numberController: _numberController,
                               ),
                               NewNumber(
                                 text: 'AirtelTigo Money',
                                 imgPath: 'assets/MoMo Networks/AirtelTigo.png',
+                                nameController: _nameController,
+                                numberController: _numberController,
                               ),
                               SizedBox(
                                 height: getProportionateScreenHeight(15.0),
@@ -284,6 +292,9 @@ class _ChoosePaymentNumberState extends State<ChoosePaymentNumber>
                     // print(accNumber.text);
                     Navigator.pushNamed(context, '/summary');
                   },
+                ),
+                SizedBox(
+                  height: getProportionateScreenHeight(40.0),
                 )
               ],
             ),

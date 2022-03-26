@@ -23,16 +23,21 @@ class DefaultButton extends StatefulWidget {
 class _DefaultButtonState extends State<DefaultButton> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 300),
       height: 64,
       width: 311,
+      decoration: BoxDecoration(
+        color: widget.isActive ? Colors.black : Color(0xFFF2F2F2),
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
       child: FlatButton(
         padding: EdgeInsets.all(20.0),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: BorderSide(
                 color: widget.isActive ? Colors.black : Color(0xFFF2F2F2))),
-        color: widget.isActive ? Colors.black : Color(0xFFF2F2F2),
+        // color: widget.isActive ? Colors.black : Color(0xFFF2F2F2),
         child: Text(
           widget.text!,
           style: TextStyle(
